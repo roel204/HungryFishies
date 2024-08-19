@@ -1,17 +1,16 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuShopManager : MonoBehaviour
 {
     public Sprite[] fishSkins; // An array of all available fish skins to display
     public int[] fishSkinCosts; // An array to store the cost of each fish skin
+
     public Button purchaseButton;
     public Button playButton;
     public TextMeshProUGUI pearlCounter;
     public Image selectedFishImage; // Reference to the UI Image to display the selected fish
-    private SFXManager sfxManager;
     private SceneHandler sceneHandler;
 
     private int selectedFishIndex = 0;
@@ -19,11 +18,9 @@ public class MainMenuShopManager : MonoBehaviour
 
     private void Start()
     {
-        sfxManager = FindObjectOfType<SFXManager>();
         sceneHandler = FindFirstObjectByType<SceneHandler>();
 
-
-        pearlCounter.text = "Pearls: " + PlayerPrefs.GetInt("Pearls").ToString() + "\vHighscore: " + PlayerPrefs.GetFloat("HighScore").ToString("F2");
+        pearlCounter.text = "Pearls: " + GameManager.instance.pearls.ToString() + "\vHighscore: " + PlayerPrefs.GetFloat("HighScore").ToString("F2");
 
         selectedFishIndex = PlayerPrefs.GetInt("ActiveFishIndex");
 
@@ -94,31 +91,21 @@ public class MainMenuShopManager : MonoBehaviour
     public void OnPurchaseButtonClick()
     {
         int cost = fishSkinCosts[selectedFishIndex];
-        int pearls = PlayerPrefs.GetInt("Pearls", 0);
 
-        if (pearls >= cost)
+        if (GameManager.instance.ChangePearls(cost))
         {
-            GameManager.instance.AddPearls(-cost);
-            sfxManager.PlaySFXBuy();
-
             purchasedFish[selectedFishIndex] = true;
             SavePurchasedFishData();
 
             UpdateShopUI();
-            pearlCounter.text = "Pearls: " + PlayerPrefs.GetInt("Pearls").ToString() + "\vHighscore: " + PlayerPrefs.GetFloat("HighScore").ToString("F2");
-        }
-        else
-        {
-            sfxManager.PlaySFXError();
+            pearlCounter.text = "Pearls: " + GameManager.instance.pearls.ToString() + "\vHighscore: " + PlayerPrefs.GetFloat("HighScore").ToString("F2");
         }
     }
 
 
     public void OnPlayButtonClick()
     {
-        int activeFishIndex = selectedFishIndex;
-        PlayerPrefs.SetInt("ActiveFishIndex", activeFishIndex);
-        PlayerPrefs.Save();
+        GameManager.instance.selectedFish = selectedFishIndex;
 
         sceneHandler.ChangeScene(1);
     }

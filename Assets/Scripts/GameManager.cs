@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public float score;
-    private int pearls;
+    public int pearls;
+    public int selectedFish;
     private Timer timer;
     [SerializeField] Animator transitionAnimator;
 
@@ -22,6 +23,13 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        pearls = PlayerPrefs.GetInt("Pearls");
+    }
+
+    private void Start()
+    {
+        pearls = PlayerPrefs.GetInt("Pearls");
     }
 
     public void GameOver()
@@ -30,10 +38,22 @@ public class GameManager : MonoBehaviour
         score = timer.GetTimerValue();
     }
 
-    public void AddPearls(int amount)
+    public bool ChangePearls(int amount)
     {
-        pearls = PlayerPrefs.GetInt("Pearls");
-        pearls += amount;
-        PlayerPrefs.SetInt("Pearls", pearls);
+        if (pearls + amount >= 0)
+        {
+            pearls += amount;
+            PlayerPrefs.SetInt("Pearls", pearls);
+
+            //sfxManager.PlaySFXBuy();
+
+            return true;
+        }
+        else
+        {
+            //sfxManager.PlaySFXError();
+
+            return false;
+        }
     }
 }

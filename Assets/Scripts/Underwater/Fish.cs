@@ -3,6 +3,7 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     public Sprite[] fishSkins;
+
     public bool followMouse = false;
     private KeyCode mouseButton = KeyCode.Mouse0;
 
@@ -17,18 +18,15 @@ public class Fish : MonoBehaviour
     private Vector3 targetPosition;
 
     private ShopManager shopManager;
-    private Rigidbody2D rb;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-
         currentSpeed = baseSpeed;
         currentScale = baseScale;
 
         shopManager = FindObjectOfType<ShopManager>();
 
-        int activeFishIndex = PlayerPrefs.GetInt("ActiveFishIndex", 0);
+        int activeFishIndex = GameManager.instance.selectedFish;
         GetComponent<SpriteRenderer>().sprite = fishSkins[activeFishIndex];
     }
 

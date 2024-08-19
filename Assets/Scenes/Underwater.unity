@@ -1417,6 +1417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneHandler
       objectReference: {fileID: 0}
+    - target: {fileID: 1743688037833255361, guid: 20ea91023e03aa74389a7191f50fe808, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4416818875483971341, guid: 20ea91023e03aa74389a7191f50fe808, type: 3}
       propertyPath: m_RootOrder
       value: 7
