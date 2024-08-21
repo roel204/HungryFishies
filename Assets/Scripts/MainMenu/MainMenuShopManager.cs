@@ -2,10 +2,28 @@ using DanielLochner.Assets.SimpleScrollSnap;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System.IO;  // Ensure this is included for Path and File
+
+[System.Serializable]
+public class FishData
+{
+    public int index;
+    public string name;
+    public int cost;
+    public int defaultSpeed;
+    public int defaultTurnSpeed;
+}
+
+[System.Serializable]
+public class FishDataWrapper
+{
+    public List<FishData> fishData;
+}
 
 public class MainMenuShopManager : MonoBehaviour
 {
-    public int[] fishSkinCosts; // An array to store the cost of each fish skin
+    private List<FishData> fishDataList; // List to store fish data loaded from JSON
 
     public Button purchaseButton;
     public Button playButton;
@@ -27,6 +45,16 @@ public class MainMenuShopManager : MonoBehaviour
     {
         sceneHandler = FindFirstObjectByType<SceneHandler>();
 
+        // Load the JSON file
+        string jsonFilePath = Path.Combine(Application.streamingAssetsPath, "fishData.json");
+        string jsonData = File.ReadAllText(jsonFilePath);
+
+        // Parse the JSON data into a list of FishData objects
+        fishDataList = JsonUtility.FromJson<FishDataWrapper>(jsonData).fishData;
+
+        // Initialize the purchased fish array based on the size of fishDataList
+        purchasedFish = new bool[fishDataList.Count];
+
         LoadPurchasedFishData();
         UpdateShopUI();
     }
@@ -34,6 +62,7 @@ public class MainMenuShopManager : MonoBehaviour
     public void SelectFish(int selectedItem, int previousItem)
     {
         selectedFishIndex = selectedItem;
+        GameManager.instance.selectedFish = selectedFishIndex;
         Debug.Log(selectedItem + "|" + previousItem);
 
         UpdateShopUI();
@@ -42,26 +71,15 @@ public class MainMenuShopManager : MonoBehaviour
     private void LoadPurchasedFishData()
     {
         // Load the purchased fish data from PlayerPrefs or initialize if not present
-        purchasedFish = new bool[fishSkinCosts.Length];
-        for (int i = 0; i < fishSkinCosts.Length; i++)
+        for (int i = 0; i < fishDataList.Count; i++)
         {
             purchasedFish[i] = PlayerPrefs.GetInt("Fish_" + i.ToString(), 0) == 1;
         }
     }
 
-    //private void SavePurchasedFishData()
-    //{
-    //    // Save the purchased fish data to PlayerPrefs
-    //    for (int i = 0; i < fishSkinCosts.Length; i++)
-    //    {
-    //        PlayerPrefs.SetInt("Fish_" + i.ToString(), purchasedFish[i] ? 1 : 0);
-    //    }
-    //    PlayerPrefs.Save();
-    //}
-
     public void OnPurchaseButtonClick()
     {
-        int cost = fishSkinCosts[selectedFishIndex];
+        int cost = fishDataList[selectedFishIndex].cost;
 
         if (GameManager.instance.ChangePearls(-cost))
         {
@@ -76,7 +94,6 @@ public class MainMenuShopManager : MonoBehaviour
 
     public void OnPlayButtonClick()
     {
-        GameManager.instance.selectedFish = selectedFishIndex;
         PlayerPrefs.SetInt("LastFish", selectedFishIndex);
 
         sceneHandler.ChangeScene(1);
@@ -99,7 +116,7 @@ public class MainMenuShopManager : MonoBehaviour
 
             if (buyButtonText != null)
             {
-                buyButtonText.text = "Pearls X" + fishSkinCosts[selectedFishIndex].ToString();
+                buyButtonText.text = "Pearls X" + fishDataList[selectedFishIndex].cost.ToString();
             }
             else
             {

@@ -1,0 +1,96 @@
+{
+    "fishData": [
+
+	{
+		"index": 0,
+		"name": "Fish",
+		"cost": 0,
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 1
+	},
+	{
+		"index": 1,
+		"name": "Fish1",
+		"cost": 1,
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 1
+	},
+	{
+		"index": 2,
+		"name": "Fish2",
+		"cost": 2,
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 1
+	},
+	{
+		"index": 3,
+		"name": "Fish3",
+		"cost": 3,
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 1
+	},
+	{
+		"index": 4,
+		"name": "Fish4",
+		"cost": 4,
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 1
+	},
+	{
+		"index": 5,
+		"name": "Fish5",
+		"cost": 5,
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 1
+	},
+	{
+		"index": 6,
+		"name": "Fish6",
+		"cost": 6,
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 1
+	},
+	{
+		"index": 7,
+		"name": "Fish7",
+		"cost": 7,
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 1
+	},
+	{
+		"index": 8,
+		"name": "Fish8",
+		"cost": 8,
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 1
+	},
+	{
+		"index": 9,
+		"name": "Fish9",
+		"cost": 9,
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 1
+	},
+	{
+		"index": 10,
+		"name": "Fish10",
+		"cost": 10,
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 1
+	},
+	{
+		"index": 11,
+		"name": "Fish11",
+		"cost": 11,
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 1
+	},
+	{
+		"index": 12,
+		"name": "Fish12",
+		"cost": 12,
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 1
+	}
+]
+}
