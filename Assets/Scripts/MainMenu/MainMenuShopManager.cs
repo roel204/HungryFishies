@@ -11,7 +11,7 @@ public class MainMenuShopManager : MonoBehaviour
     public Button playButton;
     public TextMeshProUGUI pearlCounter;
     public Image selectedFishImage; // Reference to the UI Image to display the selected fish
-    [SerializeField] private SimpleScrollSnap scrollSnap; // I accedentalli hid the console log so it didnt show, so try again.
+    [SerializeField] private SimpleScrollSnap scrollSnap;
     private SceneHandler sceneHandler;
 
     private int selectedFishIndex = 0;
@@ -25,14 +25,14 @@ public class MainMenuShopManager : MonoBehaviour
 
         LoadPurchasedFishData();
         UpdateShopUI();
-        Debug.Log(scrollSnap);
     }
 
-    public void SelectFish(int fish)
+    public void SelectFish(int selectedItem, int previousItem)
     {
-        selectedFishIndex = fish;
-        Debug.Log(fish);
-        Debug.Log("Active!");
+        selectedFishIndex = selectedItem;
+        Debug.Log(selectedItem + "|" + previousItem);
+
+        UpdateShopUI();
     }
 
     private void LoadPurchasedFishData()
@@ -45,14 +45,36 @@ public class MainMenuShopManager : MonoBehaviour
         }
     }
 
-    private void SavePurchasedFishData()
+    //private void SavePurchasedFishData()
+    //{
+    //    // Save the purchased fish data to PlayerPrefs
+    //    for (int i = 0; i < fishSkinCosts.Length; i++)
+    //    {
+    //        PlayerPrefs.SetInt("Fish_" + i.ToString(), purchasedFish[i] ? 1 : 0);
+    //    }
+    //    PlayerPrefs.Save();
+    //}
+
+    public void OnPurchaseButtonClick()
     {
-        // Save the purchased fish data to PlayerPrefs
-        for (int i = 0; i < fishSkinCosts.Length; i++)
+        int cost = fishSkinCosts[selectedFishIndex];
+
+        if (GameManager.instance.ChangePearls(-cost))
         {
-            PlayerPrefs.SetInt("Fish_" + i.ToString(), purchasedFish[i] ? 1 : 0);
+            purchasedFish[selectedFishIndex] = true;
+
+            PlayerPrefs.SetInt("Fish_" + selectedFishIndex.ToString(), 1);
+            PlayerPrefs.Save();
+
+            UpdateShopUI();
         }
-        PlayerPrefs.Save();
+    }
+
+    public void OnPlayButtonClick()
+    {
+        GameManager.instance.selectedFish = selectedFishIndex;
+
+        sceneHandler.ChangeScene(1);
     }
 
     private void UpdateShopUI()
@@ -67,39 +89,19 @@ public class MainMenuShopManager : MonoBehaviour
         {
             purchaseButton.gameObject.SetActive(true);
             playButton.gameObject.SetActive(false);
+
+            TextMeshProUGUI buyButtonText = purchaseButton.GetComponentInChildren<TextMeshProUGUI>();
+
+            if (buyButtonText != null)
+            {
+                buyButtonText.text = "Pearls X" + fishSkinCosts[selectedFishIndex].ToString();
+            }
+            else
+            {
+                Debug.LogWarning("TextMeshProUGUI component not found on the Purchase Button.");
+            }
         }
 
         pearlCounter.text = "Pearls: " + GameManager.instance.pearls.ToString() + "\vHighscore: " + PlayerPrefs.GetFloat("HighScore").ToString("F2");
-
-        TextMeshProUGUI buttonText = purchaseButton.GetComponentInChildren<TextMeshProUGUI>();
-
-        if (buttonText != null)
-        {
-            buttonText.text = "Pearls X" + fishSkinCosts[selectedFishIndex].ToString();
-        }
-        else
-        {
-            Debug.LogWarning("TextMeshProUGUI component not found on the Purchase Button.");
-        }
-    }
-
-    public void OnPurchaseButtonClick()
-    {
-        int cost = fishSkinCosts[selectedFishIndex];
-
-        if (GameManager.instance.ChangePearls(-cost))
-        {
-            purchasedFish[selectedFishIndex] = true;
-            SavePurchasedFishData();
-
-            UpdateShopUI();
-        }
-    }
-
-    public void OnPlayButtonClick()
-    {
-        GameManager.instance.selectedFish = selectedFishIndex;
-
-        sceneHandler.ChangeScene(1);
     }
 }
