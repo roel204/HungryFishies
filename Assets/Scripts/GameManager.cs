@@ -1,15 +1,33 @@
-using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+
+[System.Serializable]
+public class FishData
+{
+    public int index;
+    public string name;
+    public int cost;
+    public int defaultSpeed;
+    public int defaultTurnSpeed;
+}
+
+[System.Serializable]
+public class FishDataWrapper
+{
+    public List<FishData> fishData;
+}
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public List<FishData> fishDataList; // Make this public so it's accessible from other scripts
+
     public float score;
     public int pearls;
     public int selectedFish;
     private Timer timer;
-    [SerializeField] Animator transitionAnimator;
 
     private void Awake()
     {
@@ -25,11 +43,13 @@ public class GameManager : MonoBehaviour
         }
 
         pearls = PlayerPrefs.GetInt("Pearls");
-    }
 
-    private void Start()
-    {
-        pearls = PlayerPrefs.GetInt("Pearls");
+        // Load the JSON file
+        string jsonFilePath = Path.Combine(Application.streamingAssetsPath, "fishData.json");
+        string jsonData = File.ReadAllText(jsonFilePath);
+
+        // Parse the JSON data into a list of FishData objects
+        fishDataList = JsonUtility.FromJson<FishDataWrapper>(jsonData).fishData;
     }
 
     public void GameOver()
