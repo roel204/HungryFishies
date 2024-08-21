@@ -26,8 +26,7 @@ public class Fish : MonoBehaviour
 
         shopManager = FindObjectOfType<ShopManager>();
 
-        int activeFishIndex = GameManager.instance.selectedFish;
-        GetComponent<SpriteRenderer>().sprite = fishSkins[activeFishIndex];
+        GetComponent<SpriteRenderer>().sprite = fishSkins[GameManager.instance.selectedFish];
     }
 
     private void Update()

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 61137c04f79b5e946b8c452c2437f703
+guid: 6a8f4c4a21f4db4449d4a708a401f304
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -77,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -89,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -101,19 +103,46 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SALMON_0
+      name: STURGEON_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 104
-        height: 80
+        width: 220
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82ef73c91611c354b9f136fe2d11f218
-      internalID: -518011612
+      spriteID: d7b898c562b0c7e4a810931b0e37b53e
+      internalID: 407880389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SALMON_1
+      name: STURGEON_1
       rect:
         serializedVersion: 2
-        x: 104
+        x: 220
         y: 0
-        width: 104
-        height: 80
+        width: 220
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 714614f8fd1437441af20b6b724e673e
-      internalID: -392850138
+      spriteID: f349c4240d8ddba459fa6ac0b5dce23a
+      internalID: -1204659791
       vertices: []
       indices: 
       edges: []
@@ -159,8 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SALMON_0: -518011612
-      SALMON_1: -392850138
+      STURGEON_0: 407880389
+      STURGEON_1: -1204659791
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -17,11 +17,15 @@ public class MainMenuShopManager : MonoBehaviour
     private int selectedFishIndex = 0;
     private bool[] purchasedFish; // An array to store purchased fish data
 
+    private void Awake()
+    {
+        selectedFishIndex = PlayerPrefs.GetInt("LastFish");
+        scrollSnap.StartingPanel = selectedFishIndex;
+    }
+
     private void Start()
     {
         sceneHandler = FindFirstObjectByType<SceneHandler>();
-
-        selectedFishIndex = PlayerPrefs.GetInt("ActiveFishIndex");
 
         LoadPurchasedFishData();
         UpdateShopUI();
@@ -73,6 +77,7 @@ public class MainMenuShopManager : MonoBehaviour
     public void OnPlayButtonClick()
     {
         GameManager.instance.selectedFish = selectedFishIndex;
+        PlayerPrefs.SetInt("LastFish", selectedFishIndex);
 
         sceneHandler.ChangeScene(1);
     }

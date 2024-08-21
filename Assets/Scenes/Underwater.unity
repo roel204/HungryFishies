@@ -3688,9 +3688,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishSkins:
-  - {fileID: 21300000, guid: 0484c0691d90536448ab21ecfd67b97f, type: 3}
-  - {fileID: 21300000, guid: 8e0fd398472065e41a607f0ef2451149, type: 3}
-  - {fileID: 21300000, guid: 1dbb7c33739651347a69123b045c5dbb, type: 3}
+  - {fileID: 21300000, guid: bbc5a3aeff16d364f80a3424e7b82318, type: 3}
+  - {fileID: 21300000, guid: 670bb9258f451e64fa35b05e150aad99, type: 3}
+  - {fileID: 685496547, guid: bad67b0ef9489b0479da511e693d7cce, type: 3}
+  - {fileID: 1813713875, guid: 7f4570a705216de4998e999e54fa638e, type: 3}
+  - {fileID: -518011612, guid: 61137c04f79b5e946b8c452c2437f703, type: 3}
+  - {fileID: 407880389, guid: 6a8f4c4a21f4db4449d4a708a401f304, type: 3}
+  - {fileID: -1706221978, guid: b7694b868ac65d74fac5816d3748a035, type: 3}
+  - {fileID: -1483111531, guid: d3c272beba016a8498be7ec85af53103, type: 3}
+  - {fileID: -662984834, guid: 48a0eb5cc43dac344bd71d5e8b1ec01c, type: 3}
+  - {fileID: -798320069, guid: 9de025b0881d1524ea5a4f4ec04fe6f0, type: 3}
+  - {fileID: -736724356, guid: b32899d86ffba354c9c10e1101e54ed2, type: 3}
+  - {fileID: 865070556, guid: edaa203e2cabe6940bd616020abb97b6, type: 3}
+  - {fileID: 349485984, guid: ec3c911bd17996847a6270a6142df79c, type: 3}
   followMouse: 0
 --- !u!212 &1308488877
 SpriteRenderer:
@@ -3741,7 +3751,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 0.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1308488878

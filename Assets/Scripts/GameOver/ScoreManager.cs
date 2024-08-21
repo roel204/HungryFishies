@@ -21,6 +21,6 @@ public class ScoreManager : MonoBehaviour
         GameManager.instance.ChangePearls((int)score);
         int currentPearls = PlayerPrefs.GetInt("Pearls");
 
-        highScoreText.text = "Score: " + score.ToString("F2") + "\nHighscore: " + highScore.ToString("F2") + "\nPearls: " + currentPearls;
+        highScoreText.text = "Score: " + score.ToString("F2") + "\nHighscore: " + highScore.ToString("F2") + "\nPearls: " + currentPearls + " (+" + (int)score + ")";
     }
 }
