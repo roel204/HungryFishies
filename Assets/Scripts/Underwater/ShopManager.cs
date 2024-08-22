@@ -7,8 +7,8 @@ public class ShopManager : MonoBehaviour
 
     public TextMeshProUGUI coinCounter;
     public int coins = 0;
-    public int[,] shopItems = new int[5, 7];
-    public string[,] shopItemNames = new string[2, 7];
+    public int[,] shopItems = new int[5, 8];
+    public string[,] shopItemNames = new string[2, 8];
     public int maxUpgradeLevel = 5;
 
     private SFXManager sfxManager;
@@ -22,6 +22,7 @@ public class ShopManager : MonoBehaviour
         shopItemNames[1, 4] = "More Coins";
         shopItemNames[1, 5] = "Better Food";
         shopItemNames[1, 6] = "More HP";
+        shopItemNames[1, 7] = "Rotate Speed";
     }
 
     void Start()
@@ -35,6 +36,7 @@ public class ShopManager : MonoBehaviour
         shopItems[1, 4] = 4; // More Coins
         shopItems[1, 5] = 5; // Better Food
         shopItems[1, 6] = 6; // More HP
+        shopItems[1, 7] = 7; // Rotate Speed
 
         // Price
         shopItems[2, 1] = 2;
@@ -43,6 +45,7 @@ public class ShopManager : MonoBehaviour
         shopItems[2, 4] = 5;
         shopItems[2, 5] = 4;
         shopItems[2, 6] = 7;
+        shopItems[2, 7] = 2;
 
         // Level
         shopItems[3, 1] = 0;
@@ -51,6 +54,7 @@ public class ShopManager : MonoBehaviour
         shopItems[3, 4] = 0;
         shopItems[3, 5] = 0;
         shopItems[3, 6] = 0;
+        shopItems[3, 7] = 0;
 
         // Price Addition
         shopItems[4, 1] = 2;
@@ -59,6 +63,7 @@ public class ShopManager : MonoBehaviour
         shopItems[4, 4] = 3;
         shopItems[4, 5] = 3;
         shopItems[4, 6] = 4;
+        shopItems[4, 7] = 2;
 
     }
 

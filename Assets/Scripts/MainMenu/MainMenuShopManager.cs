@@ -103,6 +103,6 @@ public class MainMenuShopManager : MonoBehaviour
 
         highScoreText.text = "HighScore: " + PlayerPrefs.GetFloat("HighScoreFish_" + selectedFishIndex, 0).ToString("F2");
 
-        pearlCounter.text = "Pearls: " + GameManager.instance.pearls.ToString() + "\nHighscore: " + PlayerPrefs.GetFloat("HighScore").ToString("F2");
+        pearlCounter.text = "Pearls: " + GameManager.instance.pearls.ToString();
     }
 }

@@ -41,7 +41,7 @@ public class HealthBar : MonoBehaviour
 
             // Decrease health over time based on the decreaseSpeed and speedMultiplier
             float decreaseAmount = baseDecreaseSpeed * speedMultiplier * Time.deltaTime;
-            DecreaseHealth(decreaseAmount);
+            // DecreaseHealth(decreaseAmount);
 
             if (currentHealth <= 0f)
             {
