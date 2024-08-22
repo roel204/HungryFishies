@@ -3,87 +3,111 @@
 
 	{
 		"index": 0,
-		"name": "Fish",
+		"name": "Sea Bass",
+		"ability": "No Ability",
 		"cost": 0,
 		"defaultSpeed": 3,
-		"defaultTurnSpeed": 150
+		"defaultTurnSpeed": 150,
+		"defaultHealth": 100
 	},
 	{
 		"index": 1,
-		"name": "Fish1",
+		"name": "Opah",
+		"ability": "Slower hunger drain",
 		"cost": 1,
-		"defaultSpeed": 3,
-		"defaultTurnSpeed": 150
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 130,
+		"defaultHealth": 120
 	},
 	{
 		"index": 2,
-		"name": "Fish2",
+		"name": "Bullhead Catfish",
+		"ability": "No Ability",
 		"cost": 2,
 		"defaultSpeed": 3,
-		"defaultTurnSpeed": 150
+		"defaultTurnSpeed": 180,
+		"defaultHealth": 110
 	},
 	{
 		"index": 3,
-		"name": "Fish3",
+		"name": "Seahorse",
+		"ability": "No Ability",
 		"cost": 3,
 		"defaultSpeed": 3,
-		"defaultTurnSpeed": 150
+		"defaultTurnSpeed": 150,
+		"defaultHealth": 100
 	},
 	{
 		"index": 4,
-		"name": "Fish4",
+		"name": "Salmon",
+		"ability": "No Ability",
 		"cost": 4,
-		"defaultSpeed": 3,
-		"defaultTurnSpeed": 150
+		"defaultSpeed": 4,
+		"defaultTurnSpeed": 160,
+		"defaultHealth": 120
 	},
 	{
 		"index": 5,
-		"name": "Fish5",
+		"name": "Sturgeon",
+		"ability": "No Ability",
 		"cost": 5,
-		"defaultSpeed": 3,
-		"defaultTurnSpeed": 150
+		"defaultSpeed": 4,
+		"defaultTurnSpeed": 140,
+		"defaultHealth": 130
 	},
 	{
 		"index": 6,
-		"name": "Fish6",
+		"name": "Sardine",
+		"ability": "Half upgrade cost",
 		"cost": 6,
-		"defaultSpeed": 3,
-		"defaultTurnSpeed": 150
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 170,
+		"defaultHealth": 80
 	},
 	{
 		"index": 7,
-		"name": "Fish7",
+		"name": "Stingray",
+		"ability": "Faster when close to ground",
 		"cost": 7,
 		"defaultSpeed": 3,
-		"defaultTurnSpeed": 150
+		"defaultTurnSpeed": 160,
+		"defaultHealth": 100
 	},
 	{
 		"index": 8,
-		"name": "Fish8",
+		"name": "Squid",
+		"ability": "No Ability",
 		"cost": 8,
-		"defaultSpeed": 3,
-		"defaultTurnSpeed": 150
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 200,
+		"defaultHealth": 100
 	},
 	{
 		"index": 9,
-		"name": "Fish9",
+		"name": "Basking Shark",
+		"ability": "No Ability",
 		"cost": 9,
-		"defaultSpeed": 3,
-		"defaultTurnSpeed": 150
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 120,
+		"defaultHealth": 200
 	},
 	{
 		"index": 10,
-		"name": "Fish10",
+		"name": "Turtle",
+		"ability": "Immune to damage",
 		"cost": 10,
-		"defaultSpeed": 3,
-		"defaultTurnSpeed": 150
+		"defaultSpeed": 2,
+		"defaultTurnSpeed": 120,
+		"defaultHealth": 150
 	},
 	{
 		"index": 11,
-		"name": "Fish11",
+		"name": "Thresher Shark",
+		"ability": "No Ability",
 		"cost": 11,
-		"defaultSpeed": 3,
-		"defaultTurnSpeed": 150
+		"defaultSpeed": 4,
+		"defaultTurnSpeed": 200,
+		"defaultHealth": 130
 	}
 ]
 }

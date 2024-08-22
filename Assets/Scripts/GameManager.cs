@@ -7,9 +7,11 @@ public class FishData
 {
     public int index;
     public string name;
+    public string ability;
     public int cost;
     public int defaultSpeed;
     public int defaultTurnSpeed;
+    public int defaultHealth;
 }
 
 [System.Serializable]

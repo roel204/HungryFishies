@@ -6,8 +6,8 @@ public class HealthBar : MonoBehaviour
 {
     public Slider slider;
     public TextMeshProUGUI multiplier;
-    public float maxHealth = 100f;
-    private float currentHealth = 100f;
+    public float baseHealth = GameManager.instance.fishDataList[GameManager.instance.selectedFish].defaultHealth;
+    private float currentHealth;
     public float baseDecreaseSpeed = 10f;
     private float speedMultiplier;
     private float gameDuration;
@@ -20,8 +20,9 @@ public class HealthBar : MonoBehaviour
         shopManager = FindObjectOfType<ShopManager>();
         sceneHandler = FindFirstObjectByType<SceneHandler>();
 
-        slider.maxValue = maxHealth;
-        slider.value = currentHealth;
+        slider.maxValue = baseHealth;
+        slider.value = baseHealth;
+        currentHealth = baseHealth;
         isGameRunning = true;
         gameDuration = 0f;
         speedMultiplier = 1f;
@@ -32,7 +33,7 @@ public class HealthBar : MonoBehaviour
     {
         if (isGameRunning)
         {
-            slider.maxValue = maxHealth * (shopManager.shopItems[3, 6] + 1);
+            slider.maxValue = baseHealth * (shopManager.shopItems[3, 6] + 1);
 
             // Calculate the decrease speed multiplier based on the game duration
             gameDuration += Time.deltaTime;
@@ -41,7 +42,7 @@ public class HealthBar : MonoBehaviour
 
             // Decrease health over time based on the decreaseSpeed and speedMultiplier
             float decreaseAmount = baseDecreaseSpeed * speedMultiplier * Time.deltaTime;
-            // DecreaseHealth(decreaseAmount);
+            DecreaseHealth(decreaseAmount);
 
             if (currentHealth <= 0f)
             {

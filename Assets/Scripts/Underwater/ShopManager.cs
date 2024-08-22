@@ -98,6 +98,14 @@ public class ShopManager : MonoBehaviour
         int baseCost = shopItems[2, itemID];
         int incrementalCost = shopItems[4, itemID];
         int nextLevelCost = baseCost + (incrementalCost * currentLevel);
+
+        // Half cost if sardine
+        if (GameManager.instance.selectedFish == 6)
+        {
+            int halfCost = nextLevelCost / 2;
+            return halfCost;
+        }
+
         return nextLevelCost;
     }
 }
