@@ -7,16 +7,16 @@
 		"ability": "No Ability",
 		"cost": 0,
 		"defaultSpeed": 3,
-		"defaultTurnSpeed": 150,
+		"defaultRotate": 150,
 		"defaultHealth": 100
 	},
 	{
 		"index": 1,
 		"name": "Opah",
-		"ability": "Slower hunger drain",
+		"ability": "No Ability",
 		"cost": 1,
 		"defaultSpeed": 2,
-		"defaultTurnSpeed": 130,
+		"defaultRotate": 130,
 		"defaultHealth": 120
 	},
 	{
@@ -25,7 +25,7 @@
 		"ability": "No Ability",
 		"cost": 2,
 		"defaultSpeed": 3,
-		"defaultTurnSpeed": 180,
+		"defaultRotate": 180,
 		"defaultHealth": 110
 	},
 	{
@@ -34,7 +34,7 @@
 		"ability": "No Ability",
 		"cost": 3,
 		"defaultSpeed": 3,
-		"defaultTurnSpeed": 150,
+		"defaultRotate": 150,
 		"defaultHealth": 100
 	},
 	{
@@ -43,7 +43,7 @@
 		"ability": "No Ability",
 		"cost": 4,
 		"defaultSpeed": 4,
-		"defaultTurnSpeed": 160,
+		"defaultRotate": 160,
 		"defaultHealth": 120
 	},
 	{
@@ -52,7 +52,7 @@
 		"ability": "No Ability",
 		"cost": 5,
 		"defaultSpeed": 4,
-		"defaultTurnSpeed": 140,
+		"defaultRotate": 140,
 		"defaultHealth": 130
 	},
 	{
@@ -61,16 +61,16 @@
 		"ability": "Half upgrade cost",
 		"cost": 6,
 		"defaultSpeed": 2,
-		"defaultTurnSpeed": 170,
+		"defaultRotate": 170,
 		"defaultHealth": 80
 	},
 	{
 		"index": 7,
 		"name": "Stingray",
-		"ability": "Faster when close to ground",
+		"ability": "Faster close to ground",
 		"cost": 7,
 		"defaultSpeed": 3,
-		"defaultTurnSpeed": 160,
+		"defaultRotate": 160,
 		"defaultHealth": 100
 	},
 	{
@@ -79,7 +79,7 @@
 		"ability": "No Ability",
 		"cost": 8,
 		"defaultSpeed": 2,
-		"defaultTurnSpeed": 200,
+		"defaultRotate": 200,
 		"defaultHealth": 100
 	},
 	{
@@ -88,7 +88,7 @@
 		"ability": "No Ability",
 		"cost": 9,
 		"defaultSpeed": 2,
-		"defaultTurnSpeed": 120,
+		"defaultRotate": 120,
 		"defaultHealth": 200
 	},
 	{
@@ -97,7 +97,7 @@
 		"ability": "Immune to damage",
 		"cost": 10,
 		"defaultSpeed": 2,
-		"defaultTurnSpeed": 120,
+		"defaultRotate": 120,
 		"defaultHealth": 150
 	},
 	{
@@ -106,7 +106,7 @@
 		"ability": "No Ability",
 		"cost": 11,
 		"defaultSpeed": 4,
-		"defaultTurnSpeed": 200,
+		"defaultRotate": 200,
 		"defaultHealth": 130
 	}
 ]

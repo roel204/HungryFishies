@@ -10,7 +10,11 @@ public class MainMenuShopManager : MonoBehaviour
     public TextMeshProUGUI pearlCounter;
     public TextMeshProUGUI fishNameText;
     public TextMeshProUGUI highScoreText;
-    public Image selectedFishImage; // Reference to the UI Image to display the selected fish
+    public TextMeshProUGUI speedText;
+    public TextMeshProUGUI rotateText;
+    public TextMeshProUGUI HealthText;
+    public TextMeshProUGUI AbilityText;
+
     [SerializeField] private SimpleScrollSnap scrollSnap;
     private SceneHandler sceneHandler;
 
@@ -103,7 +107,15 @@ public class MainMenuShopManager : MonoBehaviour
 
         fishNameText.text = GameManager.instance.fishDataList[selectedFishIndex].name.ToString();
 
-        highScoreText.text = "HighScore: " + PlayerPrefs.GetFloat("HighScoreFish_" + selectedFishIndex, 0).ToString("F2");
+        highScoreText.text = PlayerPrefs.GetFloat("HighScoreFish_" + selectedFishIndex, 0).ToString("F2");
+
+        speedText.text = GameManager.instance.fishDataList[selectedFishIndex].defaultSpeed.ToString();
+
+        rotateText.text = GameManager.instance.fishDataList[selectedFishIndex].defaultRotate.ToString();
+
+        HealthText.text = GameManager.instance.fishDataList[selectedFishIndex].defaultHealth.ToString();
+
+        AbilityText.text = GameManager.instance.fishDataList[selectedFishIndex].ability;
 
         pearlCounter.text = "Pearls: " + GameManager.instance.pearls.ToString();
     }

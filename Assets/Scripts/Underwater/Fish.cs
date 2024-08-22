@@ -1,3 +1,4 @@
+using TMPro.Examples;
 using UnityEngine;
 
 public class Fish : MonoBehaviour
@@ -27,7 +28,7 @@ public class Fish : MonoBehaviour
 
         // Initialize the speed and rotation based on the selected fish's data
         baseSpeed = selectedFishData.defaultSpeed;
-        baseRotateSpeed = selectedFishData.defaultTurnSpeed;
+        baseRotateSpeed = selectedFishData.defaultRotate;
 
         currentSpeed = baseSpeed;
         currentScale = baseScale;
@@ -65,10 +66,26 @@ public class Fish : MonoBehaviour
             followMouse = false;
         }
 
-
         // Update the swimming speed based on the level of the first item in the shop
         int speedItemLevel = shopManager.shopItems[3, 1];
         currentSpeed = baseSpeed + (speedItemLevel * speedIncreasePerLevel);
+
+        // Speed Increase for Ray
+        if (GameManager.instance.selectedFish == 7)
+        {
+            // Increase speed as the fish's Y position drops below a certain threshold
+            float topY = -6f;
+            float bottomY = -10f;
+
+            if (transform.position.y < topY)
+            {
+                // Calculate the amount of speed increase based on how close the fish is to the bottom Y position
+                float speedMultiplier = Mathf.Clamp01((topY - transform.position.y) / (topY - bottomY));
+                float additionalSpeed = speedMultiplier * 2f;
+                Debug.Log(additionalSpeed);
+                currentSpeed += additionalSpeed;
+            }
+        }
 
         // Update the scale based on the level of the third item in the shop
         int scaleItemLevel = shopManager.shopItems[3, 3];

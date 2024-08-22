@@ -10,7 +10,7 @@ public class FishData
     public string ability;
     public int cost;
     public int defaultSpeed;
-    public int defaultTurnSpeed;
+    public int defaultRotate;
     public int defaultHealth;
 }
 
