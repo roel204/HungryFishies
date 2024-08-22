@@ -27,6 +27,8 @@ public class MainMenuShopManager : MonoBehaviour
     {
         sceneHandler = FindFirstObjectByType<SceneHandler>();
 
+        GameManager.instance.selectedFish = selectedFishIndex;
+
         // Initialize the purchased fish array based on the size of fishDataList
         purchasedFish = new bool[GameManager.instance.fishDataList.Count];
 

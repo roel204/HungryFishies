@@ -31,7 +31,18 @@ public class Fish : MonoBehaviour
 
         shopManager = FindObjectOfType<ShopManager>();
 
-        GetComponent<SpriteRenderer>().sprite = fishSkins[GameManager.instance.selectedFish];
+        // Set the sprite based on the selected fish
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = fishSkins[GameManager.instance.selectedFish];
+
+        // Set the BoxCollider2D size to match the sprite's size
+        BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+        if (boxCollider != null)
+        {
+            // Match the collider size to the sprite's bounds
+            boxCollider.size = spriteRenderer.bounds.size;
+            boxCollider.offset = spriteRenderer.bounds.center - transform.position;
+        }
 
         MoveAndRotateFish();
     }
