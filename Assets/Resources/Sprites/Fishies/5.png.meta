@@ -139,12 +139,12 @@ TextureImporter:
       name: STURGEON_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 220
-        height: 140
+        x: 6
+        y: 42
+        width: 208
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: STURGEON_1
       rect:
         serializedVersion: 2
-        x: 220
-        y: 0
-        width: 220
-        height: 140
+        x: 226
+        y: 42
+        width: 208
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

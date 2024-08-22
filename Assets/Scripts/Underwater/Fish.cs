@@ -2,13 +2,11 @@ using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
-    public Sprite[] fishSkins;
-
     public bool followMouse = false;
     private KeyCode mouseButton = KeyCode.Mouse0;
 
     private float currentSpeed;
-    private float baseSpeed = 3f;
+    private float baseSpeed;
     private float speedIncreasePerLevel = 1f;
 
     private float currentScale;
@@ -16,24 +14,27 @@ public class Fish : MonoBehaviour
     private float scaleIncreasePerLevel = 0.2f;
 
     private float currentRotateSpeed;
-    private float baseRotateSpeed = 150f;
+    private float baseRotateSpeed;
     private float rotateSpeedIncreasePerLevel = 40f;
 
     private Vector3 targetPosition = new(10, 10, 0);
-
     private ShopManager shopManager;
 
     private void Start()
     {
+        // Get selected fish data
+        FishData selectedFishData = GameManager.instance.fishDataList[GameManager.instance.selectedFish];
+
+        // Initialize the speed and rotation based on the selected fish's data
+        baseSpeed = selectedFishData.defaultSpeed;
+        baseRotateSpeed = selectedFishData.defaultTurnSpeed;
+
         currentSpeed = baseSpeed;
         currentScale = baseScale;
         currentRotateSpeed = baseRotateSpeed;
-
-        shopManager = FindObjectOfType<ShopManager>();
-
-        // Set the sprite based on the selected fish
+        // Set the sprite based on the selected fish's name
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = fishSkins[GameManager.instance.selectedFish];
+        spriteRenderer.sprite = Resources.Load<Sprite>($"Sprites/Fishies/{selectedFishData.index}");
 
         // Set the BoxCollider2D size to match the sprite's size
         BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
@@ -43,6 +44,8 @@ public class Fish : MonoBehaviour
             boxCollider.size = spriteRenderer.bounds.size;
             boxCollider.offset = spriteRenderer.bounds.center - transform.position;
         }
+
+        shopManager = FindObjectOfType<ShopManager>();
 
         MoveAndRotateFish();
     }

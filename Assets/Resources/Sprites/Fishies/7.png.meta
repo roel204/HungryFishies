@@ -139,12 +139,12 @@ TextureImporter:
       name: STINGRAY_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 104
-        height: 80
+        x: 6
+        y: 26
+        width: 94
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: STINGRAY_1
       rect:
         serializedVersion: 2
-        x: 104
-        y: 0
-        width: 104
-        height: 80
+        x: 110
+        y: 26
+        width: 94
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

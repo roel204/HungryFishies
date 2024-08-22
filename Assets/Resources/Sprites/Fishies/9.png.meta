@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9de025b0881d1524ea5a4f4ec04fe6f0
+guid: b32899d86ffba354c9c10e1101e54ed2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,43 +136,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SQUID_0
+      name: BASKING_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 52
-        height: 40
+        x: 2
+        y: 54
+        width: 294
+        height: 114
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0615957a78621be4d8aee5fe589e24c9
-      internalID: -798320069
+      spriteID: d122448bab7562e46aaf77c31b097f99
+      internalID: -736724356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SQUID_1
+      name: BASKING_1
       rect:
         serializedVersion: 2
-        x: 52
-        y: 0
-        width: 52
-        height: 40
+        x: 302
+        y: 54
+        width: 294
+        height: 114
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b14471ca4d0367469d7d6a6ea430811
-      internalID: -812839073
+      spriteID: c1e8d5cd2d9e73b458992ae3afa506fa
+      internalID: 1095121853
       vertices: []
       indices: 
       edges: []
@@ -180,7 +180,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: fecade86583e9e24ab1d55d9a7ecf3e0
+    spriteID: 56742a93569745b448bf29f3ec681736
     internalID: 0
     vertices: []
     indices: 
@@ -188,8 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SQUID_0: -798320069
-      SQUID_1: -812839073
+      BASKING_0: -736724356
+      BASKING_1: 1095121853
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

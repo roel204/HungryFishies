@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b7694b868ac65d74fac5816d3748a035
+guid: a297f68de4a86eb4b9f7ce78c6d391f9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OPAH_0
+      name: SARDINE_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 104
-        height: 70
+        width: 68
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eacc9c1e01e587b4e80b03a06e225ca4
-      internalID: -1706221978
+      spriteID: 9b776e2e6d4b6e743acaf1557fde5a91
+      internalID: -1838790957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OPAH_1
+      name: SARDINE_1
       rect:
         serializedVersion: 2
-        x: 104
+        x: 68
         y: 0
-        width: 104
-        height: 70
+        width: 68
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7350ceadebc37043acebc643e384790
-      internalID: -338096557
+      spriteID: 403c9ac91ce3b1541ab18e5cf9ec39ce
+      internalID: 800710543
       vertices: []
       indices: 
       edges: []
@@ -180,7 +180,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: ff4b9024f80ada44d8c5e6ae43df4e88
     internalID: 0
     vertices: []
     indices: 
@@ -188,8 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      OPAH_0: -1706221978
-      OPAH_1: -338096557
+      SARDINE_0: -1838790957
+      SARDINE_1: 800710543
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bad67b0ef9489b0479da511e693d7cce
+guid: 7f4570a705216de4998e999e54fa638e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,43 +136,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SEABASS_0
+      name: BULLHEADCATFISH_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 104
-        height: 80
+        x: 10
+        y: 24
+        width: 88
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 076395ad1f650344397793df52b43861
-      internalID: 685496547
+      spriteID: 6bff9fdcf1d0d7244b54621569879ad8
+      internalID: 1813713875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SEABASS_1
+      name: BULLHEADCATFISH_1
       rect:
         serializedVersion: 2
-        x: 104
-        y: 0
-        width: 104
-        height: 80
+        x: 114
+        y: 24
+        width: 88
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 568bbd0ba16d1d04ca2a2b3024a3918f
-      internalID: -406773771
+      spriteID: a28c2b4ee52a70f4996ae1d43621322a
+      internalID: -573846222
       vertices: []
       indices: 
       edges: []
@@ -188,8 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SEABASS_0: 685496547
-      SEABASS_1: -406773771
+      BULLHEADCATFISH_0: 1813713875
+      BULLHEADCATFISH_1: -573846222
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
