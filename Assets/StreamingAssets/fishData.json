@@ -13,8 +13,8 @@
 	{
 		"index": 1,
 		"name": "Opah",
-		"ability": "Speed boost",
-		"cost": 1,
+		"ability": "Speed Boost",
+		"cost": 420,
 		"defaultSpeed": 2,
 		"defaultRotate": 130,
 		"defaultHealth": 120
@@ -22,92 +22,92 @@
 	{
 		"index": 2,
 		"name": "Bullhead Catfish",
-		"ability": "No Ability",
-		"cost": 2,
+		"ability": "Track Food?????",
+		"cost": 1000,
 		"defaultSpeed": 3,
-		"defaultRotate": 180,
+		"defaultRotate": 160,
 		"defaultHealth": 110
 	},
 	{
 		"index": 3,
-		"name": "Seahorse",
-		"ability": "No Ability",
-		"cost": 3,
-		"defaultSpeed": 3,
-		"defaultRotate": 150,
-		"defaultHealth": 100
-	},
-	{
-		"index": 4,
 		"name": "Salmon",
-		"ability": "No Ability",
-		"cost": 4,
-		"defaultSpeed": 4,
+		"ability": "Speed Boost",
+		"cost": 1500,
+		"defaultSpeed": 3,
 		"defaultRotate": 160,
 		"defaultHealth": 120
 	},
 	{
-		"index": 5,
-		"name": "Sturgeon",
-		"ability": "No Ability",
-		"cost": 5,
-		"defaultSpeed": 4,
-		"defaultRotate": 140,
-		"defaultHealth": 130
-	},
-	{
-		"index": 6,
+		"index": 4,
 		"name": "Sardine",
-		"ability": "Half upgrade cost",
-		"cost": 6,
+		"ability": "Half Upgrade Cost",
+		"cost": 2000,
 		"defaultSpeed": 2,
 		"defaultRotate": 170,
 		"defaultHealth": 80
 	},
 	{
-		"index": 7,
+		"index": 5,
 		"name": "Stingray",
-		"ability": "Faster close to ground",
-		"cost": 7,
+		"ability": "Faster Close to Ground",
+		"cost": 2500,
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
 		"defaultHealth": 100
 	},
 	{
-		"index": 8,
+		"index": 6,
 		"name": "Squid",
-		"ability": "Speed boost",
-		"cost": 8,
+		"ability": "Speed Boost",
+		"cost": 3000,
 		"defaultSpeed": 2,
 		"defaultRotate": 200,
-		"defaultHealth": 100
+		"defaultHealth": 120
 	},
 	{
-		"index": 9,
-		"name": "Basking Shark",
-		"ability": "No Ability",
-		"cost": 9,
-		"defaultSpeed": 2,
-		"defaultRotate": 120,
-		"defaultHealth": 200
-	},
-	{
-		"index": 10,
-		"name": "Turtle",
-		"ability": "Immune to damage",
-		"cost": 10,
-		"defaultSpeed": 2,
-		"defaultRotate": 120,
+		"index": 7,
+		"name": "Sturgeon",
+		"ability": "More Upgrades?????",
+		"cost": 3500,
+		"defaultSpeed": 4,
+		"defaultRotate": 160,
 		"defaultHealth": 150
 	},
 	{
-		"index": 11,
+		"index": 8,
+		"name": "Basking Shark",
+		"ability": "More Upgrades?????",
+		"cost": 4000,
+		"defaultSpeed": 2,
+		"defaultRotate": 110,
+		"defaultHealth": 250
+	},
+	{
+		"index": 9,
+		"name": "Turtle",
+		"ability": "Immune to Damage???",
+		"cost": 4200,
+		"defaultSpeed": 2,
+		"defaultRotate": 130,
+		"defaultHealth": 180
+	},
+	{
+		"index": 10,
 		"name": "Thresher Shark",
-		"ability": "No Ability",
-		"cost": 11,
+		"ability": "More Upgrades?????",
+		"cost": 5000,
 		"defaultSpeed": 4,
 		"defaultRotate": 200,
-		"defaultHealth": 130
+		"defaultHealth": 140
+	},
+	{
+		"index": 11,
+		"name": "Seahorse God",
+		"ability": "GOD OF ALL LIFE?!",
+		"cost": 6942,
+		"defaultSpeed": 5,
+		"defaultRotate": 200,
+		"defaultHealth": 200
 	}
 ]
 }

@@ -17,7 +17,7 @@ public class SpeedBoost : MonoBehaviour
         slider.maxValue = 10;
         slider.value = energy;
 
-        if (GameManager.instance.selectedFish == 1 || GameManager.instance.selectedFish == 8)
+        if (GameManager.instance.selectedFish == 1 || GameManager.instance.selectedFish == 3 || GameManager.instance.selectedFish == 8 || GameManager.instance.selectedFish == 11)
         {
             button.gameObject.SetActive(true); // Show the button
         }
@@ -40,7 +40,7 @@ public class SpeedBoost : MonoBehaviour
             {
                 boosting = false;
             }
-            fish.baseSpeed = +3f;
+            fish.baseSpeed = GameManager.instance.fishDataList[GameManager.instance.selectedFish].defaultSpeed + 3;
 
         }
         else

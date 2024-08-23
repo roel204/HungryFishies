@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b32899d86ffba354c9c10e1101e54ed2
+guid: edaa203e2cabe6940bd616020abb97b6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BASKING_0
+      name: TURTLE_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 54
-        width: 294
-        height: 114
+        x: 10
+        y: 4
+        width: 88
+        height: 44
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d122448bab7562e46aaf77c31b097f99
-      internalID: -736724356
+      spriteID: 569be002cde38664ca6f9187da224fde
+      internalID: 865070556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BASKING_1
+      name: TURTLE_1
       rect:
         serializedVersion: 2
-        x: 302
-        y: 54
-        width: 294
-        height: 114
+        x: 114
+        y: 6
+        width: 86
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1e8d5cd2d9e73b458992ae3afa506fa
-      internalID: 1095121853
+      spriteID: 00393d5a9f57d984ba3002ba42bd3f4d
+      internalID: 1502426130
       vertices: []
       indices: 
       edges: []
@@ -180,7 +180,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 56742a93569745b448bf29f3ec681736
+    spriteID: 27b95c43819eb4e438dcd9a4426ea568
     internalID: 0
     vertices: []
     indices: 
@@ -188,8 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BASKING_0: -736724356
-      BASKING_1: 1095121853
+      TURTLE_0: 865070556
+      TURTLE_1: 1502426130
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -69,8 +69,10 @@ public class Fish : MonoBehaviour
         int speedItemLevel = shopManager.shopItems[3, 1];
         currentSpeed = baseSpeed + (speedItemLevel * speedIncreasePerLevel);
 
+        Debug.Log(currentSpeed);
+
         // Speed Increase for Ray
-        if (GameManager.instance.selectedFish == 7)
+        if (GameManager.instance.selectedFish == 7 || GameManager.instance.selectedFish == 11)
         {
             // Increase speed as the fish's Y position drops below a certain threshold
             float topY = -6f;

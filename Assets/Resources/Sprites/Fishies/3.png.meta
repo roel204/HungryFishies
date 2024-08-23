@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 48a0eb5cc43dac344bd71d5e8b1ec01c
+guid: 61137c04f79b5e946b8c452c2437f703
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SEAHORSE_0
+      name: SALMON_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 2
-        width: 34
-        height: 46
+        x: 2
+        y: 24
+        width: 96
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d1346fbb0564954f900e63c2997db87
-      internalID: -662984834
+      spriteID: 82ef73c91611c354b9f136fe2d11f218
+      internalID: -518011612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SEAHORSE_1
+      name: SALMON_1
       rect:
         serializedVersion: 2
-        x: 88
-        y: 0
-        width: 34
-        height: 48
+        x: 106
+        y: 24
+        width: 96
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 217dee596fde9674b9832459bcd251ab
-      internalID: 999101632
+      spriteID: 714614f8fd1437441af20b6b724e673e
+      internalID: -392850138
       vertices: []
       indices: 
       edges: []
@@ -180,7 +180,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f6bcf3a8d1475d94e940de5ee5d4e1e6
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -188,8 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SEAHORSE_0: -662984834
-      SEAHORSE_1: 999101632
+      SALMON_0: -518011612
+      SALMON_1: -392850138
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

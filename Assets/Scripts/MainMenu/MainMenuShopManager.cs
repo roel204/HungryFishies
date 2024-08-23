@@ -55,6 +55,7 @@ public class MainMenuShopManager : MonoBehaviour
         for (int i = 0; i < GameManager.instance.fishDataList.Count; i++)
         {
             purchasedFish[i] = PlayerPrefs.GetInt("UnlockedFish_" + i.ToString(), 0) == 1;
+            purchasedFish[0] = true;
         }
     }
 

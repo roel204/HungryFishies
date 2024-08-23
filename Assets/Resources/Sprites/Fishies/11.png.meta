@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ec3c911bd17996847a6270a6142df79c
+guid: 48a0eb5cc43dac344bd71d5e8b1ec01c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,7 +81,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Standalone
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -94,7 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -136,43 +136,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TREHSER_0
+      name: SEAHORSE_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 300
-        height: 120
+        x: 20
+        y: 2
+        width: 34
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bca8c8eaa3de0f41b828a9f7efc3567
-      internalID: 349485984
+      spriteID: 4d1346fbb0564954f900e63c2997db87
+      internalID: -662984834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TREHSER_1
+      name: SEAHORSE_1
       rect:
         serializedVersion: 2
-        x: 300
+        x: 88
         y: 0
-        width: 300
-        height: 120
+        width: 34
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a27de348a305cef43955d438292bd386
-      internalID: 276754365
+      spriteID: 217dee596fde9674b9832459bcd251ab
+      internalID: 999101632
       vertices: []
       indices: 
       edges: []
@@ -180,7 +180,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: f6bcf3a8d1475d94e940de5ee5d4e1e6
     internalID: 0
     vertices: []
     indices: 
@@ -188,8 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TREHSER_0: 349485984
-      TREHSER_1: 276754365
+      SEAHORSE_0: -662984834
+      SEAHORSE_1: 999101632
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
