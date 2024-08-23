@@ -13,7 +13,7 @@
 	{
 		"index": 1,
 		"name": "Opah",
-		"ability": "No Ability",
+		"ability": "Speed boost",
 		"cost": 1,
 		"defaultSpeed": 2,
 		"defaultRotate": 130,
@@ -76,7 +76,7 @@
 	{
 		"index": 8,
 		"name": "Squid",
-		"ability": "No Ability",
+		"ability": "Speed boost",
 		"cost": 8,
 		"defaultSpeed": 2,
 		"defaultRotate": 200,

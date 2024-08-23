@@ -6,9 +6,9 @@ public class HealthBar : MonoBehaviour
 {
     public Slider slider;
     public TextMeshProUGUI multiplier;
-    public float baseHealth = GameManager.instance.fishDataList[GameManager.instance.selectedFish].defaultHealth;
+    private float baseHealth = GameManager.instance.fishDataList[GameManager.instance.selectedFish].defaultHealth;
     private float currentHealth;
-    public float baseDecreaseSpeed = 10f;
+    private float baseDecreaseSpeed = 8f;
     private float speedMultiplier;
     private float gameDuration;
     private bool isGameRunning;

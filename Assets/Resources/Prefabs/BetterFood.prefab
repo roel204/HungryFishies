@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2486012469371063131
 SpriteRenderer:
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -150712255
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6891c7dbf7e8b4f448fa409311f2997b, type: 3}
   m_Color: {r: 1, g: 0.5529412, b: 0, a: 1}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb13f6a09f5f504a97f5d6da3a96fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthIncreaseAmount: 20
+  healthIncreaseAmount: 25
 --- !u!61 &8900610349346395564
 BoxCollider2D:
   m_ObjectHideFlags: 0

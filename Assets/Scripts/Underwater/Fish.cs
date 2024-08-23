@@ -1,4 +1,3 @@
-using TMPro.Examples;
 using UnityEngine;
 
 public class Fish : MonoBehaviour
@@ -7,7 +6,7 @@ public class Fish : MonoBehaviour
     private KeyCode mouseButton = KeyCode.Mouse0;
 
     private float currentSpeed;
-    private float baseSpeed;
+    public float baseSpeed;
     private float speedIncreasePerLevel = 1f;
 
     private float currentScale;

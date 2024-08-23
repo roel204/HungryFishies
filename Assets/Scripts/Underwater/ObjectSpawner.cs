@@ -8,19 +8,19 @@ public class ObjectSpawner : MonoBehaviour
     public GameObject foodPrefab;
     public GameObject betterFoodPrefab;
 
-    private int coinBaseAmount = 2;
+    private int coinBaseAmount = 3;
     private int coinUpgradeLevel = 0;
     private int coinsPerLevel = 1;
     private int coinRespawnTimer = 3;
 
-    private int foodBaseAmount = 10;
+    private int foodBaseAmount = 20;
     private int foodUpgradeLevel = 0;
-    private int foodPerLevel = 3;
+    private int foodPerLevel = 4;
     private int foodRespawnTimer = 3;
 
     private int betterFoodBaseAmount = 0;
     private int betterFoodUpgradeLevel = 0;
-    private int betterFoodPerLevel = 2;
+    private int betterFoodPerLevel = 3;
     private int betterFoodRespawnTimer = 3;
 
     private List<GameObject> spawnedCoins = new List<GameObject>();
@@ -114,10 +114,10 @@ public class ObjectSpawner : MonoBehaviour
 
     private Vector3 GetRandomSpawnPosition()
     {
-        float minX = -8.5f;
-        float maxX = 8.5f;
-        float minY = -4.5f;
-        float maxY = 4f;
+        float minX = -18f;
+        float maxX = 18f;
+        float minY = -9f;
+        float maxY = 9f;
 
         float randomX = Random.Range(minX, maxX);
         float randomY = Random.Range(minY, maxY);

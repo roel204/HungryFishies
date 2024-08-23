@@ -139,12 +139,12 @@ TextureImporter:
       name: SARDINE_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 68
-        height: 48
+        x: 18
+        y: 14
+        width: 26
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: SARDINE_1
       rect:
         serializedVersion: 2
-        x: 68
-        y: 0
-        width: 68
-        height: 48
+        x: 86
+        y: 14
+        width: 26
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
