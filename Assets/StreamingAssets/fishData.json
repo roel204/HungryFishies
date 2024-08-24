@@ -4,7 +4,8 @@
 	{
 		"index": 0,
 		"name": "Sea Bass",
-		"ability": "No Ability",
+		"abilityText": "No abilityText",
+		"abilities": [],
 		"cost": 0,
 		"defaultSpeed": 3,
 		"defaultRotate": 150,
@@ -13,7 +14,8 @@
 	{
 		"index": 1,
 		"name": "Opah",
-		"ability": "Speed Boost",
+		"abilityText": "Speed Boost",
+		"abilities": ["boost"],
 		"cost": 420,
 		"defaultSpeed": 2,
 		"defaultRotate": 130,
@@ -22,7 +24,8 @@
 	{
 		"index": 2,
 		"name": "Bullhead Catfish",
-		"ability": "See Further",
+		"abilityText": "See Further",
+		"abilities": ["viewDistance"],
 		"cost": 1000,
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
@@ -31,7 +34,8 @@
 	{
 		"index": 3,
 		"name": "Salmon",
-		"ability": "Speed Boost",
+		"abilityText": "Speed Boost",
+		"abilities": ["boost"],
 		"cost": 1500,
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
@@ -40,7 +44,8 @@
 	{
 		"index": 4,
 		"name": "Sardine",
-		"ability": "Half Upgrade Cost",
+		"abilityText": "Half Upgrade Cost",
+		"abilities": ["cheapUpgrades"],
 		"cost": 2000,
 		"defaultSpeed": 2,
 		"defaultRotate": 170,
@@ -49,7 +54,8 @@
 	{
 		"index": 5,
 		"name": "Stingray",
-		"ability": "Faster Close to Ground",
+		"abilityText": "Faster Close to Ground",
+		"abilities": ["groundSpeed"],
 		"cost": 2500,
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
@@ -58,7 +64,8 @@
 	{
 		"index": 6,
 		"name": "Squid",
-		"ability": "Speed Boost",
+		"abilityText": "Speed Boost",
+		"abilities": ["boost"],
 		"cost": 3000,
 		"defaultSpeed": 2,
 		"defaultRotate": 200,
@@ -67,7 +74,8 @@
 	{
 		"index": 7,
 		"name": "Sturgeon",
-		"ability": "More Upgrades",
+		"abilityText": "More Upgrades",
+		"abilities": ["moreUpgrades"],
 		"cost": 3500,
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
@@ -76,7 +84,8 @@
 	{
 		"index": 8,
 		"name": "Basking Shark",
-		"ability": "See Further",
+		"abilityText": "See Further",
+		"abilities": ["viewDistance", "moreUpgrades"],
 		"cost": 4000,
 		"defaultSpeed": 2,
 		"defaultRotate": 110,
@@ -85,7 +94,8 @@
 	{
 		"index": 9,
 		"name": "Turtle",
-		"ability": "Immune to Damage???",
+		"abilityText": "Eat Jellyfish",
+		"abilities": ["eatJelly"],
 		"cost": 4200,
 		"defaultSpeed": 2,
 		"defaultRotate": 130,
@@ -94,7 +104,8 @@
 	{
 		"index": 10,
 		"name": "Thresher Shark",
-		"ability": "More Upgrades?????",
+		"abilityText": "More Upgrades",
+		"abilities": ["moreUpgrades"],
 		"cost": 5000,
 		"defaultSpeed": 4,
 		"defaultRotate": 200,
@@ -103,7 +114,8 @@
 	{
 		"index": 11,
 		"name": "Seahorse God",
-		"ability": "GOD OF ALL LIFE?!",
+		"abilityText": "GOD OF ALL LIFE?!",
+		"abilities": ["boost", "viewDistance", "cheapUpgrades", "groundSpeed", "moreUpgrades", "eatJelly"],
 		"cost": 6942,
 		"defaultSpeed": 5,
 		"defaultRotate": 200,

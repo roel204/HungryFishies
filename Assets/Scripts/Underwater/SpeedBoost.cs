@@ -1,3 +1,4 @@
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,7 +18,7 @@ public class SpeedBoost : MonoBehaviour
         slider.maxValue = 10;
         slider.value = energy;
 
-        if (GameManager.instance.selectedFish == 1 || GameManager.instance.selectedFish == 3 || GameManager.instance.selectedFish == 8 || GameManager.instance.selectedFish == 11)
+        if (GameManager.instance.fishDataList[GameManager.instance.selectedFish].abilities.Contains("boost"))
         {
             button.gameObject.SetActive(true); // Show the button
         }

@@ -7,7 +7,8 @@ public class FishData
 {
     public int index;
     public string name;
-    public string ability;
+    public string abilityText;
+    public string[] abilities;
     public int cost;
     public int defaultSpeed;
     public int defaultRotate;

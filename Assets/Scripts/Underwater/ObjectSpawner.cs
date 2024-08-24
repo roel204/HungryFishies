@@ -7,6 +7,7 @@ public class ObjectSpawner : MonoBehaviour
     public GameObject coinPrefab;
     public GameObject foodPrefab;
     public GameObject betterFoodPrefab;
+    public GameObject jellyPrefab;
 
     private int coinBaseAmount = 3;
     private int coinUpgradeLevel = 0;
@@ -23,9 +24,13 @@ public class ObjectSpawner : MonoBehaviour
     private int betterFoodPerLevel = 3;
     private int betterFoodRespawnTimer = 3;
 
-    private List<GameObject> spawnedCoins = new List<GameObject>();
-    private List<GameObject> spawnedFood = new List<GameObject>();
-    private List<GameObject> spawnedBetterFood = new List<GameObject>();
+    private int jellyBaseAmount = 2;
+    private int jellyRespawnTimer = 5;
+
+    private List<GameObject> spawnedCoins = new();
+    private List<GameObject> spawnedFood = new();
+    private List<GameObject> spawnedBetterFood = new();
+    private List<GameObject> spawnedJelly = new();
 
     private ShopManager shopManager;
 
@@ -34,6 +39,7 @@ public class ObjectSpawner : MonoBehaviour
         shopManager = FindObjectOfType<ShopManager>();
         SpawnCoins();
         SpawnFood();
+        SpawnJelly();
     }
 
     private void Update()
@@ -73,6 +79,21 @@ public class ObjectSpawner : MonoBehaviour
                 Vector3 spawnPosition = GetRandomSpawnPosition();
                 GameObject coinInstance = Instantiate(coinPrefab, spawnPosition, Quaternion.identity);
                 spawnedCoins.Add(coinInstance);
+            }
+        }
+    }
+
+    private void SpawnJelly()
+    {
+        int diff = jellyBaseAmount - spawnedJelly.Count;
+
+        if (diff > 0)
+        {
+            for (int i = 0; i < diff; i++)
+            {
+                Vector3 spawnPosition = GetRandomSpawnPosition();
+                GameObject jellyInstance = Instantiate(jellyPrefab, spawnPosition, Quaternion.identity);
+                spawnedJelly.Add(jellyInstance);
             }
         }
     }
@@ -138,6 +159,20 @@ public class ObjectSpawner : MonoBehaviour
         Vector3 spawnPosition = GetRandomSpawnPosition();
         coin.transform.position = spawnPosition;
         coin.SetActive(true);
+    }
+
+    public void StartJellyRespawnTimer(GameObject jelly)
+    {
+        StartCoroutine(JellyRespawnTimer(jelly));
+    }
+
+    private IEnumerator JellyRespawnTimer(GameObject jelly)
+    {
+        yield return new WaitForSeconds(jellyRespawnTimer);
+
+        Vector3 spawnPosition = GetRandomSpawnPosition();
+        jelly.transform.position = spawnPosition;
+        jelly.SetActive(true);
     }
 
     public void StartFoodRespawnTimer(GameObject food)

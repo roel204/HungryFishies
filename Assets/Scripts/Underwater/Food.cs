@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    public float healthIncreaseAmount = 10f; // Amount of health to increase when fish touches the food
+    private readonly float healthIncreaseAmount = 15f; // Amount of health to increase when fish touches the food
 
     private ObjectSpawner objectSpawner;
     private SFXManager sfxManager;
@@ -23,7 +23,7 @@ public class Food : MonoBehaviour
             {
                 if (healthBar != null)
                 {
-                    healthBar.AddHealth(healthIncreaseAmount);
+                    healthBar.ChangeHealth(healthIncreaseAmount);
                     sfxManager.PlaySFXPop();
                 }
 

@@ -42,7 +42,7 @@ public class HealthBar : MonoBehaviour
 
             // Decrease health over time based on the decreaseSpeed and speedMultiplier
             float decreaseAmount = baseDecreaseSpeed * speedMultiplier * Time.deltaTime;
-            DecreaseHealth(decreaseAmount);
+            ChangeHealth(-decreaseAmount);
 
             if (currentHealth <= 0f)
             {
@@ -53,16 +53,9 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    public void AddHealth(float amount)
+    public void ChangeHealth(float amount)
     {
         currentHealth += amount;
-        currentHealth = Mathf.Clamp(currentHealth, 0f, slider.maxValue);
-        slider.value = currentHealth;
-    }
-
-    private void DecreaseHealth(float amount)
-    {
-        currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0f, slider.maxValue);
         slider.value = currentHealth;
     }

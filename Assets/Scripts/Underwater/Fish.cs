@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class Fish : MonoBehaviour
@@ -69,10 +70,8 @@ public class Fish : MonoBehaviour
         int speedItemLevel = shopManager.shopItems[3, 1];
         currentSpeed = baseSpeed + (speedItemLevel * speedIncreasePerLevel);
 
-        Debug.Log(currentSpeed);
-
         // Speed Increase for Ray
-        if (GameManager.instance.selectedFish == 7 || GameManager.instance.selectedFish == 11)
+        if (GameManager.instance.fishDataList[GameManager.instance.selectedFish].abilities.Contains("groundSpeed"))
         {
             // Increase speed as the fish's Y position drops below a certain threshold
             float topY = -6f;

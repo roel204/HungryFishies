@@ -4624,8 +4624,8 @@ Transform:
   m_GameObject: {fileID: 1308488875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -5113,6 +5113,7 @@ MonoBehaviour:
   coinPrefab: {fileID: 169969578299738919, guid: a1e0f934d7c92254caa62f8eb677256c, type: 3}
   foodPrefab: {fileID: 1736651759095495877, guid: 2ce2b10904ee2604397ba290d2a5f42e, type: 3}
   betterFoodPrefab: {fileID: 6521969476097520100, guid: 51e94b6ebc848f74294d7fc8031fdf4b, type: 3}
+  jellyPrefab: {fileID: 8859164412536108677, guid: b5c874883f501a845911c1f4b3f89ebc, type: 3}
 --- !u!1 &1452327197
 GameObject:
   m_ObjectHideFlags: 0

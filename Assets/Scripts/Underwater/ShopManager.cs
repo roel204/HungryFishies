@@ -1,3 +1,4 @@
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -24,7 +25,7 @@ public class ShopManager : MonoBehaviour
         shopItemNames[1, 6] = "More HP";
         shopItemNames[1, 7] = "Rotate Speed";
 
-        if (GameManager.instance.selectedFish == 7 || GameManager.instance.selectedFish == 8 || GameManager.instance.selectedFish == 11)
+        if (GameManager.instance.fishDataList[GameManager.instance.selectedFish].abilities.Contains("moreUpgrades"))
         {
             maxUpgradeLevel = 8;
         }
@@ -104,7 +105,7 @@ public class ShopManager : MonoBehaviour
         int nextLevelCost = baseCost + (incrementalCost * currentLevel);
 
         // Half cost if sardine
-        if (GameManager.instance.selectedFish == 6)
+        if (GameManager.instance.fishDataList[GameManager.instance.selectedFish].abilities.Contains("cheapUpgrades"))
         {
             int halfCost = nextLevelCost / 2;
             return halfCost;

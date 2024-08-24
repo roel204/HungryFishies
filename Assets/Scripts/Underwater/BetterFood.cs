@@ -21,7 +21,7 @@ public class BetterFood : MonoBehaviour
         {
             if (healthBar != null)
             {
-                healthBar.AddHealth(healthIncreaseAmount);
+                healthBar.ChangeHealth(healthIncreaseAmount);
                 sfxManager.PlaySFXPop();
             }
 

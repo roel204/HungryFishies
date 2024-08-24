@@ -116,7 +116,7 @@ public class MainMenuShopManager : MonoBehaviour
 
         HealthText.text = GameManager.instance.fishDataList[selectedFishIndex].defaultHealth.ToString();
 
-        AbilityText.text = GameManager.instance.fishDataList[selectedFishIndex].ability;
+        AbilityText.text = GameManager.instance.fishDataList[selectedFishIndex].abilityText;
 
         pearlCounter.text = "Pearls: " + GameManager.instance.pearls.ToString();
     }

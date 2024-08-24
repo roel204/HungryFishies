@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
@@ -13,7 +14,7 @@ public class FollowCamera : MonoBehaviour
 
     private void Start()
     {
-        if (GameManager.instance.selectedFish == 2 || GameManager.instance.selectedFish == 8 || GameManager.instance.selectedFish == 11)
+        if (GameManager.instance.fishDataList[GameManager.instance.selectedFish].abilities.Contains("viewDistance"))
         {
             cam.orthographicSize = 7;
         }
