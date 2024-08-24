@@ -84,6 +84,8 @@ public class MainMenuShopManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("LastFish", selectedFishIndex);
 
+        SFXManager.instance.PlaySFXEat();
+
         sceneHandler.ChangeScene(1);
     }
 

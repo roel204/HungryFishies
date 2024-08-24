@@ -47,9 +47,9 @@ public class GameManager : MonoBehaviour
 
         pearls = PlayerPrefs.GetInt("Pearls");
 
-        // Load the JSON file
-        string jsonFilePath = Path.Combine(Application.streamingAssetsPath, "fishData.json");
-        string jsonData = File.ReadAllText(jsonFilePath);
+        // Load the JSON file from Resources
+        TextAsset jsonFile = Resources.Load<TextAsset>("fishData"); // Do not include file extension
+        string jsonData = jsonFile.text;
 
         // Parse the JSON data into a list of FishData objects
         fishDataList = JsonUtility.FromJson<FishDataWrapper>(jsonData).fishData;
