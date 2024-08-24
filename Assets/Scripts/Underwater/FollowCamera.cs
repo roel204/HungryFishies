@@ -3,12 +3,25 @@ using UnityEngine;
 public class FollowCamera : MonoBehaviour
 {
     public Transform target;
+    public Camera cam;
 
     // Define the boundaries within which the camera can move
     private readonly float minX = -19.1f;
     private readonly float maxX = 19.1f;
     private readonly float minY = -10.7f;
     private readonly float maxY = 10.7f;
+
+    private void Start()
+    {
+        if (GameManager.instance.selectedFish == 2 || GameManager.instance.selectedFish == 8 || GameManager.instance.selectedFish == 11)
+        {
+            cam.orthographicSize = 7;
+        }
+        else
+        {
+            cam.orthographicSize = 5;
+        }
+    }
 
     private void LateUpdate()
     {

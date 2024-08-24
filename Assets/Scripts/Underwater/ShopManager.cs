@@ -4,8 +4,8 @@ using UnityEngine.EventSystems;
 
 public class ShopManager : MonoBehaviour
 {
-
     public TextMeshProUGUI coinCounter;
+
     public int coins = 0;
     public int[,] shopItems = new int[5, 8];
     public string[,] shopItemNames = new string[2, 8];
@@ -23,6 +23,11 @@ public class ShopManager : MonoBehaviour
         shopItemNames[1, 5] = "Better Food";
         shopItemNames[1, 6] = "More HP";
         shopItemNames[1, 7] = "Rotate Speed";
+
+        if (GameManager.instance.selectedFish == 7 || GameManager.instance.selectedFish == 8 || GameManager.instance.selectedFish == 11)
+        {
+            maxUpgradeLevel = 8;
+        }
     }
 
     void Start()
@@ -64,7 +69,6 @@ public class ShopManager : MonoBehaviour
         shopItems[4, 5] = 3;
         shopItems[4, 6] = 4;
         shopItems[4, 7] = 2;
-
     }
 
     public void IncreaseCoinCount(float amount)

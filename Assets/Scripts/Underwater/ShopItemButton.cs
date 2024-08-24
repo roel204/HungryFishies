@@ -33,7 +33,7 @@ public class ShopItemButton : MonoBehaviour
         int level = ShopManager.shopItems[3, ItemID];
         int price = ShopManager.CalculateCost(ItemID, level);
 
-        if (level < 5)
+        if (level < maxUpgrade)
         {
             slider.value = level;
             PriceTxt.text = "Price: " + price.ToString();

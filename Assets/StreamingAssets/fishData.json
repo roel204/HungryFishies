@@ -22,7 +22,7 @@
 	{
 		"index": 2,
 		"name": "Bullhead Catfish",
-		"ability": "Track Food?????",
+		"ability": "See Further",
 		"cost": 1000,
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
@@ -67,16 +67,16 @@
 	{
 		"index": 7,
 		"name": "Sturgeon",
-		"ability": "More Upgrades?????",
+		"ability": "More Upgrades",
 		"cost": 3500,
-		"defaultSpeed": 4,
+		"defaultSpeed": 3,
 		"defaultRotate": 160,
 		"defaultHealth": 150
 	},
 	{
 		"index": 8,
 		"name": "Basking Shark",
-		"ability": "More Upgrades?????",
+		"ability": "See Further",
 		"cost": 4000,
 		"defaultSpeed": 2,
 		"defaultRotate": 110,
