@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public List<FishData> fishDataList; // Make this public so it's accessible from other scripts
 
     public float score;
-    public int pearls;
+    public int money;
     public int selectedFish;
     private Timer timer;
 
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        pearls = PlayerPrefs.GetInt("Pearls");
+        money = PlayerPrefs.GetInt("Money");
 
         // Load the JSON file from Resources
         TextAsset jsonFile = Resources.Load<TextAsset>("fishData"); // Do not include file extension
@@ -61,12 +61,12 @@ public class GameManager : MonoBehaviour
         score = timer.GetTimerValue();
     }
 
-    public bool ChangePearls(int amount)
+    public bool ChangeMoney(int amount)
     {
-        if (pearls + amount >= 0)
+        if (money + amount >= 0)
         {
-            pearls += amount;
-            PlayerPrefs.SetInt("Pearls", pearls);
+            money += amount;
+            PlayerPrefs.SetInt("Money", money);
             return true;
         }
         else

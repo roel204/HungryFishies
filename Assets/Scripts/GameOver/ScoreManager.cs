@@ -1,9 +1,11 @@
 using TMPro;
+using TMPro.Examples;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI highScoreText;
+    public TextMeshProUGUI moneyText;
 
     private void Start()
     {
@@ -24,13 +26,13 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.Save();
         }
 
-        // Update the player's pearls based on the score
-        GameManager.instance.ChangePearls((int)score);
-        int currentPearls = GameManager.instance.pearls;
+        // Update the player's money based on the score
+        GameManager.instance.ChangeMoney((int)score);
+        int currentPearls = GameManager.instance.money;
 
-        // Display the score, high score, and pearls in the UI
-        highScoreText.text = "Score: " + score.ToString("F2") +
-                             "\nHighscore: " + highScore.ToString("F2") +
-                             "\nPearls: " + currentPearls + " (+" + (int)score + ")";
+        // Display the score, high score, and money in the UI
+        highScoreText.text = "Score: " + score.ToString("F2") + "\nHighscore: " + highScore.ToString("F2");
+
+        moneyText.text = currentPearls + "\n (+" + (int)score + ")";
     }
 }

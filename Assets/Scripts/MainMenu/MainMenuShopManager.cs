@@ -7,7 +7,7 @@ public class MainMenuShopManager : MonoBehaviour
 {
     public Button purchaseButton;
     public Button playButton;
-    public TextMeshProUGUI pearlCounter;
+    public TextMeshProUGUI moneyText;
     public TextMeshProUGUI fishNameText;
     public TextMeshProUGUI highScoreText;
     public TextMeshProUGUI speedText;
@@ -63,7 +63,7 @@ public class MainMenuShopManager : MonoBehaviour
     {
         int cost = GameManager.instance.fishDataList[selectedFishIndex].cost;
 
-        if (GameManager.instance.ChangePearls(-cost))
+        if (GameManager.instance.ChangeMoney(-cost))
         {
             purchasedFish[selectedFishIndex] = true;
 
@@ -106,7 +106,7 @@ public class MainMenuShopManager : MonoBehaviour
 
             if (buyButtonText != null)
             {
-                buyButtonText.text = "Pearls X" + GameManager.instance.fishDataList[selectedFishIndex].cost.ToString();
+                buyButtonText.text = GameManager.instance.fishDataList[selectedFishIndex].cost.ToString() + "\nFishBucks";
             }
             else
             {
@@ -126,6 +126,6 @@ public class MainMenuShopManager : MonoBehaviour
 
         AbilityText.text = GameManager.instance.fishDataList[selectedFishIndex].abilityText;
 
-        pearlCounter.text = "Pearls: " + GameManager.instance.pearls.ToString();
+        moneyText.text = GameManager.instance.money.ToString();
     }
 }
