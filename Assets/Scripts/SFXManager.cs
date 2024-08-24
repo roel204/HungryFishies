@@ -1,24 +1,54 @@
+using System.IO;
 using UnityEngine;
 using UnityEngine.Audio;
 
 public class SFXManager : MonoBehaviour
 {
+    public static SFXManager instance;
+
     public GameObject audioSourcePrefab;
-    public AudioSource audioSource;
-    public AudioMixer foodSFX;
+    public AudioSource eatAudioSource;
 
-    public AudioClip coin, pop, error, buy;
+    public AudioMixer audioMixer;
 
-    private void Start()
+    public AudioClip coin, pop, error, buy, hurt, boost;
+
+    private void Awake()
     {
-        float savedVolume = PlayerPrefs.GetFloat("FoodVolume", 0f);
-        if (savedVolume > -49)
+        // Singleton pattern to ensure only one instance of SFXManager exists
+        if (instance == null)
         {
-            foodSFX.SetFloat("FoodSfx", savedVolume);
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            foodSFX.SetFloat("FoodSfx", -80);
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        // Load and set the saved volumes for food and general SFX
+        float savedFoodVolume = PlayerPrefs.GetFloat("FoodVolume", 0f);
+        float savedGeneralVolume = PlayerPrefs.GetFloat("GeneralVolume", 0f);
+
+        if (savedFoodVolume > -49)
+        {
+            audioMixer.SetFloat("FoodSfx", savedFoodVolume);
+        }
+        else
+        {
+            audioMixer.SetFloat("FoodSfx", -80);
+        }
+
+        if (savedGeneralVolume > -49)
+        {
+            audioMixer.SetFloat("GeneralSfx", savedGeneralVolume);
+        }
+        else
+        {
+            audioMixer.SetFloat("GeneralSfx", -80);
         }
     }
 
@@ -27,9 +57,9 @@ public class SFXManager : MonoBehaviour
         PlaySound(coin);
     }
 
-    public void PlaySFXPop()
+    public void PlaySFXEat()
     {
-        audioSource.Play();
+        eatAudioSource.Play();
     }
 
     public void PlaySFXError()
@@ -40,6 +70,16 @@ public class SFXManager : MonoBehaviour
     public void PlaySFXBuy()
     {
         PlaySound(buy);
+    }
+
+    public void PlaySFXHurt()
+    {
+        PlaySound(hurt);
+    }
+
+    public void PlaySFXBoost()
+    {
+        PlaySound(boost);
     }
 
     private void PlaySound(AudioClip clip)

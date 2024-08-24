@@ -5,13 +5,11 @@ public class BetterFood : MonoBehaviour
     public float healthIncreaseAmount = 20f;
 
     private ObjectSpawner objectSpawner;
-    private SFXManager sfxManager;
     private HealthBar healthBar;
 
     private void Start()
     {
         objectSpawner = FindObjectOfType<ObjectSpawner>();
-        sfxManager = FindObjectOfType<SFXManager>();
         healthBar = FindObjectOfType<HealthBar>();
     }
 
@@ -22,7 +20,7 @@ public class BetterFood : MonoBehaviour
             if (healthBar != null)
             {
                 healthBar.ChangeHealth(healthIncreaseAmount);
-                sfxManager.PlaySFXPop();
+                SFXManager.instance.PlaySFXEat();
             }
 
             gameObject.SetActive(false);

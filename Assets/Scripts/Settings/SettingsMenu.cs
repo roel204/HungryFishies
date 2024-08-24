@@ -4,22 +4,35 @@ using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public AudioMixer foodSFX;
+    public AudioMixer audioMixer;
     public GameObject settingsMenuPanel;
-    public Slider volumeSlider;
+    public Slider eatVolumeSlider;
+    public Slider generalVolumeSlider;
 
     private void Start()
     {
-        float savedVolume = PlayerPrefs.GetFloat("FoodVolume", 0f);
-        volumeSlider.value = savedVolume;
+        float savedEatVolume = PlayerPrefs.GetFloat("FoodVolume", 0f);
+        eatVolumeSlider.value = savedEatVolume;
 
-        if (savedVolume > -49)
+        if (savedEatVolume > -49)
         {
-            foodSFX.SetFloat("FoodSfx", savedVolume);
+            audioMixer.SetFloat("FoodSfx", savedEatVolume);
         }
         else
         {
-            foodSFX.SetFloat("FoodSfx", -80);
+            audioMixer.SetFloat("FoodSfx", -80);
+        }
+
+        float savedGeneralVolume = PlayerPrefs.GetFloat("FoodVolume", 0f);
+        generalVolumeSlider.value = savedGeneralVolume;
+
+        if (savedGeneralVolume > -49)
+        {
+            audioMixer.SetFloat("GeneralSfx", savedGeneralVolume);
+        }
+        else
+        {
+            audioMixer.SetFloat("GeneralSfx", -80);
         }
     }
 
@@ -33,17 +46,31 @@ public class SettingsMenu : MonoBehaviour
         settingsMenuPanel.SetActive(false);
     }
 
-    public void UpdateVolume(float volume)
+    public void UpdateEatVolume(float volume)
     {
         if (volume > -49)
         {
-            foodSFX.SetFloat("FoodSfx", volume);
+            audioMixer.SetFloat("FoodSfx", volume);
         }
         else
         {
-            foodSFX.SetFloat("FoodSfx", -80);
+            audioMixer.SetFloat("FoodSfx", -80);
         }
         PlayerPrefs.SetFloat("FoodVolume", volume);
+        PlayerPrefs.Save();
+    }
+
+    public void UpdateGeneralVolume(float volume)
+    {
+        if (volume > -49)
+        {
+            audioMixer.SetFloat("GeneralSfx", volume);
+        }
+        else
+        {
+            audioMixer.SetFloat("GeneralSfx", -80);
+        }
+        PlayerPrefs.SetFloat("GeneralVolume", volume);
         PlayerPrefs.Save();
     }
 }

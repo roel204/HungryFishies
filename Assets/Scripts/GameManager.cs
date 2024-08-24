@@ -67,15 +67,10 @@ public class GameManager : MonoBehaviour
         {
             pearls += amount;
             PlayerPrefs.SetInt("Pearls", pearls);
-
-            //sfxManager.PlaySFXBuy();
-
             return true;
         }
         else
         {
-            //sfxManager.PlaySFXError();
-
             return false;
         }
     }

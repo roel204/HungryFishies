@@ -12,8 +12,6 @@ public class ShopManager : MonoBehaviour
     public string[,] shopItemNames = new string[2, 8];
     public int maxUpgradeLevel = 5;
 
-    private SFXManager sfxManager;
-
     private void Awake()
     {
         // Name
@@ -33,8 +31,6 @@ public class ShopManager : MonoBehaviour
 
     void Start()
     {
-        sfxManager = FindObjectOfType<SFXManager>();
-
         // ID
         shopItems[1, 1] = 1; // Swim Speed
         shopItems[1, 2] = 2; // More Food
@@ -92,9 +88,9 @@ public class ShopManager : MonoBehaviour
             {
                 IncreaseCoinCount(-cost);
                 shopItems[3, itemID]++;
-                sfxManager.PlaySFXBuy();
+                SFXManager.instance.PlaySFXBuy();
             }
-            else { sfxManager.PlaySFXError(); }
+            else { SFXManager.instance.PlaySFXError(); }
         }
     }
 

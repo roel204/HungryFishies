@@ -46,6 +46,7 @@ public class HealthBar : MonoBehaviour
 
             if (currentHealth <= 0f)
             {
+                SFXManager.instance.PlaySFXHurt();
                 GameManager.instance.GameOver();
                 sceneHandler.ChangeScene(2);
                 isGameRunning = false;

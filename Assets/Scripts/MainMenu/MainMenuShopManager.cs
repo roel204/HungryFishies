@@ -71,6 +71,12 @@ public class MainMenuShopManager : MonoBehaviour
             PlayerPrefs.Save();
 
             UpdateShopUI();
+
+            SFXManager.instance.PlaySFXBuy();
+        }
+        else
+        {
+            SFXManager.instance.PlaySFXError();
         }
     }
 

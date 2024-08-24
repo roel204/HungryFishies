@@ -5,13 +5,11 @@ public class Food : MonoBehaviour
     private readonly float healthIncreaseAmount = 15f; // Amount of health to increase when fish touches the food
 
     private ObjectSpawner objectSpawner;
-    private SFXManager sfxManager;
     private HealthBar healthBar;
 
     private void Start()
     {
         objectSpawner = FindObjectOfType<ObjectSpawner>();
-        sfxManager = FindObjectOfType<SFXManager>();
         healthBar = FindObjectOfType<HealthBar>();
     }
 
@@ -24,7 +22,7 @@ public class Food : MonoBehaviour
                 if (healthBar != null)
                 {
                     healthBar.ChangeHealth(healthIncreaseAmount);
-                    sfxManager.PlaySFXPop();
+                    SFXManager.instance.PlaySFXEat();
                 }
 
                 gameObject.SetActive(false);

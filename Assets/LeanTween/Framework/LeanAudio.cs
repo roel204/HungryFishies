@@ -281,7 +281,7 @@ public class LeanAudio : object {
 		// Debug.Log("audio length:"+audio.length);
 		AudioSource audioSource = playClipAt(audio, pos);
 		audioSource.minDistance = 1f;
-		//audioSource.pitch = pitch;
+		//eatAudioSource.pitch = pitch;
 		audioSource.volume = volume;
 
 		return audioSource;

@@ -62,7 +62,15 @@ public class SpeedBoost : MonoBehaviour
 
     public void ToggleSpeedBoost()
     {
-        boosting = !boosting;
+        if (boosting)
+        {
+            boosting = false;
+        }
+        else
+        {
+            boosting = true;
+            SFXManager.instance.PlaySFXBoost();
+        };
     }
 
 }

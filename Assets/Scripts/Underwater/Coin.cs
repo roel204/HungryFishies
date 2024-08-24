@@ -3,13 +3,11 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     private ObjectSpawner objectSpawner;
-    private SFXManager sfxManager;
     private ShopManager shopManager;
 
     private void Start()
     {
         objectSpawner = FindObjectOfType<ObjectSpawner>();
-        sfxManager = FindObjectOfType<SFXManager>();
         shopManager = FindObjectOfType<ShopManager>();
     }
 
@@ -22,7 +20,7 @@ public class Coin : MonoBehaviour
                 if (shopManager != null)
                 {
                     shopManager.IncreaseCoinCount(1f);
-                    sfxManager.PlaySFXCoin();
+                    SFXManager.instance.PlaySFXCoin();
                 }
 
                 gameObject.SetActive(false);
