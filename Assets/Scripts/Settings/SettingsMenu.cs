@@ -8,6 +8,7 @@ public class SettingsMenu : MonoBehaviour
     public GameObject settingsMenuPanel;
     public Slider eatVolumeSlider;
     public Slider generalVolumeSlider;
+    public Toggle autoSwimToggle;
 
     private void Start()
     {
@@ -34,6 +35,8 @@ public class SettingsMenu : MonoBehaviour
         {
             audioMixer.SetFloat("GeneralSfx", -80);
         }
+
+        autoSwimToggle.isOn = PlayerPrefs.GetInt("AutoSwim", 0) == 1;
     }
 
     public void OpenSettingsMenu()
@@ -71,6 +74,13 @@ public class SettingsMenu : MonoBehaviour
             audioMixer.SetFloat("GeneralSfx", -80);
         }
         PlayerPrefs.SetFloat("GeneralVolume", volume);
+        PlayerPrefs.Save();
+    }
+
+    public void OnAutoSwimToggleChanged()
+    {
+        // Save the AutoSwim setting
+        PlayerPrefs.SetInt("AutoSwim", autoSwimToggle.isOn ? 1 : 0);
         PlayerPrefs.Save();
     }
 }

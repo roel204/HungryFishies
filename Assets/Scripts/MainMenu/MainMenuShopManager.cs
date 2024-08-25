@@ -106,7 +106,7 @@ public class MainMenuShopManager : MonoBehaviour
 
             if (buyButtonText != null)
             {
-                buyButtonText.text = GameManager.instance.fishDataList[selectedFishIndex].cost.ToString() + "\nFishBucks";
+                buyButtonText.text = GameManager.instance.fishDataList[selectedFishIndex].cost.ToString();
             }
             else
             {

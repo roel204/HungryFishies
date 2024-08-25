@@ -16,7 +16,7 @@
 		"name": "Opah",
 		"abilityText": "Speed Boost",
 		"abilities": ["boost"],
-		"cost": 420,
+		"cost": 250,
 		"defaultSpeed": 2,
 		"defaultRotate": 130,
 		"defaultHealth": 120
@@ -26,7 +26,7 @@
 		"name": "Bullhead Catfish",
 		"abilityText": "See Further",
 		"abilities": ["viewDistance"],
-		"cost": 1000,
+		"cost": 500,
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
 		"defaultHealth": 110
@@ -36,7 +36,7 @@
 		"name": "Salmon",
 		"abilityText": "Speed Boost",
 		"abilities": ["boost"],
-		"cost": 1500,
+		"cost": 1000,
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
 		"defaultHealth": 120
@@ -46,7 +46,7 @@
 		"name": "Sardine",
 		"abilityText": "Half Upgrade Cost",
 		"abilities": ["cheapUpgrades"],
-		"cost": 2000,
+		"cost": 1500,
 		"defaultSpeed": 2,
 		"defaultRotate": 170,
 		"defaultHealth": 80
@@ -56,7 +56,7 @@
 		"name": "Stingray",
 		"abilityText": "Faster Close to Ground",
 		"abilities": ["groundSpeed"],
-		"cost": 2500,
+		"cost": 2000,
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
 		"defaultHealth": 100
@@ -66,7 +66,7 @@
 		"name": "Squid",
 		"abilityText": "Speed Boost",
 		"abilities": ["boost"],
-		"cost": 3000,
+		"cost": 2500,
 		"defaultSpeed": 2,
 		"defaultRotate": 200,
 		"defaultHealth": 120
@@ -76,7 +76,7 @@
 		"name": "Sturgeon",
 		"abilityText": "More Upgrades",
 		"abilities": ["moreUpgrades"],
-		"cost": 3500,
+		"cost": 3000,
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
 		"defaultHealth": 150
@@ -86,7 +86,7 @@
 		"name": "Basking Shark",
 		"abilityText": "See Further",
 		"abilities": ["viewDistance", "moreUpgrades"],
-		"cost": 4000,
+		"cost": 3500,
 		"defaultSpeed": 2,
 		"defaultRotate": 110,
 		"defaultHealth": 250
@@ -96,7 +96,7 @@
 		"name": "Turtle",
 		"abilityText": "Eat Jellyfish",
 		"abilities": ["eatJelly"],
-		"cost": 4200,
+		"cost": 4000,
 		"defaultSpeed": 2,
 		"defaultRotate": 130,
 		"defaultHealth": 180
@@ -106,7 +106,7 @@
 		"name": "Thresher Shark",
 		"abilityText": "More Upgrades",
 		"abilities": ["moreUpgrades"],
-		"cost": 5000,
+		"cost": 4500,
 		"defaultSpeed": 4,
 		"defaultRotate": 200,
 		"defaultHealth": 140

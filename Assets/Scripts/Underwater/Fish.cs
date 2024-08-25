@@ -21,6 +21,8 @@ public class Fish : MonoBehaviour
     private Vector3 targetPosition = new(10, 10, 0);
     private ShopManager shopManager;
 
+    private bool autoSwimEnabled;
+
     private void Start()
     {
         // Get selected fish data
@@ -48,6 +50,8 @@ public class Fish : MonoBehaviour
 
         shopManager = FindObjectOfType<ShopManager>();
 
+        autoSwimEnabled = PlayerPrefs.GetInt("AutoSwim", 0) == 1;
+
         MoveAndRotateFish();
     }
 
@@ -64,6 +68,12 @@ public class Fish : MonoBehaviour
         else
         {
             followMouse = false;
+
+            // If autoSwim is enabled, continue moving and rotating the fish
+            if (autoSwimEnabled)
+            {
+                MoveAndRotateFish();
+            }
         }
 
         // Update the swimming speed based on the level of the first item in the shop
@@ -98,33 +108,55 @@ public class Fish : MonoBehaviour
 
     private void MoveAndRotateFish()
     {
-        // Calculate the direction vector from the fish to the target position
-        Vector3 direction = targetPosition - transform.position;
-
-        // Calculate the angle in degrees from the fish's forward direction to the target direction
-        float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        // Get the current rotation angle of the fish
-        float currentAngle = transform.rotation.eulerAngles.z;
-
-        // Smoothly interpolate the current angle towards the target angle based on the currentRotateSpeed
-        float angle = Mathf.MoveTowardsAngle(currentAngle, targetAngle, currentRotateSpeed * Time.deltaTime);
-
-        // Apply the calculated angle to the fish's rotation
-        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
-
-        // Move the fish forward in the direction it is facing
-        Vector3 forwardDirection = transform.right;  // Assuming the fish is facing along its local right axis
-        transform.position += forwardDirection * currentSpeed * Time.deltaTime;
-
-        // Flip the fish sprite based on the direction of movement (avoid upside down)
-        if (currentAngle < 90 || currentAngle > 270)
+        if (followMouse)
         {
-            transform.localScale = new Vector3(-currentScale, currentScale, 1f);
+            // Calculate the direction vector from the fish to the target position
+            Vector3 direction = targetPosition - transform.position;
+
+            // Calculate the angle in degrees from the fish's forward direction to the target direction
+            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            // Get the current rotation angle of the fish
+            float currentAngle = transform.rotation.eulerAngles.z;
+
+            // Smoothly interpolate the current angle towards the target angle based on the currentRotateSpeed
+            float angle = Mathf.MoveTowardsAngle(currentAngle, targetAngle, currentRotateSpeed * Time.deltaTime);
+
+            // Apply the calculated angle to the fish's rotation
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+
+            // Move the fish forward in the direction it is facing
+            Vector3 forwardDirection = transform.right;  // Assuming the fish is facing along its local right axis
+            transform.position += forwardDirection * currentSpeed * Time.deltaTime;
+
+            // Flip the fish sprite based on the direction of movement (avoid upside down)
+            if (currentAngle < 90 || currentAngle > 270)
+            {
+                transform.localScale = new Vector3(-currentScale, currentScale, 1f);
+            }
+            else
+            {
+                transform.localScale = new Vector3(-currentScale, -currentScale, 1f);
+            }
         }
         else
         {
-            transform.localScale = new Vector3(-currentScale, -currentScale, 1f);
+            // Move the fish forward in the direction it is facing
+            Vector3 forwardDirection = transform.right;  // Assuming the fish is facing along its local right axis
+            transform.position += forwardDirection * currentSpeed * Time.deltaTime;
+
+            // Get the current rotation angle of the fish
+            float currentAngle = transform.rotation.eulerAngles.z;
+
+            // Flip the fish sprite based on the direction of movement (avoid upside down)
+            if (currentAngle < 90 || currentAngle > 270)
+            {
+                transform.localScale = new Vector3(-currentScale, currentScale, 1f);
+            }
+            else
+            {
+                transform.localScale = new Vector3(-currentScale, -currentScale, 1f);
+            }
         }
     }
 }
