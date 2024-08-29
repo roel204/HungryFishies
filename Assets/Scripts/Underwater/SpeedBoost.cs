@@ -10,6 +10,7 @@ public class SpeedBoost : MonoBehaviour
     public Slider slider;
     public Button button;
 
+    private bool boostingAllowed = false;
     private bool boosting = false;
     private float energy = 3f;
 
@@ -20,16 +21,25 @@ public class SpeedBoost : MonoBehaviour
 
         if (GameManager.instance.fishDataList[GameManager.instance.selectedFish].abilities.Contains("boost"))
         {
+            boostingAllowed = true;
             button.gameObject.SetActive(true); // Show the button
         }
         else
         {
+            boostingAllowed = false;
             button.gameObject.SetActive(false); // Hide the button
         }
     }
 
     private void Update()
     {
+        // Check if the spacebar is pressed
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ToggleSpeedBoost();
+        }
+
+        // Boost the fish
         if (boosting)
         {
             if (energy > 0.1f)
@@ -62,15 +72,17 @@ public class SpeedBoost : MonoBehaviour
 
     public void ToggleSpeedBoost()
     {
-        if (boosting)
+        if (boostingAllowed)
         {
-            boosting = false;
+            if (boosting)
+            {
+                boosting = false;
+            }
+            else
+            {
+                boosting = true;
+                SFXManager.instance.PlaySFXBoost();
+            };
         }
-        else
-        {
-            boosting = true;
-            SFXManager.instance.PlaySFXBoost();
-        };
     }
-
 }

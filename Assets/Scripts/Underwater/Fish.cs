@@ -9,6 +9,8 @@ public class Fish : MonoBehaviour
     private float currentSpeed;
     public float baseSpeed;
     private float speedIncreasePerLevel = 1f;
+    private float currentVelocity = 0f;
+    private readonly float acceleration = 4f;
 
     private float currentScale;
     private float baseScale = 1f;
@@ -69,11 +71,7 @@ public class Fish : MonoBehaviour
         {
             followMouse = false;
 
-            // If autoSwim is enabled, continue moving and rotating the fish
-            if (autoSwimEnabled)
-            {
-                MoveAndRotateFish();
-            }
+            MoveAndRotateFish();
         }
 
         // Update the swimming speed based on the level of the first item in the shop
@@ -108,28 +106,38 @@ public class Fish : MonoBehaviour
 
     private void MoveAndRotateFish()
     {
-        if (followMouse)
+        Vector3 direction;
+        float targetAngle;
+        float currentAngle;
+
+        // Always move the fish forward when autoSwim is enabled or the player is following the mouse
+        if (followMouse || autoSwimEnabled)
         {
-            // Calculate the direction vector from the fish to the target position
-            Vector3 direction = targetPosition - transform.position;
+            if (followMouse)
+            {
+                // Calculate the direction vector from the fish to the target position
+                direction = targetPosition - transform.position;
 
-            // Calculate the angle in degrees from the fish's forward direction to the target direction
-            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                // Calculate the angle in degrees from the fish's forward direction to the target direction
+                targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-            // Get the current rotation angle of the fish
-            float currentAngle = transform.rotation.eulerAngles.z;
+                // Get the current rotation angle of the fish
+                currentAngle = transform.rotation.eulerAngles.z;
 
-            // Smoothly interpolate the current angle towards the target angle based on the currentRotateSpeed
-            float angle = Mathf.MoveTowardsAngle(currentAngle, targetAngle, currentRotateSpeed * Time.deltaTime);
+                // Smoothly interpolate the current angle towards the target angle based on the currentRotateSpeed
+                float angle = Mathf.MoveTowardsAngle(currentAngle, targetAngle, currentRotateSpeed * Time.deltaTime);
 
-            // Apply the calculated angle to the fish's rotation
-            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+                // Apply the calculated angle to the fish's rotation
+                transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+            }
 
-            // Move the fish forward in the direction it is facing
-            Vector3 forwardDirection = transform.right;  // Assuming the fish is facing along its local right axis
-            transform.position += forwardDirection * currentSpeed * Time.deltaTime;
+            // Accelerate the fish forward in the direction it is facing
+            Vector3 forwardDirection = transform.right;
+            currentVelocity = Mathf.MoveTowards(currentVelocity, currentSpeed, acceleration * Time.deltaTime);
+            transform.position += currentVelocity * Time.deltaTime * forwardDirection;
 
             // Flip the fish sprite based on the direction of movement (avoid upside down)
+            currentAngle = transform.rotation.eulerAngles.z;
             if (currentAngle < 90 || currentAngle > 270)
             {
                 transform.localScale = new Vector3(-currentScale, currentScale, 1f);
@@ -141,22 +149,15 @@ public class Fish : MonoBehaviour
         }
         else
         {
-            // Move the fish forward in the direction it is facing
-            Vector3 forwardDirection = transform.right;  // Assuming the fish is facing along its local right axis
-            transform.position += forwardDirection * currentSpeed * Time.deltaTime;
+            // Gradually decrease the velocity when not following the mouse and autoSwim is disabled
+            currentVelocity = Mathf.MoveTowards(currentVelocity, 0f, acceleration * Time.deltaTime);
 
-            // Get the current rotation angle of the fish
-            float currentAngle = transform.rotation.eulerAngles.z;
-
-            // Flip the fish sprite based on the direction of movement (avoid upside down)
-            if (currentAngle < 90 || currentAngle > 270)
+            // Continue moving the fish forward based on the reduced velocity
+            if (currentVelocity > 0f)
             {
-                transform.localScale = new Vector3(-currentScale, currentScale, 1f);
-            }
-            else
-            {
-                transform.localScale = new Vector3(-currentScale, -currentScale, 1f);
+                transform.position += transform.right * currentVelocity * Time.deltaTime;
             }
         }
     }
+
 }
