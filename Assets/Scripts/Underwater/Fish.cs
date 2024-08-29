@@ -115,19 +115,12 @@ public class Fish : MonoBehaviour
         {
             if (followMouse)
             {
-                // Calculate the direction vector from the fish to the target position
                 direction = targetPosition - transform.position;
-
-                // Calculate the angle in degrees from the fish's forward direction to the target direction
                 targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-                // Get the current rotation angle of the fish
                 currentAngle = transform.rotation.eulerAngles.z;
 
                 // Smoothly interpolate the current angle towards the target angle based on the currentRotateSpeed
                 float angle = Mathf.MoveTowardsAngle(currentAngle, targetAngle, currentRotateSpeed * Time.deltaTime);
-
-                // Apply the calculated angle to the fish's rotation
                 transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
             }
 
