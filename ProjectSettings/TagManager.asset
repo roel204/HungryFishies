@@ -50,9 +50,9 @@ TagManager:
   - name: Player
     uniqueID: 4144255041
     locked: 0
-  - name: ShopUI
-    uniqueID: 3639370723
-    locked: 0
   - name: UI
     uniqueID: 4208635783
+    locked: 0
+  - name: ShopUI
+    uniqueID: 3639370723
     locked: 0
