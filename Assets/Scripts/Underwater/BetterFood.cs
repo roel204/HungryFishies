@@ -4,6 +4,8 @@ public class BetterFood : MonoBehaviour
 {
     public float healthIncreaseAmount = 20f;
 
+    [SerializeField] private GameObject particlePrefab;
+
     private ObjectSpawner objectSpawner;
     private HealthBar healthBar;
 
@@ -17,14 +19,16 @@ public class BetterFood : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fish"))
         {
-            if (healthBar != null)
+            if (healthBar != null && objectSpawner != null)
             {
                 healthBar.ChangeHealth(healthIncreaseAmount);
-                SFXManager.instance.PlaySFXEat();
-            }
+                SFXManager.instance.PlaySfx("chomp", 1.5f, 2.5f, true);
 
-            gameObject.SetActive(false);
-            objectSpawner.StartBetterFoodRespawnTimer(gameObject);
+                Instantiate(particlePrefab, transform.position, transform.rotation);
+
+                gameObject.SetActive(false);
+                objectSpawner.StartBetterFoodRespawnTimer(gameObject);
+            }
         }
     }
 }

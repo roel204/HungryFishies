@@ -1,4 +1,4 @@
-using System.IO;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -7,11 +7,14 @@ public class SFXManager : MonoBehaviour
     public static SFXManager instance;
 
     public GameObject audioSourcePrefab;
-    public AudioSource eatAudioSource;
 
     public AudioMixer audioMixer;
+    public AudioMixerGroup audioMixerGroupEat;
+    public AudioMixerGroup audioMixerGroupSfx;
 
-    public AudioClip coin, pop, error, buy, hurt, boost, boostReverse;
+    public AudioClip coin, pop, chomp, error, buy, hurt, boost, boostReverse;
+
+    private Dictionary<string, AudioClip> audioClips;
 
     private void Awake()
     {
@@ -25,6 +28,19 @@ public class SFXManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // Initialize the dictionary with audio clips
+        audioClips = new Dictionary<string, AudioClip>
+        {
+            { "coin", coin },
+            { "pop", pop },
+            { "chomp", chomp },
+            { "error", error },
+            { "buy", buy },
+            { "hurt", hurt },
+            { "boost", boost },
+            { "boostReverse", boostReverse }
+        };
     }
 
     private void Start()
@@ -52,43 +68,15 @@ public class SFXManager : MonoBehaviour
         }
     }
 
-    public void PlaySFXCoin()
+    public void PlaySfx(string clipName, float minPitch = 1, float maxPitch = 1, bool food = false)
     {
-        PlaySound(coin);
-    }
+        // Check if the clip exists in the dictionary
+        if (!audioClips.TryGetValue(clipName, out AudioClip clip))
+        {
+            Debug.LogWarning($"AudioClip with name {clipName} not found!");
+            return;
+        }
 
-    public void PlaySFXEat()
-    {
-        eatAudioSource.Play();
-    }
-
-    public void PlaySFXError()
-    {
-        PlaySound(error);
-    }
-
-    public void PlaySFXBuy()
-    {
-        PlaySound(buy);
-    }
-
-    public void PlaySFXHurt()
-    {
-        PlaySound(hurt);
-    }
-
-    public void PlaySFXBoost()
-    {
-        PlaySound(boost);
-    }
-
-    public void PlaySFXBoostReverse()
-    {
-        PlaySound(boostReverse);
-    }
-
-    private void PlaySound(AudioClip clip)
-    {
         // Create a new GameObject to hold the AudioSource component
         GameObject audioSourceObject = Instantiate(audioSourcePrefab, transform);
 
@@ -97,6 +85,19 @@ public class SFXManager : MonoBehaviour
 
         // Set the AudioClip and play the sound
         src.clip = clip;
+
+        // Set the appropriate AudioMixerGroup
+        if (food)
+        {
+            src.outputAudioMixerGroup = audioMixerGroupEat;
+        }
+        else
+        {
+            src.outputAudioMixerGroup = audioMixerGroupSfx;
+        }
+
+        src.pitch = Random.Range(minPitch, maxPitch);
+
         src.Play();
 
         // Destroy the temporary GameObject after the sound has finished playing

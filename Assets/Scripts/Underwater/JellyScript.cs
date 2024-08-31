@@ -55,7 +55,7 @@ public class JellyfishMovement : MonoBehaviour
             else
             {
                 healthBar.ChangeHealth(-healthDecreaseAmount);
-                SFXManager.instance.PlaySFXHurt();
+                SFXManager.instance.PlaySfx("hurt", 0.8f, 1.2f);
             }
         }
     }

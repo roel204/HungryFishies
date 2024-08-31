@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3419467011560932989}
   - component: {fileID: 8113309222191556979}
   m_Layer: 0
-  m_Name: FoodParticleSystem
+  m_Name: BetterFoodParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +55,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dd1ce5da9a8a49f43a6789f2e847bd7e, type: 2}
+  - {fileID: 2100000, guid: 4d44d5401326ad04d8706aac9d0bd710, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

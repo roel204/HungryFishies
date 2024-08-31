@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthIncreaseAmount: 25
+  particlePrefab: {fileID: 7765117478141786652, guid: 0f4fee866d3c2d2428ac55228077f627, type: 3}
 --- !u!61 &8900610349346395564
 BoxCollider2D:
   m_ObjectHideFlags: 0

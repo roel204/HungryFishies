@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class FoodParticleScript : MonoBehaviour
+public class destroyAfterParticles : MonoBehaviour
 {
-    private ParticleSystem foodParticleSystem;
+    private ParticleSystem particleS;
 
     void Start()
     {
         // Get the ParticleSystem component
-        foodParticleSystem = GetComponent<ParticleSystem>();
+        particleS = GetComponent<ParticleSystem>();
 
         // Destroy the GameObject after the particle system's duration
-        Destroy(gameObject, foodParticleSystem.main.duration);
+        Destroy(gameObject, particleS.main.duration);
     }
 }

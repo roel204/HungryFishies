@@ -22,7 +22,7 @@ public class Food : MonoBehaviour
             if (healthBar != null && objectSpawner != null)
             {
                 healthBar.ChangeHealth(healthIncreaseAmount);
-                SFXManager.instance.PlaySFXEat();
+                SFXManager.instance.PlaySfx("chomp", 2f, 3f, true);
 
                 Instantiate(particlePrefab, transform.position, transform.rotation);
 

@@ -20,7 +20,7 @@ public class Coin : MonoBehaviour
                 if (shopManager != null)
                 {
                     shopManager.IncreaseCoinCount(1f);
-                    SFXManager.instance.PlaySFXCoin();
+                    SFXManager.instance.PlaySfx("coin", 1f, 1.2f);
                 }
 
                 gameObject.SetActive(false);

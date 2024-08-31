@@ -88,9 +88,9 @@ public class ShopManager : MonoBehaviour
             {
                 IncreaseCoinCount(-cost);
                 shopItems[3, itemID]++;
-                SFXManager.instance.PlaySFXBuy();
+                SFXManager.instance.PlaySfx("buy");
             }
-            else { SFXManager.instance.PlaySFXError(); }
+            else { SFXManager.instance.PlaySfx("error"); }
         }
     }
 

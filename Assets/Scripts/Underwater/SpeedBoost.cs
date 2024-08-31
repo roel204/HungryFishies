@@ -50,7 +50,7 @@ public class SpeedBoost : MonoBehaviour
             else
             {
                 boosting = false;
-                SFXManager.instance.PlaySFXBoostReverse();
+                SFXManager.instance.PlaySfx("boostReverse");
             }
             fish.baseSpeed = GameManager.instance.fishDataList[GameManager.instance.selectedFish].defaultSpeed + 3;
 
@@ -78,16 +78,16 @@ public class SpeedBoost : MonoBehaviour
             if (boosting)
             {
                 boosting = false;
-                SFXManager.instance.PlaySFXBoostReverse();
+                SFXManager.instance.PlaySfx("boostReverse");
             }
             else if (energy > 2)
             {
                 boosting = true;
-                SFXManager.instance.PlaySFXBoost();
+                SFXManager.instance.PlaySfx("boost");
             }
             else
             {
-                SFXManager.instance.PlaySFXError();
+                SFXManager.instance.PlaySfx("error");
             }
         }
     }
