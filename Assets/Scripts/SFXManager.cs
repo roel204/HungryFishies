@@ -11,7 +11,7 @@ public class SFXManager : MonoBehaviour
 
     public AudioMixer audioMixer;
 
-    public AudioClip coin, pop, error, buy, hurt, boost;
+    public AudioClip coin, pop, error, buy, hurt, boost, boostReverse;
 
     private void Awake()
     {
@@ -80,6 +80,11 @@ public class SFXManager : MonoBehaviour
     public void PlaySFXBoost()
     {
         PlaySound(boost);
+    }
+
+    public void PlaySFXBoostReverse()
+    {
+        PlaySound(boostReverse);
     }
 
     private void PlaySound(AudioClip clip)

@@ -25,7 +25,7 @@ public class SettingsMenu : MonoBehaviour
             audioMixer.SetFloat("FoodSfx", -80);
         }
 
-        float savedGeneralVolume = PlayerPrefs.GetFloat("FoodVolume", 0f);
+        float savedGeneralVolume = PlayerPrefs.GetFloat("GeneralSfx", 0f);
         generalVolumeSlider.value = savedGeneralVolume;
 
         if (savedGeneralVolume > -49)
