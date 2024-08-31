@@ -4,6 +4,8 @@ public class Food : MonoBehaviour
 {
     private readonly float healthIncreaseAmount = 15f; // Amount of health to increase when fish touches the food
 
+    [SerializeField] private GameObject particlePrefab;
+
     private ObjectSpawner objectSpawner;
     private HealthBar healthBar;
 
@@ -15,19 +17,19 @@ public class Food : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (objectSpawner != null)
+        if (collision.gameObject.CompareTag("Fish"))
         {
-            if (collision.gameObject.CompareTag("Fish"))
+            if (healthBar != null && objectSpawner != null)
             {
-                if (healthBar != null)
-                {
-                    healthBar.ChangeHealth(healthIncreaseAmount);
-                    SFXManager.instance.PlaySFXEat();
-                }
+                healthBar.ChangeHealth(healthIncreaseAmount);
+                SFXManager.instance.PlaySFXEat();
+
+                Instantiate(particlePrefab, transform.position, transform.rotation);
 
                 gameObject.SetActive(false);
                 objectSpawner.StartFoodRespawnTimer(gameObject);
             }
         }
     }
+
 }
