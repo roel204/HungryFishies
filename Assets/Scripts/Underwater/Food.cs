@@ -22,7 +22,7 @@ public class Food : MonoBehaviour
             if (healthBar != null && objectSpawner != null)
             {
                 healthBar.ChangeHealth(healthIncreaseAmount);
-                SoundManager.Instance.PlaySound("Sfx", "chomp", 2f, 3f);
+                SoundManager.Instance.PlaySound("Eat", "chomp", 2f, 3f);
 
                 Instantiate(particlePrefab, transform.position, transform.rotation);
 

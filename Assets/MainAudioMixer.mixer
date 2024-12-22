@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-4546168134342831501
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: dd2a3248d7fb0c44ea54bd7e70a52602
+  m_EffectName: Attenuation
+  m_MixLevel: f603078390b24b44babba118990f5b0d
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-1349720995739573164
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -38,6 +52,25 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &-951069087093497496
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Eat
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 1d8b6d98e5fd06a4aa92b8e1a812772d
+  m_Children: []
+  m_Volume: 003e1808e336056489bd1315c19526fe
+  m_Pitch: c5387f1885eed864e91205a183cd812e
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -4546168134342831501}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -54,6 +87,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: 003e1808e336056489bd1315c19526fe
+    name: EatVolume
   - guid: b97ba0f151019d14e844634a130d50ba
     name: MusicVolume
   - guid: cc2bbfe9356619f45a70e61575f8113c
@@ -63,6 +98,7 @@ AudioMixerController:
     - 88989305588d25545b3013c58a365604
     - ee049c02dc2cb6941aab363296367362
     - 07d921f1a807c4d4986dd2e855e3a262
+    - 1d8b6d98e5fd06a4aa92b8e1a812772d
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -78,6 +114,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: -1233699900944383257}
   - {fileID: -1349720995739573164}
+  - {fileID: -951069087093497496}
   m_Volume: e7b814afaf4b6534a917918565ed8fe8
   m_Pitch: 782be3e28eb6e26419493f2486625742
   m_Send: 00000000000000000000000000000000
