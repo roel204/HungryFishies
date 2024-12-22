@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 67ccff311196a5d4ebec39cddfd094d1, type: 2}
-  audioMixerGroupMusic: {fileID: -1233699900944383257, guid: 67ccff311196a5d4ebec39cddfd094d1, type: 2}
-  audioMixerGroupSfx: {fileID: -1349720995739573164, guid: 67ccff311196a5d4ebec39cddfd094d1, type: 2}
+  audioMixerGroups:
+  - {fileID: -1233699900944383257, guid: 67ccff311196a5d4ebec39cddfd094d1, type: 2}
+  - {fileID: -1349720995739573164, guid: 67ccff311196a5d4ebec39cddfd094d1, type: 2}
   audioClips:
   - {fileID: 8300000, guid: af03aa95a4346534bbc2ff01b51ddc36, type: 3}
   - {fileID: 8300000, guid: 01c770d4c1280fe4c832ac8ec5a9651c, type: 3}

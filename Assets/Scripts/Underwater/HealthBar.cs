@@ -46,7 +46,7 @@ public class HealthBar : MonoBehaviour
 
             if (currentHealth <= 0f)
             {
-                SoundManager.Instance.PlaySfx("hurt");
+                SoundManager.Instance.PlaySound("Sfx", "hurt");
                 GameManager.instance.GameOver();
                 sceneHandler.ChangeScene(2);
                 isGameRunning = false;

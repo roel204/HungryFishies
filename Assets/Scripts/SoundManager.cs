@@ -3,106 +3,113 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class SoundManager : MonoBehaviour {
+public class SoundManager : MonoBehaviour
+{
     public static SoundManager Instance;
 
-    [Header("Audio Mixer Settings")]
     public AudioMixer audioMixer;
-    public AudioMixerGroup audioMixerGroupMusic;
-    public AudioMixerGroup audioMixerGroupSfx;
+    public AudioMixerGroup[] audioMixerGroups;
 
-    [Header("Audio Clips")]
     public AudioClip[] audioClips;
 
     public string playMusicOnStart = "";
 
     private Dictionary<string, AudioClip> audioClipDictionary;
+    private Dictionary<string, AudioMixerGroup> audioMixerGroupDictionary;
 
-    private void Awake() {
-        if (Instance == null) {
+    private void Awake()
+    {
+        if (Instance == null)
+        {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-        } else {
+        }
+        else
+        {
             Destroy(gameObject);
             return;
         }
 
+        // Initialize dictionaries
         audioClipDictionary = new Dictionary<string, AudioClip>();
-        foreach (var clip in audioClips) {
-            if (clip != null && !audioClipDictionary.ContainsKey(clip.name)) {
+        foreach (var clip in audioClips)
+        {
+            if (clip != null && !audioClipDictionary.ContainsKey(clip.name))
+            {
                 audioClipDictionary.Add(clip.name, clip);
+            }
+        }
+
+        audioMixerGroupDictionary = new Dictionary<string, AudioMixerGroup>();
+        foreach (var group in audioMixerGroups)
+        {
+            if (group != null && !audioMixerGroupDictionary.ContainsKey(group.name))
+            {
+                audioMixerGroupDictionary.Add(group.name, group);
             }
         }
     }
 
-    private void Start() {
-        float savedMusicVolume = PlayerPrefs.GetFloat("MusicVolume", 0f);
-        float savedSfxVolume = PlayerPrefs.GetFloat("SfxVolume", 0f);
+    private void Start()
+    {
+        // Load saved volume for each Audio Group
+        foreach (AudioMixerGroup group in audioMixerGroups)
+        {
+            if (group == null) continue;
 
-        audioMixer.SetFloat("MusicVolume", savedMusicVolume);
-        audioMixer.SetFloat("SfxVolume", savedSfxVolume);
+            float savedVolume = PlayerPrefs.GetFloat($"{group.name}Volume", 0f);
+            audioMixer.SetFloat(group.name, savedVolume);
 
-        if (playMusicOnStart != "") {
-            PlayMusic(playMusicOnStart, 0f);
+        }
+
+        if (playMusicOnStart != "")
+        {
+            PlaySound("Music", playMusicOnStart);
         }
     }
 
-    public void PlaySfx(string clipName, float minPitch = 1, float maxPitch = 1, bool loop = false) {
-        if (!audioClipDictionary.TryGetValue(clipName, out AudioClip newClip)) {
+    public void PlaySound(string audioMixerGroup, string clipName, float minPitch = 1, float maxPitch = 1, bool loop = false, float volume = 1f)
+    {
+        if (!audioClipDictionary.TryGetValue(clipName, out AudioClip newClip))
+        {
             Debug.LogWarning($"AudioClip with name '{clipName}' not found in SoundManager!");
             return;
         }
 
+        if (!audioMixerGroupDictionary.TryGetValue(audioMixerGroup, out AudioMixerGroup targetGroup))
+        {
+            Debug.LogWarning($"AudioMixerGroup '{audioMixerGroup}' not found in SoundManager!");
+            return;
+        }
+
         // Create a new GameObject with an AudioSource
-        GameObject sfxSourceObject = new GameObject($"SFX: {clipName}");
+        GameObject sfxSourceObject = new($"{clipName}");
         sfxSourceObject.transform.parent = transform;
-        AudioSource newSfxSrc = sfxSourceObject.AddComponent<AudioSource>();
+        AudioSource src = sfxSourceObject.AddComponent<AudioSource>();
 
         // Configure the AudioSource
-        newSfxSrc.clip = newClip;
-        newSfxSrc.pitch = Random.Range(minPitch, maxPitch);
-        newSfxSrc.outputAudioMixerGroup = audioMixerGroupSfx;
-        newSfxSrc.loop = loop;
+        src.clip = newClip;
+        src.pitch = Random.Range(minPitch, maxPitch);
+        src.outputAudioMixerGroup = targetGroup; // Assign the correct AudioMixerGroup
+        src.loop = loop;
+        src.volume = volume;
 
         // Play the sound and destroy after its length
-        newSfxSrc.Play();
+        src.Play();
 
-        if (!loop) {
-            Destroy(sfxSourceObject, newClip.length / newSfxSrc.pitch);
+        if (!loop)
+        {
+            Destroy(sfxSourceObject, newClip.length / src.pitch);
         }
     }
 
-    public void PlayMusic(string clipName, float fadeDuration = 1f, bool loop = true) {
-        if (!audioClipDictionary.TryGetValue(clipName, out AudioClip newClip)) {
-            Debug.LogWarning($"AudioClip with name '{clipName}' not found in SoundManager!");
-            return;
-        }
-
-        // Create a new GameObject with an AudioSource
-        GameObject musicSourceObject = new GameObject($"Music: {clipName}");
-        musicSourceObject.transform.parent = transform;
-        AudioSource newMusicSrc = musicSourceObject.AddComponent<AudioSource>();
-
-        // Configure the AudioSource
-        newMusicSrc.clip = newClip;
-        newMusicSrc.outputAudioMixerGroup = audioMixerGroupMusic;
-        newMusicSrc.loop = loop;
-        newMusicSrc.volume = 0f;
-
-        // Play the music and fade in
-        newMusicSrc.Play();
-        StartCoroutine(FadeVolume(newMusicSrc, 0f, 1f, fadeDuration));
-
-        if (!loop) {
-            Destroy(musicSourceObject, newClip.length / newMusicSrc.pitch);
-        }
-    }
-
-    private IEnumerator FadeVolume(AudioSource source, float startVolume, float endVolume, float duration) {
+    private IEnumerator FadeVolume(AudioSource source, float startVolume, float endVolume, float duration)
+    {
         float elapsed = 0f;
 
         source.volume = startVolume;
-        while (elapsed < duration) {
+        while (elapsed < duration)
+        {
             elapsed += Time.deltaTime;
             source.volume = Mathf.Lerp(startVolume, endVolume, elapsed / duration);
             yield return null;
@@ -111,15 +118,19 @@ public class SoundManager : MonoBehaviour {
         source.volume = endVolume;
     }
 
-    public void StopSounds(string soundName) {
-        if (!audioClipDictionary.TryGetValue(soundName, out AudioClip clip)) {
+    public void StopSounds(string soundName)
+    {
+        if (!audioClipDictionary.TryGetValue(soundName, out AudioClip clip))
+        {
             Debug.LogWarning($"AudioClip with name '{soundName}' not found in SoundManager!");
             return;
         }
 
-        foreach (Transform child in transform) {
+        foreach (Transform child in transform)
+        {
             AudioSource audioSource = child.GetComponent<AudioSource>();
-            if (audioSource != null && audioSource.clip == clip) {
+            if (audioSource != null && audioSource.clip == clip)
+            {
                 audioSource.Stop();
                 Destroy(child.gameObject);
                 Debug.Log($"Stopped and destroyed sound: {soundName}");
@@ -127,32 +138,34 @@ public class SoundManager : MonoBehaviour {
         }
     }
 
-    public void SetMusicVolume(float volume) {
+    public void SetVolume(string audioMixerGroup, float volume)
+    {
+        if (!audioMixerGroupDictionary.ContainsKey(audioMixerGroup))
+        {
+            Debug.LogWarning($"AudioMixerGroup '{audioMixerGroup}' does not exist. Volume not set.");
+            return;
+        }
+
         volume = Mathf.Clamp(volume, -80f, 0f);
-        audioMixer.SetFloat("MusicVolume", volume);
-        PlayerPrefs.SetFloat("MusicVolume", volume);
+        audioMixer.SetFloat($"{audioMixerGroup}Volume", volume);
+        PlayerPrefs.SetFloat($"{audioMixerGroup}Volume", volume);
     }
 
-    public void SetSfxVolume(float volume) {
-        volume = Mathf.Clamp(volume, -80f, 0f);
-        audioMixer.SetFloat("SfxVolume", volume);
-        PlayerPrefs.SetFloat("SfxVolume", volume);
-    }
-
-    public float GetMusicVolume() {
-        if (audioMixer.GetFloat("MusicVolume", out float volume)) {
-            return volume;
-        } else {
-            Debug.LogWarning("Failed to get MusicVolume from the AudioMixer!");
+    public float GetVolume(string audioMixerGroup)
+    {
+        if (!audioMixerGroupDictionary.ContainsKey(audioMixerGroup))
+        {
+            Debug.LogWarning($"AudioMixerGroup '{audioMixerGroup}' does not exist. Volume not set.");
             return -80f;
         }
-    }
 
-    public float GetSfxVolume() {
-        if (audioMixer.GetFloat("SfxVolume", out float volume)) {
+        if (audioMixer.GetFloat($"{audioMixerGroup}Volume", out float volume))
+        {
             return volume;
-        } else {
-            Debug.LogWarning("Failed to get SfxVolume from the AudioMixer!");
+        }
+        else
+        {
+            Debug.LogWarning($"Failed to get volume for '{audioMixerGroup}' from the AudioMixer!");
             return -80f;
         }
     }
