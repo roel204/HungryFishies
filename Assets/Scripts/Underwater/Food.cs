@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    private readonly float healthIncreaseAmount = 15f; // Amount of health to increase when fish touches the food
+    private readonly float healthIncreaseAmount = 15f;
 
     [SerializeField] private GameObject particlePrefab;
 

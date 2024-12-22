@@ -1,10 +1,8 @@
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public AudioMixer audioMixer;
     public GameObject settingsMenuPanel;
     public Toggle autoSwimToggle;
     public Toggle steeringButtonsToggle;
