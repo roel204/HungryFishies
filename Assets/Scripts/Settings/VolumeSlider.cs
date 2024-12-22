@@ -8,7 +8,6 @@ public class VolumeSlider : MonoBehaviour, IPointerUpHandler
     public string sfxOnRelease;
 
     private Slider volumeSlider;
-    private int lastPlayedValue = 9999;
 
     private void Awake()
     {
