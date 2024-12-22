@@ -11,8 +11,8 @@ public class BetterFood : MonoBehaviour
 
     private void Start()
     {
-        objectSpawner = FindObjectOfType<ObjectSpawner>();
-        healthBar = FindObjectOfType<HealthBar>();
+        objectSpawner = FindFirstObjectByType<ObjectSpawner>();
+        healthBar = FindFirstObjectByType<HealthBar>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,7 +22,7 @@ public class BetterFood : MonoBehaviour
             if (healthBar != null && objectSpawner != null)
             {
                 healthBar.ChangeHealth(healthIncreaseAmount);
-                SFXManager.instance.PlaySfx("chomp", 1.5f, 2.5f, true);
+                SoundManager.Instance.PlaySfx("chomp", 1.5f, 2.5f);
 
                 Instantiate(particlePrefab, transform.position, transform.rotation);
 

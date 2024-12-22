@@ -36,7 +36,7 @@ public class ObjectSpawner : MonoBehaviour
 
     private void Start()
     {
-        shopManager = FindObjectOfType<ShopManager>();
+        shopManager = FindFirstObjectByType<ShopManager>();
         SpawnCoins();
         SpawnFood();
         SpawnJelly();

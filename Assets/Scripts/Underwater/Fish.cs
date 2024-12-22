@@ -55,7 +55,7 @@ public class Fish : MonoBehaviour
             boxCollider.offset = spriteRenderer.bounds.center - transform.position;
         }
 
-        shopManager = FindObjectOfType<ShopManager>();
+        shopManager = FindFirstObjectByType<ShopManager>();
 
         autoSwimEnabled = PlayerPrefs.GetInt("AutoSwim", 0) == 1;
 

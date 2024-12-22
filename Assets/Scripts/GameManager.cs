@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        timer = FindObjectOfType<Timer>();
+        timer = FindFirstObjectByType<Timer>();
         score = timer.GetTimerValue();
     }
 

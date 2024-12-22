@@ -20,8 +20,8 @@ public class JellyfishMovement : MonoBehaviour
 
     private void Start()
     {
-        objectSpawner = FindObjectOfType<ObjectSpawner>();
-        healthBar = FindObjectOfType<HealthBar>();
+        objectSpawner = FindFirstObjectByType<ObjectSpawner>();
+        healthBar = FindFirstObjectByType<HealthBar>();
 
         SetNewRandomTargetPosition();
     }
@@ -55,7 +55,7 @@ public class JellyfishMovement : MonoBehaviour
             else
             {
                 healthBar.ChangeHealth(-healthDecreaseAmount);
-                SFXManager.instance.PlaySfx("hurt", 0.8f, 1.2f);
+                SoundManager.Instance.PlaySfx("hurt", 0.8f, 1.2f);
             }
         }
     }

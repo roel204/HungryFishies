@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
-        shopManager = FindObjectOfType<ShopManager>();
+        shopManager = FindFirstObjectByType<ShopManager>();
         sceneHandler = FindFirstObjectByType<SceneHandler>();
 
         slider.maxValue = baseHealth;
@@ -46,7 +46,7 @@ public class HealthBar : MonoBehaviour
 
             if (currentHealth <= 0f)
             {
-                SFXManager.instance.PlaySfx("hurt");
+                SoundManager.Instance.PlaySfx("hurt");
                 GameManager.instance.GameOver();
                 sceneHandler.ChangeScene(2);
                 isGameRunning = false;

@@ -72,11 +72,11 @@ public class MainMenuShopManager : MonoBehaviour
 
             UpdateShopUI();
 
-            SFXManager.instance.PlaySfx("buy");
+            SoundManager.Instance.PlaySfx("buy");
         }
         else
         {
-            SFXManager.instance.PlaySfx("error");
+            SoundManager.Instance.PlaySfx("error");
         }
     }
 
@@ -84,7 +84,7 @@ public class MainMenuShopManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("LastFish", selectedFishIndex);
 
-        SFXManager.instance.PlaySfx("pop");
+        SoundManager.Instance.PlaySfx("pop");
 
         sceneHandler.ChangeScene(1);
     }

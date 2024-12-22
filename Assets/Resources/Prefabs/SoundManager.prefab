@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7050945201962184970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7606390448582245637}
+  - component: {fileID: 2897673871306757157}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7606390448582245637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050945201962184970}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.90187776, y: -1.1093376, z: 0.02784557}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2897673871306757157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050945201962184970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766fb27cebc007344a9eb149305e455c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 67ccff311196a5d4ebec39cddfd094d1, type: 2}
+  audioMixerGroupMusic: {fileID: -1233699900944383257, guid: 67ccff311196a5d4ebec39cddfd094d1, type: 2}
+  audioMixerGroupSfx: {fileID: -1349720995739573164, guid: 67ccff311196a5d4ebec39cddfd094d1, type: 2}
+  audioClips:
+  - {fileID: 8300000, guid: af03aa95a4346534bbc2ff01b51ddc36, type: 3}
+  - {fileID: 8300000, guid: 01c770d4c1280fe4c832ac8ec5a9651c, type: 3}
+  - {fileID: 8300000, guid: 74d2955ed219bef4dbcb866b17c8d6b4, type: 3}
+  - {fileID: 8300000, guid: f0216c9433f3e4e4499b6af0ee8c9054, type: 3}
+  - {fileID: 8300000, guid: f1667cbf55679f3468b3efc9db9e21a0, type: 3}
+  - {fileID: 8300000, guid: c81846cfcefb018408a175ee9060b773, type: 3}
+  - {fileID: 8300000, guid: b42542bf00b299c4eabbb0950a3c0106, type: 3}
+  - {fileID: 8300000, guid: 335f986f0477de24c8524363d6f8a500, type: 3}
+  playMusicOnStart: 

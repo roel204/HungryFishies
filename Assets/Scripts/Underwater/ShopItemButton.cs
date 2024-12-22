@@ -15,7 +15,7 @@ public class ShopItemButton : MonoBehaviour
 
     private void Start()
     {
-        ShopManager = FindObjectOfType<ShopManager>();
+        ShopManager = FindFirstObjectByType<ShopManager>();
 
         NameTxt.text = ShopManager.shopItemNames[1, ItemID];
         maxUpgrade = ShopManager.maxUpgradeLevel;

@@ -7,8 +7,8 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        objectSpawner = FindObjectOfType<ObjectSpawner>();
-        shopManager = FindObjectOfType<ShopManager>();
+        objectSpawner = FindFirstObjectByType<ObjectSpawner>();
+        shopManager = FindFirstObjectByType<ShopManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,7 +20,7 @@ public class Coin : MonoBehaviour
                 if (shopManager != null)
                 {
                     shopManager.IncreaseCoinCount(1f);
-                    SFXManager.instance.PlaySfx("coin", 1f, 1.2f);
+                    SoundManager.Instance.PlaySfx("coin", 1f, 1.2f);
                 }
 
                 gameObject.SetActive(false);
