@@ -58,4 +58,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c81846cfcefb018408a175ee9060b773, type: 3}
   - {fileID: 8300000, guid: b42542bf00b299c4eabbb0950a3c0106, type: 3}
   - {fileID: 8300000, guid: 335f986f0477de24c8524363d6f8a500, type: 3}
+  - {fileID: 8300000, guid: 44cec12841e04f14886f78c2a9f39f04, type: 3}
   playMusicOnStart: 

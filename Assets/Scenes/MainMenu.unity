@@ -5295,7 +5295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixerGroup: Sfx
-  volumeSlider: {fileID: 1383125342}
+  sfxOnRelease: pop
 --- !u!1 &1400367304
 GameObject:
   m_ObjectHideFlags: 0
@@ -5730,7 +5730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixerGroup: Music
-  volumeSlider: {fileID: 1490386851}
+  sfxOnRelease: pop
 --- !u!1 &1492089089
 GameObject:
   m_ObjectHideFlags: 0
@@ -5848,7 +5848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixerGroup: Eat
-  volumeSlider: {fileID: 1492089091}
+  sfxOnRelease: chomp
 --- !u!1 &1530078248
 GameObject:
   m_ObjectHideFlags: 0
@@ -6862,7 +6862,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e611a72bdbffffc45b440a1bac1dcf33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 1fde1bc306d583649987154309b33f14, type: 2}
   settingsMenuPanel: {fileID: 1767118161}
   autoSwimToggle: {fileID: 1400367305}
   steeringButtonsToggle: {fileID: 1155225416}
