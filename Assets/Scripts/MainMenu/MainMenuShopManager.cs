@@ -44,7 +44,6 @@ public class MainMenuShopManager : MonoBehaviour
     {
         selectedFishIndex = selectedItem;
         GameManager.instance.selectedFish = selectedFishIndex;
-        Debug.Log(selectedItem + "|" + previousItem);
 
         UpdateShopUI();
     }
@@ -54,7 +53,7 @@ public class MainMenuShopManager : MonoBehaviour
         // Load the purchased fish data from PlayerPrefs or initialize if not present
         for (int i = 0; i < GameManager.instance.fishDataList.Count; i++)
         {
-            purchasedFish[i] = PlayerPrefs.GetInt("UnlockedFish_" + i.ToString(), 0) == 1;
+            purchasedFish[i] = PlayerPrefs.GetInt("Unlocked_" + GameManager.instance.fishDataList[i].id, 0) == 1;
             purchasedFish[0] = true;
         }
     }
@@ -67,7 +66,7 @@ public class MainMenuShopManager : MonoBehaviour
         {
             purchasedFish[selectedFishIndex] = true;
 
-            PlayerPrefs.SetInt("UnlockedFish_" + selectedFishIndex.ToString(), 1);
+            PlayerPrefs.SetInt("Unlocked_" + GameManager.instance.fishDataList[selectedFishIndex].id, 1);
             PlayerPrefs.Save();
 
             UpdateShopUI();
@@ -116,7 +115,7 @@ public class MainMenuShopManager : MonoBehaviour
 
         fishNameText.text = GameManager.instance.fishDataList[selectedFishIndex].name.ToString();
 
-        highScoreText.text = PlayerPrefs.GetFloat("HighScoreFish_" + selectedFishIndex, 0).ToString("F2");
+        highScoreText.text = PlayerPrefs.GetFloat("HighScore_" + GameManager.instance.fishDataList[selectedFishIndex].id, 0).ToString("F2");
 
         speedText.text = GameManager.instance.fishDataList[selectedFishIndex].defaultSpeed.ToString();
 

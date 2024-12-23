@@ -1,5 +1,4 @@
 using TMPro;
-using TMPro.Examples;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
@@ -10,8 +9,8 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         // Get the selected fish index
-        int selectedFishIndex = GameManager.instance.selectedFish;
-        string highScoreKey = "HighScoreFish_" + selectedFishIndex;
+        string selectedFishId = GameManager.instance.fishDataList[GameManager.instance.selectedFish].id;
+        string highScoreKey = "HighScore_" + selectedFishId;
 
         // Get the current score and the high score for the selected fish
         float score = GameManager.instance.score;

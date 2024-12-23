@@ -3,123 +3,159 @@
 
 	{
 		"index": 0,
+		"id": "SeaBass",
 		"name": "Sea Bass",
 		"abilityText": "No ability",
 		"abilities": [],
 		"cost": 0,
 		"defaultSpeed": 3,
 		"defaultRotate": 150,
-		"defaultHealth": 100
+		"defaultHealth": 100,
+		"rewardRequirements": [69, 120, 300],
+		"rewardAmounts": [50, 75, 100]
 	},
 	{
 		"index": 1,
+		"id": "Opah",
 		"name": "Opah",
 		"abilityText": "Speed Boost",
 		"abilities": ["boost"],
 		"cost": 250,
 		"defaultSpeed": 2,
 		"defaultRotate": 130,
-		"defaultHealth": 120
+		"defaultHealth": 120,
+		"rewardRequirements": [90, 200, 420],
+		"rewardAmounts": [75, 150, 200]
 	},
 	{
 		"index": 2,
+		"id": "Bullhead",
 		"name": "Bullhead Catfish",
 		"abilityText": "See Further",
 		"abilities": ["viewDistance"],
 		"cost": 500,
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
-		"defaultHealth": 110
+		"defaultHealth": 110,
+		"rewardRequirements": [90, 200, 420],
+		"rewardAmounts": [75, 150, 200]
 	},
 	{
 		"index": 3,
+		"id": "Salmon",
 		"name": "Salmon",
 		"abilityText": "Speed Boost",
 		"abilities": ["boost"],
 		"cost": 1000,
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
-		"defaultHealth": 120
+		"defaultHealth": 120,
+		"rewardRequirements": [90, 200, 420],
+		"rewardAmounts": [75, 150, 200]
 	},
 	{
 		"index": 4,
+		"id": "Sardine",
 		"name": "Sardine",
 		"abilityText": "Half Upgrade Cost",
 		"abilities": ["cheapUpgrades"],
 		"cost": 1500,
 		"defaultSpeed": 2,
 		"defaultRotate": 170,
-		"defaultHealth": 80
+		"defaultHealth": 80,
+		"rewardRequirements": [90, 200, 420],
+		"rewardAmounts": [75, 150, 200]
 	},
 	{
 		"index": 5,
+		"id": "Stingray",
 		"name": "Stingray",
 		"abilityText": "Faster Close to Ground",
 		"abilities": ["groundSpeed"],
 		"cost": 2000,
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
-		"defaultHealth": 100
+		"defaultHealth": 100,
+		"rewardRequirements": [90, 200, 420],
+		"rewardAmounts": [75, 150, 200]
 	},
 	{
 		"index": 6,
+		"id": "Squid",
 		"name": "Squid",
 		"abilityText": "Speed Boost",
 		"abilities": ["boost"],
 		"cost": 2500,
 		"defaultSpeed": 2,
 		"defaultRotate": 200,
-		"defaultHealth": 120
+		"defaultHealth": 120,
+		"rewardRequirements": [90, 200, 420],
+		"rewardAmounts": [75, 150, 200]
 	},
 	{
 		"index": 7,
+		"id": "Sturgeon",
 		"name": "Sturgeon",
 		"abilityText": "More Upgrades",
 		"abilities": ["moreUpgrades"],
 		"cost": 3000,
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
-		"defaultHealth": 150
+		"defaultHealth": 150,
+		"rewardRequirements": [90, 200, 420],
+		"rewardAmounts": [75, 150, 200]
 	},
 	{
 		"index": 8,
+		"id": "Basking",
 		"name": "Basking Shark",
 		"abilityText": "See Further",
 		"abilities": ["viewDistance", "moreUpgrades"],
 		"cost": 3500,
 		"defaultSpeed": 2,
 		"defaultRotate": 110,
-		"defaultHealth": 250
+		"defaultHealth": 250,
+		"rewardRequirements": [90, 200, 420],
+		"rewardAmounts": [75, 150, 200]
 	},
 	{
 		"index": 9,
+		"id": "Turtle",
 		"name": "Turtle",
 		"abilityText": "Eat Jellyfish",
 		"abilities": ["eatJelly"],
 		"cost": 4000,
 		"defaultSpeed": 2,
 		"defaultRotate": 130,
-		"defaultHealth": 180
+		"defaultHealth": 180,
+		"rewardRequirements": [90, 200, 420],
+		"rewardAmounts": [75, 150, 200]
 	},
 	{
 		"index": 10,
+		"id": "Thresher",
 		"name": "Thresher Shark",
 		"abilityText": "More Upgrades",
 		"abilities": ["moreUpgrades"],
 		"cost": 4500,
 		"defaultSpeed": 4,
 		"defaultRotate": 200,
-		"defaultHealth": 140
+		"defaultHealth": 140,
+		"rewardRequirements": [90, 200, 420],
+		"rewardAmounts": [75, 150, 200]
 	},
 	{
 		"index": 11,
+		"id": "Seahorse",
 		"name": "Seahorse God",
 		"abilityText": "GOD OF ALL LIFE?!",
 		"abilities": ["boost", "viewDistance", "cheapUpgrades", "groundSpeed", "moreUpgrades", "eatJelly"],
 		"cost": 6942,
 		"defaultSpeed": 5,
 		"defaultRotate": 200,
-		"defaultHealth": 200
+		"defaultHealth": 200,
+		"rewardRequirements": [90, 200, 420],
+		"rewardAmounts": [75, 150, 200]
 	}
 ]
 }

@@ -1,11 +1,11 @@
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
 [System.Serializable]
 public class FishData
 {
     public int index;
+    public string id;
     public string name;
     public string abilityText;
     public string[] abilities;
@@ -13,6 +13,8 @@ public class FishData
     public int defaultSpeed;
     public int defaultRotate;
     public int defaultHealth;
+    public int[] rewardRequirements;
+    public int[] rewardAmounts;
 }
 
 [System.Serializable]
