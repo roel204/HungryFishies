@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     public int selectedFish;
     private Timer timer;
 
+    public event System.Action OnMoneyChanged;
+
     private void Awake()
     {
         // Singleton pattern to ensure only one instance of GameManager exists
@@ -69,6 +71,10 @@ public class GameManager : MonoBehaviour
         {
             money += amount;
             PlayerPrefs.SetInt("Money", money);
+
+            // Notify subscribers
+            OnMoneyChanged?.Invoke();
+
             return true;
         }
         else

@@ -7,7 +7,6 @@ public class MainMenuShopManager : MonoBehaviour
 {
     public Button purchaseButton;
     public Button playButton;
-    public TextMeshProUGUI moneyText;
     public TextMeshProUGUI fishNameText;
     public TextMeshProUGUI highScoreText;
     public TextMeshProUGUI speedText;
@@ -124,7 +123,5 @@ public class MainMenuShopManager : MonoBehaviour
         HealthText.text = GameManager.instance.fishDataList[selectedFishIndex].defaultHealth.ToString();
 
         AbilityText.text = GameManager.instance.fishDataList[selectedFishIndex].abilityText;
-
-        moneyText.text = GameManager.instance.money.ToString();
     }
 }
