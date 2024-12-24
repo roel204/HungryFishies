@@ -23,6 +23,7 @@ public class Fish : MonoBehaviour
     private float rotateSpeedIncreasePerLevel = 40f;
 
     private ShopManager shopManager;
+    private FollowCamera followCamera;
 
     private bool autoSwimEnabled;
     private bool lrTurn;
@@ -57,6 +58,7 @@ public class Fish : MonoBehaviour
         }
 
         shopManager = FindFirstObjectByType<ShopManager>();
+        followCamera = FindFirstObjectByType<FollowCamera>();
 
         autoSwimEnabled = PlayerPrefs.GetInt("AutoSwim", 0) == 1;
 
@@ -162,6 +164,11 @@ public class Fish : MonoBehaviour
                 transform.position += transform.right * currentVelocity * Time.deltaTime;
             }
         }
+
+        transform.position = new Vector2(
+            Mathf.Clamp(transform.position.x, followCamera.minX, followCamera.maxX),
+            Mathf.Clamp(transform.position.y, followCamera.minY, followCamera.maxY)
+        );
 
         // Flip the fish sprite based on the direction of movement (avoid upside down)
         if (currentAngle < 90 || currentAngle > 270)

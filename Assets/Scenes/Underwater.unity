@@ -1595,14 +1595,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneHandler
       objectReference: {fileID: 0}
-    - target: {fileID: 1743688037833255361, guid: 20ea91023e03aa74389a7191f50fe808, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4416818875483971341, guid: 20ea91023e03aa74389a7191f50fe808, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 4416818875483971341, guid: 20ea91023e03aa74389a7191f50fe808, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.15072574
@@ -8971,10 +8963,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1308488879}
     m_Modifications:
     - target: {fileID: 3910274998220551072, guid: 31cdd9137c2a5c54494b11613e826c8a, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3910274998220551072, guid: 31cdd9137c2a5c54494b11613e826c8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -9016,7 +9004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9048217369127605836, guid: 31cdd9137c2a5c54494b11613e826c8a, type: 3}
       propertyPath: m_Name
-      value: Bubble Particle System
+      value: BubbleParticleSystem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9033,8 +9021,8 @@ SceneRoots:
   - {fileID: 1308488879}
   - {fileID: 1439453785}
   - {fileID: 1891828463}
-  - {fileID: 350305059}
   - {fileID: 12690557}
   - {fileID: 1291126355}
   - {fileID: 496721103}
   - {fileID: 962955311}
+  - {fileID: 350305059}
