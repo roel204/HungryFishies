@@ -13,29 +13,26 @@ public class MainMenuShopManager : MonoBehaviour
     public TextMeshProUGUI rotateText;
     public TextMeshProUGUI HealthText;
     public TextMeshProUGUI AbilityText;
+    public GameObject scrollPanel;
 
     [SerializeField] private SimpleScrollSnap scrollSnap;
     private SceneHandler sceneHandler;
 
     private int selectedFishIndex = 0;
-    private bool[] purchasedFish; // An array to store purchased fish data
+    private bool[] purchasedFish;
 
     private void Awake()
     {
         selectedFishIndex = PlayerPrefs.GetInt("LastFish");
-        scrollSnap.StartingPanel = selectedFishIndex;
     }
 
     private void Start()
     {
         sceneHandler = FindFirstObjectByType<SceneHandler>();
 
-        GameManager.instance.selectedFish = selectedFishIndex;
-
-        // Initialize the purchased fish array based on the size of fishDataList
         purchasedFish = new bool[GameManager.instance.fishDataList.Count];
+        LoadFish();
 
-        LoadPurchasedFishData();
         UpdateShopUI();
     }
 
@@ -47,14 +44,31 @@ public class MainMenuShopManager : MonoBehaviour
         UpdateShopUI();
     }
 
-    private void LoadPurchasedFishData()
+    private void LoadFish()
     {
         // Load the purchased fish data from PlayerPrefs or initialize if not present
         for (int i = 0; i < GameManager.instance.fishDataList.Count; i++)
         {
+            // Check if the fish is purchased
             purchasedFish[i] = PlayerPrefs.GetInt("Unlocked_" + GameManager.instance.fishDataList[i].id, 0) == 1;
             purchasedFish[0] = true;
+
+            // Add the panel using scrollSnap and access the newly added panel
+            int childCountBefore = scrollSnap.Content.childCount;
+            scrollSnap.Add(scrollPanel, i);
+
+            // Get the Image component and assign the appropriate fish sprite
+            GameObject newPanel = scrollSnap.Content.GetChild(childCountBefore).gameObject;
+            Image fishImage = newPanel.GetComponent<Image>();
+            if (fishImage != null)
+            {
+                fishImage.sprite = Resources.Load<Sprite>($"Sprites/Fishies/{GameManager.instance.fishDataList[i].id}");
+            }
         }
+
+        // Set the starting panel and selected fish index
+        scrollSnap.GoToPanel(selectedFishIndex);
+        GameManager.instance.selectedFish = selectedFishIndex;
     }
 
     public void OnPurchaseButtonClick()
