@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: d3c272beba016a8498be7ec85af53103
+guid: b32899d86ffba354c9c10e1101e54ed2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -67,7 +67,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -80,7 +80,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -93,7 +93,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -106,7 +106,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -119,7 +119,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -136,60 +136,65 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: STINGRAY_0
+      name: BASKING_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 26
-        width: 94
-        height: 22
+        x: 2
+        y: 54
+        width: 294
+        height: 114
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 381bc04bc1fa9c44ca7491202a7e7789
-      internalID: -1483111531
+      spriteID: d122448bab7562e46aaf77c31b097f99
+      internalID: -736724356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: STINGRAY_1
+      name: BASKING_1
       rect:
         serializedVersion: 2
-        x: 110
-        y: 26
-        width: 94
-        height: 22
+        x: 302
+        y: 54
+        width: 294
+        height: 114
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be77ed91d4da4304c9723e36cc4f5201
-      internalID: -613952734
+      spriteID: c1e8d5cd2d9e73b458992ae3afa506fa
+      internalID: 1095121853
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
-    spriteID: b4e7e0ad430df8f4d9e19d3c8c88b47a
+    spriteID: 56742a93569745b448bf29f3ec681736
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
-      STINGRAY_0: -1483111531
-      STINGRAY_1: -613952734
+      BASKING_0: -736724356
+      BASKING_1: 1095121853
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

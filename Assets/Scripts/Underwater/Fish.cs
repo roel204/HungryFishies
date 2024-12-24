@@ -42,9 +42,10 @@ public class Fish : MonoBehaviour
         currentSpeed = baseSpeed;
         currentScale = baseScale;
         currentRotateSpeed = baseRotateSpeed;
+
         // Set the sprite based on the selected fish's name
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = Resources.Load<Sprite>($"Sprites/Fishies/{selectedFishData.index}");
+        spriteRenderer.sprite = Resources.Load<Sprite>($"Sprites/Fishies/{selectedFishData.id}");
 
         // Set the BoxCollider2D size to match the sprite's size
         BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
