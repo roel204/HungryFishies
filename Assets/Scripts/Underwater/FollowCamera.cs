@@ -4,16 +4,19 @@ using UnityEngine;
 public class FollowCamera : MonoBehaviour
 {
     public Transform target;
-    public Camera cam;
 
     // Define the boundaries within which the camera can move
-    private readonly float minX = -19.1f;
-    private readonly float maxX = 19.1f;
-    private readonly float minY = -10.7f;
-    private readonly float maxY = 10.7f;
+    public float minX = -19.1f;
+    public float maxX = 19.1f;
+    public float minY = -10.7f;
+    public float maxY = 10.7f;
+
+    private Camera cam;
 
     private void Start()
     {
+        cam = GetComponent<Camera>();
+
         if (GameManager.instance.fishDataList[GameManager.instance.selectedFish].abilities.Contains("viewDistance"))
         {
             cam.orthographicSize = 7;
