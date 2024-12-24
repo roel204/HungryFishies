@@ -6,17 +6,12 @@ public class RewardsManager : MonoBehaviour
 {
     public Transform rewardsContainer;
     public GameObject rewardUIPrefab;
+    public TextMeshProUGUI titleText;
 
     private float highScore;
     private int[] rewardClaimed;
     private int[] rewardRequirements;
     private int[] rewardAmounts;
-
-    private void Start()
-    {
-        gameObject.SetActive(false);
-        UpdateUI();
-    }
 
     public void ClaimReward(int rewardID)
     {
@@ -42,6 +37,8 @@ public class RewardsManager : MonoBehaviour
         highScore = PlayerPrefs.GetFloat("HighScore_" + selectedFishID, 0);
         rewardRequirements = GameManager.instance.fishDataList[GameManager.instance.selectedFish].rewardRequirements;
         rewardAmounts = GameManager.instance.fishDataList[GameManager.instance.selectedFish].rewardAmounts;
+
+        titleText.text = GameManager.instance.fishDataList[GameManager.instance.selectedFish].name + " Milestones";
 
         // Initialize or resize rewardClaimed array
         rewardClaimed = new int[rewardRequirements.Length];
@@ -74,8 +71,10 @@ public class RewardsManager : MonoBehaviour
             }
             else
             {
+                claimButton.onClick.RemoveAllListeners();
                 buttonText.text = $"Claim {rewardAmounts[i]}";
                 claimButton.interactable = highScore >= rewardRequirements[i];
+
                 int rewardIndex = i; // Capture index for the button callback
                 claimButton.onClick.AddListener(() => ClaimReward(rewardIndex));
             }

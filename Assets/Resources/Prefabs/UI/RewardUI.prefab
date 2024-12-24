@@ -332,6 +332,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 43859618235421248}
     m_Modifications:
+    - target: {fileID: 1277041514256533373, guid: 7ac765feb071f7247a445e060d181e30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277041514256533373, guid: 7ac765feb071f7247a445e060d181e30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 746924080729690830}
+    - target: {fileID: 1277041514256533373, guid: 7ac765feb071f7247a445e060d181e30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277041514256533373, guid: 7ac765feb071f7247a445e060d181e30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlaySound, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277041514256533373, guid: 7ac765feb071f7247a445e060d181e30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1783100296614502507, guid: 7ac765feb071f7247a445e060d181e30, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -432,6 +452,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -65.00003
       objectReference: {fileID: 0}
+    - target: {fileID: 8161621728442486957, guid: 7ac765feb071f7247a445e060d181e30, type: 3}
+      propertyPath: sound
+      value: coin
+      objectReference: {fileID: 0}
     - target: {fileID: 8794650152753931364, guid: 7ac765feb071f7247a445e060d181e30, type: 3}
       propertyPath: m_Name
       value: ButtonText
@@ -444,6 +468,17 @@ PrefabInstance:
       addedObject: {fileID: 2999176341909365636}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ac765feb071f7247a445e060d181e30, type: 3}
+--- !u!114 &746924080729690830 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8161621728442486957, guid: 7ac765feb071f7247a445e060d181e30, type: 3}
+  m_PrefabInstance: {fileID: 8871665506633417315}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75350513a5668b642824c367be47e277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7178918692642710024 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1783100296614502507, guid: 7ac765feb071f7247a445e060d181e30, type: 3}
