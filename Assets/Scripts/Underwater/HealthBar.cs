@@ -6,7 +6,7 @@ public class HealthBar : MonoBehaviour
 {
     public Slider slider;
     public TextMeshProUGUI multiplier;
-    private float baseHealth = GameManager.instance.fishDataList[GameManager.instance.selectedFish].defaultHealth;
+    private float baseHealth = 50;
     private float currentHealth;
     private float baseDecreaseSpeed = 8f;
     private float speedMultiplier;
@@ -20,6 +20,7 @@ public class HealthBar : MonoBehaviour
         shopManager = FindFirstObjectByType<ShopManager>();
         sceneHandler = FindFirstObjectByType<SceneHandler>();
 
+        baseHealth = GameManager.instance.fishDataList[GameManager.instance.selectedFish].defaultHealth;
         slider.maxValue = baseHealth;
         slider.value = baseHealth;
         currentHealth = baseHealth;

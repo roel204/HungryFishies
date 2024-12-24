@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     public float score;
     public int money;
-    public int selectedFish;
+    public int selectedFish = 0;
     private Timer timer;
 
     public event System.Action OnMoneyChanged;
