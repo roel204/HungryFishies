@@ -1404,8 +1404,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 401959618}
-  - component: {fileID: 401959623}
   - component: {fileID: 401959622}
+  - component: {fileID: 401959623}
   - component: {fileID: 401959621}
   - component: {fileID: 401959620}
   m_Layer: 5
@@ -1563,7 +1563,7 @@ MonoBehaviour:
     Top: 0
     Bottom: 0
   useInfiniteScrolling: 1
-  infiniteScrollingSpacing: 0
+  infiniteScrollingSpacing: 1
   useOcclusionCulling: 0
   startingPanel: 0
   useSwipeGestures: 1
