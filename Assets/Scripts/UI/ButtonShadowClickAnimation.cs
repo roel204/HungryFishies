@@ -3,14 +3,14 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(RectTransform), typeof(Shadow))]
-public class ButtonMoveHandler : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class ButtonShadowClickAnimation : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     private RectTransform rectTransform;
     private Shadow shadow;
     private Vector3 originalPosition;
     private Vector2 originalShadowEffectDistance;
 
-    private void Awake()
+    private void Start()
     {
         // Get the RectTransform and Shadow components
         rectTransform = GetComponent<RectTransform>();
@@ -36,7 +36,7 @@ public class ButtonMoveHandler : MonoBehaviour, IPointerDownHandler, IPointerUpH
     public void OnPointerDown(PointerEventData eventData)
     {
         // Move the button down by half the shadow offset
-        Vector3 moveOffset = new Vector3(originalShadowEffectDistance.x * 0.5f, originalShadowEffectDistance.y * 0.5f, 0);
+        Vector3 moveOffset = new(originalShadowEffectDistance.x * 0.5f, originalShadowEffectDistance.y * 0.5f, 0);
         rectTransform.localPosition = originalPosition + moveOffset;
 
         // Adjust the shadow effect distance to make the shadow appear stationary

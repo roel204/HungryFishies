@@ -740,8 +740,6 @@ GameObject:
   - component: {fileID: 181820930}
   - component: {fileID: 181820932}
   - component: {fileID: 181820931}
-  - component: {fileID: 181820934}
-  - component: {fileID: 181820933}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -812,46 +810,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181820929}
   m_CullTransparentMesh: 1
---- !u!114 &181820933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 181820929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 3
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!223 &181820934
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 181820929}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1 &255264265
 GameObject:
   m_ObjectHideFlags: 0
@@ -6349,10 +6307,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1767118162}
+  - component: {fileID: 1767118163}
   - component: {fileID: 1767118166}
   - component: {fileID: 1767118165}
   - component: {fileID: 1767118164}
-  - component: {fileID: 1767118163}
   m_Layer: 5
   m_Name: SettingsCanvas
   m_TagString: Untagged
@@ -6392,7 +6350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e611a72bdbffffc45b440a1bac1dcf33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsMenuPanel: {fileID: 1767118161}
   autoSwimToggle: {fileID: 1400367305}
   steeringButtonsToggle: {fileID: 1155225416}
 --- !u!114 &1767118164

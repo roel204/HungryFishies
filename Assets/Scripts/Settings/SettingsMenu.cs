@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public GameObject settingsMenuPanel;
     public Toggle autoSwimToggle;
     public Toggle steeringButtonsToggle;
 
@@ -15,12 +14,12 @@ public class SettingsMenu : MonoBehaviour
 
     public void OpenSettingsMenu()
     {
-        settingsMenuPanel.SetActive(true);
+        gameObject.SetActive(true);
     }
 
     public void CloseSettingsMenu()
     {
-        settingsMenuPanel.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public void OnAutoSwimToggleChanged()
