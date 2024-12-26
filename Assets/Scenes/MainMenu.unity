@@ -646,6 +646,7 @@ GameObject:
   - component: {fileID: 164918620}
   - component: {fileID: 164918619}
   - component: {fileID: 164918618}
+  - component: {fileID: 164918623}
   m_Layer: 5
   m_Name: RewardsCanvas
   m_TagString: Untagged
@@ -751,6 +752,18 @@ MonoBehaviour:
   rewardsContainer: {fileID: 719421938}
   rewardUIPrefab: {fileID: 2898956988337364694, guid: ef66b0523b243e44f8ab48953a762f29, type: 3}
   titleText: {fileID: 955884200}
+--- !u!225 &164918623
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164918617}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &177833710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2971,6 +2984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 907686304}
   - component: {fileID: 907686306}
+  - component: {fileID: 907686307}
   - component: {fileID: 907686305}
   m_Layer: 5
   m_Name: Panel
@@ -3038,6 +3052,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907686303}
   m_CullTransparentMesh: 1
+--- !u!114 &907686307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907686303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab53e4bcfb45bc249b9f75af400e1861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &955884198
 GameObject:
   m_ObjectHideFlags: 0
@@ -3073,7 +3099,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -10}
-  m_SizeDelta: {x: 1000, y: 120}
+  m_SizeDelta: {x: 1000, y: 105}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &955884200
 MonoBehaviour:
