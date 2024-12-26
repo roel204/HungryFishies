@@ -11,8 +11,8 @@
 		"defaultSpeed": 3,
 		"defaultRotate": 150,
 		"defaultHealth": 100,
-		"rewardRequirements": [69, 120, 300],
-		"rewardAmounts": [50, 75, 100]
+		"rewardRequirements": [42, 69, 120],
+		"rewardAmounts": [42, 69, 75]
 	},
 	{
 		"index": 1,
@@ -24,8 +24,8 @@
 		"defaultSpeed": 2,
 		"defaultRotate": 130,
 		"defaultHealth": 120,
-		"rewardRequirements": [90, 200, 420],
-		"rewardAmounts": [75, 150, 200]
+		"rewardRequirements": [60, 100, 140],
+		"rewardAmounts": [50, 100, 150]
 	},
 	{
 		"index": 2,
@@ -37,7 +37,7 @@
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
 		"defaultHealth": 110,
-		"rewardRequirements": [90, 200, 420],
+		"rewardRequirements": [60, 100, 140],
 		"rewardAmounts": [75, 150, 200]
 	},
 	{
@@ -50,8 +50,8 @@
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
 		"defaultHealth": 120,
-		"rewardRequirements": [90, 200, 420],
-		"rewardAmounts": [75, 150, 200]
+		"rewardRequirements": [90, 150, 250],
+		"rewardAmounts": [100, 175, 225]
 	},
 	{
 		"index": 4,
@@ -63,8 +63,8 @@
 		"defaultSpeed": 2,
 		"defaultRotate": 170,
 		"defaultHealth": 80,
-		"rewardRequirements": [90, 200, 420],
-		"rewardAmounts": [75, 150, 200]
+		"rewardRequirements": [100, 200, 300],
+		"rewardAmounts": [125, 200, 250]
 	},
 	{
 		"index": 5,
@@ -76,8 +76,8 @@
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
 		"defaultHealth": 100,
-		"rewardRequirements": [90, 200, 420],
-		"rewardAmounts": [75, 150, 200]
+		"rewardRequirements": [100, 200, 300],
+		"rewardAmounts": [150, 225, 275]
 	},
 	{
 		"index": 6,
@@ -89,8 +89,8 @@
 		"defaultSpeed": 2,
 		"defaultRotate": 200,
 		"defaultHealth": 120,
-		"rewardRequirements": [90, 200, 420],
-		"rewardAmounts": [75, 150, 200]
+		"rewardRequirements": [100, 200, 300],
+		"rewardAmounts": [200, 300, 400]
 	},
 	{
 		"index": 7,
@@ -102,8 +102,8 @@
 		"defaultSpeed": 3,
 		"defaultRotate": 160,
 		"defaultHealth": 150,
-		"rewardRequirements": [90, 200, 420],
-		"rewardAmounts": [75, 150, 200]
+		"rewardRequirements": [120, 250, 420],
+		"rewardAmounts": [220, 330, 440]
 	},
 	{
 		"index": 8,
@@ -115,8 +115,8 @@
 		"defaultSpeed": 2,
 		"defaultRotate": 110,
 		"defaultHealth": 250,
-		"rewardRequirements": [90, 200, 420],
-		"rewardAmounts": [75, 150, 200]
+		"rewardRequirements": [130, 269, 420],
+		"rewardAmounts": [330, 440, 550]
 	},
 	{
 		"index": 9,
@@ -128,8 +128,8 @@
 		"defaultSpeed": 2,
 		"defaultRotate": 130,
 		"defaultHealth": 180,
-		"rewardRequirements": [90, 200, 420],
-		"rewardAmounts": [75, 150, 200]
+		"rewardRequirements": [150, 300, 450],
+		"rewardAmounts": [400, 500, 600]
 	},
 	{
 		"index": 10,
@@ -141,8 +141,8 @@
 		"defaultSpeed": 4,
 		"defaultRotate": 200,
 		"defaultHealth": 140,
-		"rewardRequirements": [90, 200, 420],
-		"rewardAmounts": [75, 150, 200]
+		"rewardRequirements": [150, 350, 500],
+		"rewardAmounts": [500, 750, 1000]
 	},
 	{
 		"index": 11,
@@ -154,8 +154,8 @@
 		"defaultSpeed": 5,
 		"defaultRotate": 200,
 		"defaultHealth": 200,
-		"rewardRequirements": [90, 200, 420],
-		"rewardAmounts": [75, 150, 200]
+		"rewardRequirements": [500, 1000, 1420],
+		"rewardAmounts": [1000, 1500, 2000]
 	}
 ]
 }
