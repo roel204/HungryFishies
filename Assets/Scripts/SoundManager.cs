@@ -64,7 +64,7 @@ public class SoundManager : MonoBehaviour
 
         if (playMusicOnStart != "")
         {
-            PlaySound("Music", playMusicOnStart);
+            PlaySound("Music", playMusicOnStart, loop:true);
         }
     }
 
