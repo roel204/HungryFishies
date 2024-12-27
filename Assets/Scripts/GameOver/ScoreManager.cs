@@ -32,6 +32,6 @@ public class ScoreManager : MonoBehaviour
         // Display the score, high score, and money in the UI
         highScoreText.text = "Score: " + score.ToString("F2") + "\nHighscore: " + highScore.ToString("F2");
 
-        moneyText.text = currentPearls + "\n (+" + (int)score + ")";
+        moneyText.text = currentPearls + "\n+" + (int)score;
     }
 }
