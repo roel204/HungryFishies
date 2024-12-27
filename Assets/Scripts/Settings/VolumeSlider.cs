@@ -9,20 +9,13 @@ public class VolumeSlider : MonoBehaviour, IPointerUpHandler
 
     private Slider volumeSlider;
 
-    private void Awake()
-    {
-        volumeSlider = GetComponent<Slider>();
-
-        if (volumeSlider == null)
-        {
-            Debug.LogError("No Slider component found on this GameObject!");
-        }
-    }
-
     private void Start()
     {
+        volumeSlider = GetComponent<Slider>();
         if (volumeSlider != null)
         {
+            volumeSlider.minValue = -80;
+            volumeSlider.maxValue = 0;
             volumeSlider.value = SoundManager.Instance.GetVolume(audioMixerGroup);
         }
     }
