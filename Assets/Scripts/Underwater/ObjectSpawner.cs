@@ -14,7 +14,7 @@ public class ObjectSpawner : MonoBehaviour
     private int coinsPerLevel = 1;
     private int coinRespawnTimer = 3;
 
-    private int foodBaseAmount = 20;
+    private int foodBaseAmount = 25;
     private int foodUpgradeLevel = 0;
     private int foodPerLevel = 4;
     private int foodRespawnTimer = 3;
@@ -32,11 +32,11 @@ public class ObjectSpawner : MonoBehaviour
     private List<GameObject> spawnedBetterFood = new();
     private List<GameObject> spawnedJelly = new();
 
-    private ShopManager shopManager;
+    private UpgradeManager upgradeManager;
 
     private void Start()
     {
-        shopManager = FindFirstObjectByType<ShopManager>();
+        upgradeManager = FindFirstObjectByType<UpgradeManager>();
         SpawnCoins();
         SpawnFood();
         SpawnJelly();
@@ -44,21 +44,21 @@ public class ObjectSpawner : MonoBehaviour
 
     private void Update()
     {
-        int coinUpgradeFromShop = shopManager.shopItems[3, 4];
+        int coinUpgradeFromShop = upgradeManager.GetLevel("CoinUpgrade");
         if (coinUpgradeFromShop != coinUpgradeLevel)
         {
             coinUpgradeLevel = coinUpgradeFromShop;
             SpawnCoins();
         }
 
-        int foodUpgradeFromShop = shopManager.shopItems[3, 2];
+        int foodUpgradeFromShop = upgradeManager.GetLevel("NormalFood");
         if (foodUpgradeFromShop != foodUpgradeLevel)
         {
             foodUpgradeLevel = foodUpgradeFromShop;
             SpawnFood();
         }
 
-        int betterFoodUpgradeFromShop = shopManager.shopItems[3, 5];
+        int betterFoodUpgradeFromShop = upgradeManager.GetLevel("BetterFood");
         if (betterFoodUpgradeFromShop != betterFoodUpgradeLevel)
         {
             betterFoodUpgradeLevel = betterFoodUpgradeFromShop;

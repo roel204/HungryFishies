@@ -3,12 +3,12 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     private ObjectSpawner objectSpawner;
-    private ShopManager shopManager;
+    private UpgradeManager UpgradeManager;
 
     private void Start()
     {
         objectSpawner = FindFirstObjectByType<ObjectSpawner>();
-        shopManager = FindFirstObjectByType<ShopManager>();
+        UpgradeManager = FindFirstObjectByType<UpgradeManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,9 +17,9 @@ public class Coin : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Fish"))
             {
-                if (shopManager != null)
+                if (UpgradeManager != null)
                 {
-                    shopManager.IncreaseCoinCount(1f);
+                    UpgradeManager.IncreaseCoinCount(1f);
                     SoundManager.Instance.PlaySound("Sfx", "coin", 1f, 1.2f);
                 }
 

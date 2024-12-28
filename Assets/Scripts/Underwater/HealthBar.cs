@@ -12,12 +12,12 @@ public class HealthBar : MonoBehaviour
     private float speedMultiplier;
     private float gameDuration;
     private bool isGameRunning;
-    private ShopManager shopManager;
+    private UpgradeManager upgradeManager;
     private SceneHandler sceneHandler;
 
     private void Start()
     {
-        shopManager = FindFirstObjectByType<ShopManager>();
+        upgradeManager = FindFirstObjectByType<UpgradeManager>();
         sceneHandler = FindFirstObjectByType<SceneHandler>();
 
         baseHealth = GameManager.instance.fishDataList[GameManager.instance.selectedFish].defaultHealth;
@@ -34,7 +34,7 @@ public class HealthBar : MonoBehaviour
     {
         if (isGameRunning)
         {
-            slider.maxValue = baseHealth * (shopManager.shopItems[3, 6] + 1);
+            slider.maxValue = baseHealth * (upgradeManager.GetLevel("FishHp") + 1);
 
             // Calculate the decrease speed multiplier based on the game duration
             gameDuration += Time.deltaTime;

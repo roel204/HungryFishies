@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class ShopMenuController : MonoBehaviour
+public class UpgradeMenu : MonoBehaviour
 {
     public TextMeshProUGUI shopButtonText;
     private bool isShopOpen = false;

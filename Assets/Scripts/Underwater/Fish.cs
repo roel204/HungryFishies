@@ -22,7 +22,7 @@ public class Fish : MonoBehaviour
     private float baseRotateSpeed;
     private float rotateSpeedIncreasePerLevel = 40f;
 
-    private ShopManager shopManager;
+    private UpgradeManager upgradeManager;
     private FollowCamera followCamera;
 
     private bool autoSwimEnabled;
@@ -57,7 +57,7 @@ public class Fish : MonoBehaviour
             boxCollider.offset = spriteRenderer.bounds.center - transform.position;
         }
 
-        shopManager = FindFirstObjectByType<ShopManager>();
+        upgradeManager = FindFirstObjectByType<UpgradeManager>();
         followCamera = FindFirstObjectByType<FollowCamera>();
 
         autoSwimEnabled = PlayerPrefs.GetInt("AutoSwim", 0) == 1;
@@ -74,7 +74,7 @@ public class Fish : MonoBehaviour
         MoveAndRotateFish();
 
         // Update the swimming speed based on the level of the first item in the shop
-        int speedItemLevel = shopManager.shopItems[3, 1];
+        int speedItemLevel = upgradeManager.GetLevel("FishSpeed");
         currentSpeed = baseSpeed + (speedItemLevel * speedIncreasePerLevel);
 
         // Speed Increase for Ray
@@ -95,11 +95,11 @@ public class Fish : MonoBehaviour
         }
 
         // Update the scale based on the level of the third item in the shop
-        int scaleItemLevel = shopManager.shopItems[3, 3];
+        int scaleItemLevel = upgradeManager.GetLevel("FishSize");
         currentScale = baseScale + (scaleItemLevel * scaleIncreasePerLevel);
 
         // Update the rotate speed based on the level of the third item in the shop
-        int rotateSpeedItemLevel = shopManager.shopItems[3, 7];
+        int rotateSpeedItemLevel = upgradeManager.GetLevel("FishRotateSpeed");
         currentRotateSpeed = baseRotateSpeed + (rotateSpeedItemLevel * rotateSpeedIncreasePerLevel);
     }
 
