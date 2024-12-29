@@ -14,7 +14,7 @@ public class ObjectSpawner : MonoBehaviour
     private int coinsPerLevel = 1;
     private int coinRespawnTimer = 3;
 
-    private int foodBaseAmount = 25;
+    private int foodBaseAmount = 20;
     private int foodUpgradeLevel = 0;
     private int foodPerLevel = 4;
     private int foodRespawnTimer = 3;
