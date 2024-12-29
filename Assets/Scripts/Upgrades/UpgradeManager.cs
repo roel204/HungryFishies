@@ -7,6 +7,7 @@ public class UpgradeManager : MonoBehaviour
     public List<Upgrade> upgrades;
     public GameObject shopItemPrefab;
     public Transform shopContainer;
+    public GameObject upgradeShopCanvas;
 
     public int coins = 0;
     public TextMeshProUGUI coinCounter;
@@ -85,5 +86,17 @@ public class UpgradeManager : MonoBehaviour
     public int GetLevel(string upgradeId)
     {
         return upgradeLevels.ContainsKey(upgradeId) ? upgradeLevels[upgradeId] : 0;
+    }
+
+    public void Open()
+    {
+        upgradeShopCanvas.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void Close()
+    {
+        upgradeShopCanvas.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
