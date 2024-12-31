@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags:
   - Fish
   - Event
@@ -47,6 +47,9 @@ TagManager:
   - name: Background
     uniqueID: 3348794791
     locked: 0
+  - name: Props
+    uniqueID: 1030175419
+    locked: 0
   - name: Player
     uniqueID: 4144255041
     locked: 0
@@ -56,3 +59,5 @@ TagManager:
   - name: ShopUI
     uniqueID: 3639370723
     locked: 0
+  m_RenderingLayers:
+  - Default
