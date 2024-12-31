@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: FishRotateSpeed
   upgradeName: Rotate Speed
-  description: Spin Faster!
+  description: Turn faster!
   baseCost: 2
   priceIncrement: 2
   maxLevel: 5
-  icon: {fileID: 21300000, guid: af0882195f0cf52428c728ed0b19a0cb, type: 3}
+  icon: {fileID: 21300000, guid: 0bfeacbe2a9ca0441bc0e02e0f760173, type: 3}

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: CoinUpgrade
   upgradeName: More Coins
-  description: More coins to grab!
+  description: An extra coin to grab!
   baseCost: 4
   priceIncrement: 3
   maxLevel: 5
-  icon: {fileID: 21300000, guid: af0882195f0cf52428c728ed0b19a0cb, type: 3}
+  icon: {fileID: 1540540117, guid: a5dba29b9894ba44dbc8fabfac6ad6ff, type: 3}

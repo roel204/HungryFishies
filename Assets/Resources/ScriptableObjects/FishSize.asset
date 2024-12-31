@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: FishSize
   upgradeName: Fish Size
-  description: Larger Hitbox!
+  description: Larger Hitbox to grab more stuff
   baseCost: 1
   priceIncrement: 2
   maxLevel: 5
-  icon: {fileID: 21300000, guid: af0882195f0cf52428c728ed0b19a0cb, type: 3}
+  icon: {fileID: 21300000, guid: f146c6dce7d6f0247a917c3ea019a274, type: 3}

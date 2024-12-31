@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: FishSpeed
   upgradeName: Swim Speed
-  description: Swim faster!
+  description: Swim faster! Increase speed by 1
   baseCost: 2
   priceIncrement: 2
   maxLevel: 5
-  icon: {fileID: 21300000, guid: af0882195f0cf52428c728ed0b19a0cb, type: 3}
+  icon: {fileID: 21300000, guid: 4e5854694b6485b44a9d5acc685a0d85, type: 3}

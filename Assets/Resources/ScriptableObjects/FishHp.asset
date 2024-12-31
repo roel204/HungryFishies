@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: FishHp
   m_EditorClassIdentifier: 
   id: FishHp
-  upgradeName: Bigger Belly
-  description: Get more HP!
+  upgradeName: More HP
+  description: Get more HP to last longer
   baseCost: 5
   priceIncrement: 3
   maxLevel: 5
-  icon: {fileID: 21300000, guid: af0882195f0cf52428c728ed0b19a0cb, type: 3}
+  icon: {fileID: 21300000, guid: 3dd20d2852a06dc48a8d89206d870ca0, type: 3}
