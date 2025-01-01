@@ -910,7 +910,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa6ad3a2c9fe7343ab84862b860616d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffect: 0.2
+  horizontalMovement: 1
+  parallaxEffectX: 0.3
+  verticalMovement: 1
+  parallaxEffectY: -0.05
 --- !u!1001 &420668862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3590,7 +3593,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa6ad3a2c9fe7343ab84862b860616d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffect: 0.7
+  horizontalMovement: 1
+  parallaxEffectX: 0.8
+  verticalMovement: 0
+  parallaxEffectY: 0
 --- !u!1 &1804519028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4195,7 +4201,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa6ad3a2c9fe7343ab84862b860616d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffect: 0.5
+  horizontalMovement: 1
+  parallaxEffectX: 0.6
+  verticalMovement: 0
+  parallaxEffectY: 0
 --- !u!1 &1958555758
 GameObject:
   m_ObjectHideFlags: 0
@@ -4296,7 +4305,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa6ad3a2c9fe7343ab84862b860616d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffect: 0
+  horizontalMovement: 0
+  parallaxEffectX: 0
+  verticalMovement: 0
+  parallaxEffectY: 0
 --- !u!1 &1977985385
 GameObject:
   m_ObjectHideFlags: 0
@@ -4979,7 +4991,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa6ad3a2c9fe7343ab84862b860616d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffect: 0.9
+  horizontalMovement: 1
+  parallaxEffectX: 1
+  verticalMovement: 0
+  parallaxEffectY: 0
 --- !u!1001 &6811820233942132312
 PrefabInstance:
   m_ObjectHideFlags: 0

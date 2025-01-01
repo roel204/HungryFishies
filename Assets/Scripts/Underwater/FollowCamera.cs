@@ -6,10 +6,10 @@ public class FollowCamera : MonoBehaviour
     public Transform target;
 
     // Define the boundaries within which the camera can move
-    public float minX = -19.1f;
-    public float maxX = 19.1f;
-    public float minY = -10.7f;
-    public float maxY = 10.7f;
+    public float minX;
+    public float maxX;
+    public float minY;
+    public float maxY;
 
     private Camera cam;
 
