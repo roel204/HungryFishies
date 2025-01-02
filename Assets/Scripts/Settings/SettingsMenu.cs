@@ -12,16 +12,6 @@ public class SettingsMenu : MonoBehaviour
         steeringButtonsToggle.isOn = PlayerPrefs.GetInt("lrTurn", 0) == 1;
     }
 
-    public void OpenSettingsMenu()
-    {
-        gameObject.SetActive(true);
-    }
-
-    public void CloseSettingsMenu()
-    {
-        gameObject.SetActive(false);
-    }
-
     public void OnAutoSwimToggleChanged()
     {
         if (steeringButtonsToggle.isOn && !autoSwimToggle.isOn)
