@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class UpgradeManager : MonoBehaviour
 {
@@ -80,6 +81,12 @@ public class UpgradeManager : MonoBehaviour
     {
         var upgrade = upgrades.Find(u => u.id == upgradeId);
         int currentLevel = upgradeLevels[upgradeId];
+
+        if (GameManager.instance.fishDataList[GameManager.instance.selectedFish].abilities.Contains("cheapUpgrades"))
+        {
+            return (upgrade.baseCost + (currentLevel * upgrade.priceIncrement)) / 2;
+        }
+
         return upgrade.baseCost + (currentLevel * upgrade.priceIncrement);
     }
 

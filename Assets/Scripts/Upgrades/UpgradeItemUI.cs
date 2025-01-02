@@ -13,9 +13,12 @@ public class UpgradeItemUI : MonoBehaviour
 
     private Upgrade currentUpgrade;
     private System.Action onUpgradeClicked;
+    private UpgradeManager upgradeManager;
 
     public void Initialize(Upgrade upgrade, System.Action upgradeCallback)
     {
+        upgradeManager = FindFirstObjectByType<UpgradeManager>();
+
         currentUpgrade = upgrade;
         onUpgradeClicked = upgradeCallback;
 
@@ -31,6 +34,6 @@ public class UpgradeItemUI : MonoBehaviour
     public void UpdateUI(int currentLevel)
     {
         levelSlider.value = currentLevel;
-        priceText.text = "Cost: " + (currentUpgrade.baseCost + (currentLevel * currentUpgrade.priceIncrement)).ToString();
+        priceText.text = "Cost: " + upgradeManager.CalculateCost(currentUpgrade.id);
     }
 }
