@@ -8,11 +8,12 @@ public class Fish : MonoBehaviour
     private KeyCode mouseButton = KeyCode.Mouse0;
     private Vector3 mousePos;
 
-    private float currentSpeed;
-    public float baseSpeed;
-    private float speedIncreasePerLevel = 1f;
     private float currentVelocity = 0f;
     private readonly float acceleration = 4f;
+
+    private float currentSpeed;
+    public float baseSpeed;
+    private float speedIncreasePerLevel = 0.8f;
 
     private float currentScale;
     private float baseScale = 1f;
@@ -43,6 +44,15 @@ public class Fish : MonoBehaviour
         currentSpeed = baseSpeed;
         currentScale = baseScale;
         currentRotateSpeed = baseRotateSpeed;
+
+        if (selectedFishData.abilities.Contains("biggerUpgrades"))
+        {
+            speedIncreasePerLevel += 0.2f;
+            scaleIncreasePerLevel += 0.1f;
+            rotateSpeedIncreasePerLevel += 10f;
+        }
+
+        Debug.Log(speedIncreasePerLevel + " " + scaleIncreasePerLevel + " " + rotateSpeedIncreasePerLevel);
 
         // Set the sprite based on the selected fish's name
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
