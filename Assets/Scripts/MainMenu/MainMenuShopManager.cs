@@ -59,11 +59,13 @@ public class MainMenuShopManager : MonoBehaviour
 
             // Get the Image component and assign the appropriate fish sprite
             GameObject newPanel = scrollSnap.Content.GetChild(childCountBefore).gameObject;
+
             Image fishImage = newPanel.GetComponent<Image>();
-            if (fishImage != null)
-            {
-                fishImage.sprite = Resources.Load<Sprite>($"Sprites/Fishies/{GameManager.instance.fishDataList[i].id}");
-            }
+            fishImage.sprite = Resources.Load<Sprite>($"Sprites/Fishies/{GameManager.instance.fishDataList[i].id}");
+
+            //Not working!
+            //Animator animator = newPanel.GetComponent<Animator>();
+            //animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>($"Animations/Fishies/{GameManager.instance.fishDataList[i].id}");
         }
 
         // Set the starting panel and selected fish index

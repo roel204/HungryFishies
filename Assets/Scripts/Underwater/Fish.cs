@@ -1,4 +1,5 @@
 using System.Linq;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class Fish : MonoBehaviour
     public bool screenPressed = false;
     private KeyCode mouseButton = KeyCode.Mouse0;
     private Vector3 mousePos;
+    private Animator animator;
 
     private float currentVelocity = 0f;
     private readonly float acceleration = 4f;
@@ -45,6 +47,7 @@ public class Fish : MonoBehaviour
         currentScale = baseScale;
         currentRotateSpeed = baseRotateSpeed;
 
+        // Add increases for some fish
         if (selectedFishData.abilities.Contains("biggerUpgrades"))
         {
             speedIncreasePerLevel += 0.2f;
@@ -52,11 +55,12 @@ public class Fish : MonoBehaviour
             rotateSpeedIncreasePerLevel += 10f;
         }
 
-        Debug.Log(speedIncreasePerLevel + " " + scaleIncreasePerLevel + " " + rotateSpeedIncreasePerLevel);
-
         // Set the sprite based on the selected fish's name
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = Resources.Load<Sprite>($"Sprites/Fishies/{selectedFishData.id}");
+
+        animator = GetComponent<Animator>();
+        animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>($"Animations/Fishies/{selectedFishData.id}");
 
         // Set the BoxCollider2D size to match the sprite's size
         BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
