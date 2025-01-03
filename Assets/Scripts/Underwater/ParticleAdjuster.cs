@@ -93,6 +93,11 @@ public class ParticleAdjuster : MonoBehaviour
         {
             scaledCurve.constantMin = originalCurve.constantMin * multiplier;
             scaledCurve.constantMax = originalCurve.constantMax * multiplier;
+
+            if (scaledCurve.constantMax > 0.4f)
+            {
+                scaledCurve.constantMax = 0.4f;
+            }
         }
         // Scale curves (if needed)
         else if (originalCurve.mode == ParticleSystemCurveMode.Curve || originalCurve.mode == ParticleSystemCurveMode.TwoCurves)
