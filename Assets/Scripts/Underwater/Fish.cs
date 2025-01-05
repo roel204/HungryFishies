@@ -1,7 +1,5 @@
 using System.Linq;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Fish : MonoBehaviour
 {
