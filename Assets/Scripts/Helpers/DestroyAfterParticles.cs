@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class destroyAfterParticles : MonoBehaviour
+public class DestroyAfterParticles : MonoBehaviour
 {
     private ParticleSystem particleS;
 
