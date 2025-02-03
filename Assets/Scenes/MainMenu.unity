@@ -2637,9 +2637,10 @@ MonoBehaviour:
   highScoreText: {fileID: 2112266876}
   speedText: {fileID: 1144966078}
   rotateText: {fileID: 765117322}
-  HealthText: {fileID: 1543701617}
-  AbilityText: {fileID: 1541254937}
+  healthText: {fileID: 1543701617}
+  abilityText: {fileID: 1541254937}
   scrollPanel: {fileID: 5057867922835996507, guid: c0e85d62f976d7f41ae6f01bba33cbd2, type: 3}
+  greyScaleMat: {fileID: 2100000, guid: da70dc5e3eb5cf440a13364082cccda5, type: 2}
   scrollSnap: {fileID: 401959622}
 --- !u!4 &757675192
 Transform:

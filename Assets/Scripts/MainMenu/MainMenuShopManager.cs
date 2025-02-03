@@ -11,9 +11,10 @@ public class MainMenuShopManager : MonoBehaviour
     public TextMeshProUGUI highScoreText;
     public TextMeshProUGUI speedText;
     public TextMeshProUGUI rotateText;
-    public TextMeshProUGUI HealthText;
-    public TextMeshProUGUI AbilityText;
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI abilityText;
     public GameObject scrollPanel;
+    public Material greyScaleMat;
 
     [SerializeField] private SimpleScrollSnap scrollSnap;
     private SceneHandler sceneHandler;
@@ -63,9 +64,10 @@ public class MainMenuShopManager : MonoBehaviour
             Image fishImage = newPanel.GetComponent<Image>();
             fishImage.sprite = Resources.Load<Sprite>($"Sprites/Fishies/{GameManager.instance.fishDataList[i].id}");
 
-            //Not working!
-            //Animator animator = newPanel.GetComponent<Animator>();
-            //animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>($"Animations/Fishies/{GameManager.instance.fishDataList[i].id}");
+            if (!purchasedFish[i]) {
+                fishImage.material = greyScaleMat;
+                newPanel.transform.Find("LockImage").gameObject.SetActive(true);
+            }
         }
 
         // Set the starting panel and selected fish index
@@ -87,6 +89,10 @@ public class MainMenuShopManager : MonoBehaviour
             UpdateShopUI();
 
             SoundManager.Instance.PlaySound("Sfx", "buy");
+
+            GameObject fishPanel = scrollSnap.Content.GetChild(selectedFishIndex).gameObject;
+            fishPanel.GetComponent<Image>().material = null;
+            fishPanel.transform.Find("LockImage").gameObject.SetActive(false);
         }
         else
         {
@@ -136,8 +142,8 @@ public class MainMenuShopManager : MonoBehaviour
 
         rotateText.text = GameManager.instance.fishDataList[selectedFishIndex].defaultRotate.ToString();
 
-        HealthText.text = GameManager.instance.fishDataList[selectedFishIndex].defaultHealth.ToString();
+        healthText.text = GameManager.instance.fishDataList[selectedFishIndex].defaultHealth.ToString();
 
-        AbilityText.text = GameManager.instance.fishDataList[selectedFishIndex].abilityText;
+        abilityText.text = GameManager.instance.fishDataList[selectedFishIndex].abilityText;
     }
 }
