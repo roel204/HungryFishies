@@ -88,11 +88,12 @@ public class MainMenuShopManager : MonoBehaviour
 
             UpdateShopUI();
 
-            SoundManager.Instance.PlaySound("Sfx", "buy");
+            SoundManager.Instance.PlaySound("Sfx", "bubbleBuy" , 1.5f, 1.5f);
 
             GameObject fishPanel = scrollSnap.Content.GetChild(selectedFishIndex).gameObject;
             fishPanel.GetComponent<Image>().material = null;
             fishPanel.transform.Find("LockImage").gameObject.SetActive(false);
+            fishPanel.transform.Find("BubbleExplosionParticles").gameObject.SetActive(true);
         }
         else
         {
