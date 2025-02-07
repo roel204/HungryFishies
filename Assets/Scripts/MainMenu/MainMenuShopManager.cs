@@ -64,7 +64,8 @@ public class MainMenuShopManager : MonoBehaviour
             Image fishImage = newPanel.GetComponent<Image>();
             fishImage.sprite = Resources.Load<Sprite>($"Sprites/Fishies/{GameManager.instance.fishDataList[i].id}");
 
-            if (!purchasedFish[i]) {
+            if (!purchasedFish[i])
+            {
                 fishImage.material = greyScaleMat;
                 newPanel.transform.Find("LockImage").gameObject.SetActive(true);
             }
@@ -88,7 +89,7 @@ public class MainMenuShopManager : MonoBehaviour
 
             UpdateShopUI();
 
-            SoundManager.Instance.PlaySound("Sfx", "bubbleBuy" , 1.5f, 1.5f);
+            SoundManager.Instance.PlaySound("Sfx", "bubbleBuy", 1.5f, 1.5f);
 
             GameObject fishPanel = scrollSnap.Content.GetChild(selectedFishIndex).gameObject;
             fishPanel.GetComponent<Image>().material = null;
