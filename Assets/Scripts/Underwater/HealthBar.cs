@@ -13,12 +13,10 @@ public class HealthBar : MonoBehaviour
     private float gameDuration;
     private bool isGameRunning;
     private UpgradeManager upgradeManager;
-    private SceneHandler sceneHandler;
 
     private void Start()
     {
         upgradeManager = FindFirstObjectByType<UpgradeManager>();
-        sceneHandler = FindFirstObjectByType<SceneHandler>();
 
         baseHealth = GameManager.instance.fishDataList[GameManager.instance.selectedFish].defaultHealth;
         slider.maxValue = baseHealth;
@@ -49,7 +47,7 @@ public class HealthBar : MonoBehaviour
             {
                 SoundManager.Instance.PlaySound("Sfx", "hurt");
                 GameManager.instance.GameOver();
-                sceneHandler.ChangeScene(2);
+                SceneTransitionManager.Instance.LoadSceneByID(2);
                 isGameRunning = false;
             }
         }

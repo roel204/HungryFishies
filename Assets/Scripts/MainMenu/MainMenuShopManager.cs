@@ -17,7 +17,6 @@ public class MainMenuShopManager : MonoBehaviour
     public Material greyScaleMat;
 
     [SerializeField] private SimpleScrollSnap scrollSnap;
-    private SceneHandler sceneHandler;
 
     private int selectedFishIndex = 0;
     private bool[] purchasedFish;
@@ -29,8 +28,6 @@ public class MainMenuShopManager : MonoBehaviour
 
     private void Start()
     {
-        sceneHandler = FindFirstObjectByType<SceneHandler>();
-
         purchasedFish = new bool[GameManager.instance.fishDataList.Count];
         LoadFish();
 
@@ -108,7 +105,7 @@ public class MainMenuShopManager : MonoBehaviour
 
         SoundManager.Instance.PlaySound("Sfx", "pop");
 
-        sceneHandler.ChangeScene(1);
+        SceneTransitionManager.Instance.LoadSceneByID(1);
     }
 
     private void UpdateShopUI()
