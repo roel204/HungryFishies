@@ -1963,6 +1963,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1242279629166955030, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 789
+      objectReference: {fileID: 0}
     - target: {fileID: 2367419482097694985, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
