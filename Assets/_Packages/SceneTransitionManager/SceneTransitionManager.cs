@@ -20,9 +20,9 @@ public class SceneTransitionManager : MonoBehaviour {
     public bool animateScale = false;
     public AnimationCurve scaleCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     [HideInInspector] public bool allowAnimation = true;
+    [HideInInspector] public bool isTransitioning = false;
 
     private float currentAnimationValue = 1f;
-    private bool isTransitioning = false;
     private Vector3 defaultScale;
     private Coroutine textDotCoroutine;
     private string loadingMessage = "Loading";

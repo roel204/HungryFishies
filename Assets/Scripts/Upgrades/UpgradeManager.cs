@@ -97,6 +97,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void Open()
     {
+        if (SceneTransitionManager.Instance.isTransitioning) return;
         upgradeShopCanvas.SetActive(true);
         Time.timeScale = 0f;
     }
