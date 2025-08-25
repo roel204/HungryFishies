@@ -53,8 +53,14 @@ public class SoundManager : MonoBehaviour {
         foreach (AudioMixerGroup group in audioMixerGroups) {
             if (group == null) continue;
 
-            float savedVolume = PlayerPrefs.GetFloat($"{group.name}Volume", 0f);
-            audioMixer.SetFloat($"{group.name}Volume", savedVolume);
+            float savedVolume = PlayerPrefs.GetFloat($"{group.name}Volume", 69f);
+
+            if (savedVolume == 69f) {
+                audioMixer.GetFloat($"{group.name}Volume", out float currentVolume);
+                PlayerPrefs.SetFloat($"{group.name}Volume", currentVolume);
+            } else {
+                audioMixer.SetFloat($"{group.name}Volume", savedVolume);
+            }
         }
     }
 

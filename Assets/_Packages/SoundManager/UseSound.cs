@@ -16,12 +16,14 @@ public class UseSound : MonoBehaviour {
     [Header("Extra")]
     [SerializeField] private bool playOnStart = false;
     [SerializeField] private bool preventDuplicates = false;
+    [SerializeField] private bool stopByNameOnStart = false;
+    [SerializeField] private bool stopByGroupOnStart = false;
     [SerializeField] private float fadeOutDuration = 0f;
 
     private void Start() {
-        if (playOnStart) {
-            PlaySound();
-        }
+        if (playOnStart) PlaySound();
+        if (stopByNameOnStart) StopSoundsByName(clipName);
+        if (stopByGroupOnStart) StopSoundsByGroup(audioMixerGroup);
     }
 
     public void PlaySound() {

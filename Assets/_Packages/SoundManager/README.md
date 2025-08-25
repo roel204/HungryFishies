@@ -9,4 +9,5 @@ How to use:
 - Use SoundManager.Instance.PlaySound to play a sound.
 - Most things use the file name as a string to identify themselves, so make sure the file names are unique.
 - Use the UseSound script to use the SoundManager on it's own. Ex: Play music on start or Play sound with a button.
+- If you want to set default values for the different volumes, just set them directly in the audio mixer.
 - All other code is pretty self explanatory, just look at the SoundManager script to learn more.
