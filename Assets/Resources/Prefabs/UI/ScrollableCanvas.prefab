@@ -53,44 +53,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7983bfd47d04fe44b49719478c138aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startEnabled: 0
   stopTimeOnEnable: 0
-  enableAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Enable
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 2ceb851e-2246-4dc6-9824-20ccceba35ed
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  disableAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Disable
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 60f0514e-2e12-43fc-900d-a88edb4b0e9f
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  toggleAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Toggle
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 9f611ef7-60b1-428b-8ec3-eb056d0ec4a7
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
+  enableAction: {fileID: 0}
+  disableAction: {fileID: 0}
+  toggleAction: {fileID: 0}
   onEnable:
     m_PersistentCalls:
       m_Calls: []
@@ -140,7 +106,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
