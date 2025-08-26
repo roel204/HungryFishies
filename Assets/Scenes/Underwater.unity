@@ -890,16 +890,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 12690557}
     m_Modifications:
     - target: {fileID: 4084960352346581197, guid: 2f5e01f2991dafd41a32214e4c958432, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4084960352346581197, guid: 2f5e01f2991dafd41a32214e4c958432, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1082631445}
+      objectReference: {fileID: 420668865}
     - target: {fileID: 4084960352346581197, guid: 2f5e01f2991dafd41a32214e4c958432, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Open
+      value: PlayAudio
       objectReference: {fileID: 0}
     - target: {fileID: 4084960352346581197, guid: 2f5e01f2991dafd41a32214e4c958432, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UpgradeManager, Assembly-CSharp
+      value: PlaySound, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5043500491787722696, guid: 2f5e01f2991dafd41a32214e4c958432, type: 3}
       propertyPath: m_Name
@@ -992,13 +996,45 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5043500491787722696, guid: 2f5e01f2991dafd41a32214e4c958432, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 420668866}
   m_SourcePrefab: {fileID: 100100000, guid: 2f5e01f2991dafd41a32214e4c958432, type: 3}
 --- !u!224 &420668863 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9160649110481961023, guid: 2f5e01f2991dafd41a32214e4c958432, type: 3}
   m_PrefabInstance: {fileID: 420668862}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &420668864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5043500491787722696, guid: 2f5e01f2991dafd41a32214e4c958432, type: 3}
+  m_PrefabInstance: {fileID: 420668862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &420668865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7344755174475004318, guid: 2f5e01f2991dafd41a32214e4c958432, type: 3}
+  m_PrefabInstance: {fileID: 420668862}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420668864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75350513a5668b642824c367be47e277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &420668866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420668864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Keyboard>/e
 --- !u!224 &483896898 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7875495333232649203, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
@@ -1163,6 +1199,7 @@ GameObject:
   - component: {fileID: 569154512}
   - component: {fileID: 569154511}
   - component: {fileID: 569154510}
+  - component: {fileID: 569154515}
   - component: {fileID: 569154509}
   - component: {fileID: 569154514}
   - component: {fileID: 569154513}
@@ -1208,6 +1245,18 @@ MonoBehaviour:
   fish: {fileID: 1308488876}
   slider: {fileID: 226721484}
   button: {fileID: 569154510}
+  boostButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Boost Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 349b7a8d-fa47-42d4-965f-3edffc5cbd5e
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 8126550922127561749, guid: 9d0068544ba69da48b86129e1a95d839, type: 3}
 --- !u!114 &569154510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1251,19 +1300,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 569154511}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 569154509}
-        m_TargetAssemblyTypeName: SpeedBoost, Assembly-CSharp
-        m_MethodName: ToggleSpeedBoost
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &569154511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,6 +1366,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f95a46b500fff4993472f4b2c293a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &569154515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569154507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Keyboard>/space
 --- !u!1 &628306451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,7 +1513,7 @@ GameObject:
   - component: {fileID: 736690423}
   - component: {fileID: 736690425}
   - component: {fileID: 736690424}
-  - component: {fileID: 736690426}
+  - component: {fileID: 736690428}
   - component: {fileID: 736690427}
   m_Layer: 5
   m_Name: Left
@@ -1543,51 +1593,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736690422}
   m_CullTransparentMesh: 1
---- !u!114 &736690426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736690422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1308488876}
-          m_TargetAssemblyTypeName: Fish, Assembly-CSharp
-          m_MethodName: LeftPointerDown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1308488876}
-          m_TargetAssemblyTypeName: Fish, Assembly-CSharp
-          m_MethodName: LeftPointerUp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &736690427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1618,6 +1623,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &736690428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736690422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Keyboard>/a
 --- !u!4 &746530908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3910274998220551072, guid: 31cdd9137c2a5c54494b11613e826c8a, type: 3}
@@ -1968,6 +1986,10 @@ PrefabInstance:
       value: 789
       objectReference: {fileID: 0}
     - target: {fileID: 2367419482097694985, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367419482097694985, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1082631445}
@@ -1984,12 +2006,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2860844163746471095, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2860844163746471095, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1082631445}
+      objectReference: {fileID: 836638270}
+    - target: {fileID: 2860844163746471095, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayAudio
+      objectReference: {fileID: 0}
     - target: {fileID: 2860844163746471095, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UpgradeManager, Assembly-CSharp
+      value: PlaySound, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3849924644075293325, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
       propertyPath: m_Pivot.x
@@ -2082,8 +2112,61 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2131897801324234809, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 836638273}
+    - targetCorrespondingSourceObject: {fileID: 6556519408178850738, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 836638272}
   m_SourcePrefab: {fileID: 100100000, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
+--- !u!1 &836638269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6556519408178850738, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
+  m_PrefabInstance: {fileID: 836638268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &836638270 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8858225028064136676, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
+  m_PrefabInstance: {fileID: 836638268}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836638269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75350513a5668b642824c367be47e277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &836638271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2131897801324234809, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
+  m_PrefabInstance: {fileID: 836638268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &836638272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836638269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Keyboard>/e
+--- !u!114 &836638273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836638271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Keyboard>/e
 --- !u!1 &846218727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2248,6 +2331,18 @@ MonoBehaviour:
   shopItemPrefab: {fileID: 3194279891494655614, guid: e7a7335aea5c37b408904fede29d4666, type: 3}
   shopContainer: {fileID: 483896898}
   upgradeShopCanvas: {fileID: 1367980409}
+  toggleShopButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Toggle Shop Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 1c150488-5c06-42a1-bf53-13415b76bff3
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -6537172323556179883, guid: 9d0068544ba69da48b86129e1a95d839, type: 3}
   coins: 0
   coinCounter: {fileID: 2062690289}
 --- !u!4 &1082631446
@@ -2442,6 +2537,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenPressed: 0
+  leftButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Left Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b28d01f4-bb96-4eaa-afc9-be413650ea47
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 3085535622958485226, guid: 9d0068544ba69da48b86129e1a95d839, type: 3}
+  rightButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: f4dbc1ab-31d4-4545-9f5f-af0d8e91fdec
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -1095412700659269869, guid: 9d0068544ba69da48b86129e1a95d839, type: 3}
   baseSpeed: 0
 --- !u!212 &1308488877
 SpriteRenderer:
@@ -3107,42 +3226,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1616328610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1308488876}
-          m_TargetAssemblyTypeName: Fish, Assembly-CSharp
-          m_MethodName: RightPointerDown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1308488876}
-          m_TargetAssemblyTypeName: Fish, Assembly-CSharp
-          m_MethodName: RightPointerUp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_ControlPath: <Keyboard>/d
 --- !u!1 &1653342217
 GameObject:
   m_ObjectHideFlags: 0
