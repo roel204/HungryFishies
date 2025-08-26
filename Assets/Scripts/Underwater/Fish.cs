@@ -1,8 +1,12 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Fish : MonoBehaviour {
+
     public bool screenPressed = false;
+    [SerializeField] private InputActionReference pointerPress;
+    [SerializeField] private InputActionReference pointerPosition;
     private Vector3 mousePos;
     private Animator animator;
 
@@ -107,11 +111,12 @@ public class Fish : MonoBehaviour {
         Vector3 direction;
         float currentAngle = transform.rotation.eulerAngles.z;
 
-        if (Input.GetKey(KeyCode.Mouse0)) {
+        if (pointerPress.action.ReadValue<float>() > 0) {
             screenPressed = true;
-            Vector3 newMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            newMousePosition.z = 0f;
-            mousePos = newMousePosition;
+
+            // Read pointer position in screen coordinates
+            Vector2 screenPos = pointerPosition.action.ReadValue<Vector2>();
+            mousePos = Camera.main.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 0f));
         } else {
             screenPressed = false;
         }

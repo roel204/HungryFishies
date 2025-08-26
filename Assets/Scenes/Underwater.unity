@@ -2621,6 +2621,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenPressed: 0
+  pointerPress: {fileID: 8918781246772470811, guid: 9d0068544ba69da48b86129e1a95d839, type: 3}
+  pointerPosition: {fileID: -8893185778701084625, guid: 9d0068544ba69da48b86129e1a95d839, type: 3}
   baseSpeed: 0
 --- !u!212 &1308488877
 SpriteRenderer:
