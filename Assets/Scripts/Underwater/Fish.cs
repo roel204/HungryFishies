@@ -1,11 +1,8 @@
 using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Fish : MonoBehaviour {
     public bool screenPressed = false;
-    public InputActionProperty leftButton;
-    public InputActionProperty rightButton;
     private Vector3 mousePos;
     private Animator animator;
 
@@ -71,11 +68,6 @@ public class Fish : MonoBehaviour {
         autoSwimEnabled = PlayerPrefs.GetInt("AutoSwim", 0) == 1;
         lrTurn = PlayerPrefs.GetInt("lrTurn", 0) == 1;
         if (lrTurn) autoSwimEnabled = true;
-
-        leftButton.action.performed += LeftPointerDown;
-        leftButton.action.canceled += LeftPointerUp;
-        rightButton.action.performed += RightPointerDown;
-        rightButton.action.canceled += RightPointerUp;
 
         MoveAndRotateFish();
     }
@@ -167,28 +159,21 @@ public class Fish : MonoBehaviour {
         }
     }
 
-    private void LeftPointerDown(InputAction.CallbackContext ctx) {
+    public void LeftPointerDown() {
         turnRight = false;
         turnLeft = true;
     }
 
-    private void LeftPointerUp(InputAction.CallbackContext ctx) {
+    public void LeftPointerUp() {
         turnLeft = false;
     }
 
-    private void RightPointerDown(InputAction.CallbackContext ctx) {
+    public void RightPointerDown() {
         turnLeft = false;
         turnRight = true;
     }
 
-    private void RightPointerUp(InputAction.CallbackContext ctx) {
+    public void RightPointerUp() {
         turnRight = false;
-    }
-
-    private void OnDestroy() {
-        leftButton.action.performed -= LeftPointerDown;
-        leftButton.action.canceled -= LeftPointerUp;
-        rightButton.action.performed -= RightPointerDown;
-        rightButton.action.canceled -= RightPointerUp;
     }
 }

@@ -2,14 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Linq;
-using UnityEngine.InputSystem;
 
 public class UpgradeManager : MonoBehaviour {
     public List<Upgrade> upgrades;
     public GameObject shopItemPrefab;
     public Transform shopContainer;
     public GameObject upgradeShopCanvas;
-    public InputActionProperty toggleShopButton;
 
     public int coins = 0;
     public TextMeshProUGUI coinCounter;
@@ -19,8 +17,6 @@ public class UpgradeManager : MonoBehaviour {
 
     private void Start() {
         InitializeShop();
-
-        toggleShopButton.action.performed += ToggleShop;
     }
 
     private void InitializeShop() {
@@ -83,28 +79,5 @@ public class UpgradeManager : MonoBehaviour {
 
     public int GetLevel(string upgradeId) {
         return upgradeLevels.ContainsKey(upgradeId) ? upgradeLevels[upgradeId] : 0;
-    }
-
-    private void ToggleShop(InputAction.CallbackContext ctx) {
-        if (upgradeShopCanvas.activeSelf) {
-            Close();
-        } else {
-            Open();
-        }
-    }
-
-    private void Open() {
-        if (SceneTransitionManager.Instance.isTransitioning) return;
-        upgradeShopCanvas.SetActive(true);
-        Time.timeScale = 0f;
-    }
-
-    private void Close() {
-        upgradeShopCanvas.SetActive(false);
-        Time.timeScale = 1f;
-    }
-
-    private void OnDestroy() {
-        toggleShopButton.action.performed -= ToggleShop;
     }
 }

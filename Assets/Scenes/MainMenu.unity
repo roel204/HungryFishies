@@ -3301,8 +3301,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 924116744706266449}
-        m_TargetAssemblyTypeName: ToggleUI, Assembly-CSharp
-        m_MethodName: Open
+        m_TargetAssemblyTypeName: ToggleObject, Assembly-CSharp
+        m_MethodName: Enable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5589,8 +5589,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 164918624}
-        m_TargetAssemblyTypeName: ToggleUI, Assembly-CSharp
-        m_MethodName: Open
+        m_TargetAssemblyTypeName: ToggleObject, Assembly-CSharp
+        m_MethodName: Enable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7159,6 +7159,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 41795184257857908, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
+      propertyPath: enableAction.m_Action.m_Name
+      value: Enable
+      objectReference: {fileID: 0}
+    - target: {fileID: 41795184257857908, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
+      propertyPath: toggleAction.m_Action.m_Name
+      value: Toggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 41795184257857908, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
+      propertyPath: disableAction.m_Action.m_Name
+      value: Disable
+      objectReference: {fileID: 0}
     - target: {fileID: 782924639005363261, guid: 77754174613f9b04d9ab75a05b2d8532, type: 3}
       propertyPath: m_Name
       value: Settings Canvas

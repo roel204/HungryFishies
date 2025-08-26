@@ -53,10 +53,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7983bfd47d04fe44b49719478c138aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onOpen:
+  startEnabled: 0
+  stopTimeOnEnable: 0
+  enableAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Enable
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 2ceb851e-2246-4dc6-9824-20ccceba35ed
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  disableAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Disable
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 60f0514e-2e12-43fc-900d-a88edb4b0e9f
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  toggleAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Toggle
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 9f611ef7-60b1-428b-8ec3-eb056d0ec4a7
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  onEnable:
     m_PersistentCalls:
       m_Calls: []
-  onClose:
+  onDisable:
+    m_PersistentCalls:
+      m_Calls: []
+  onToggle:
     m_PersistentCalls:
       m_Calls: []
 --- !u!223 &9171543988222465773
@@ -486,8 +527,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 41795184257857908}
-        m_TargetAssemblyTypeName: ToggleUI, Assembly-CSharp
-        m_MethodName: Close
+        m_TargetAssemblyTypeName: ToggleObject, Assembly-CSharp
+        m_MethodName: Disable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -903,11 +944,11 @@ PrefabInstance:
       objectReference: {fileID: 41795184257857908}
     - target: {fileID: 4084960352346581197, guid: 2f5e01f2991dafd41a32214e4c958432, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Close
+      value: Disable
       objectReference: {fileID: 0}
     - target: {fileID: 4084960352346581197, guid: 2f5e01f2991dafd41a32214e4c958432, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ToggleUI, Assembly-CSharp
+      value: ToggleObject, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5043500491787722696, guid: 2f5e01f2991dafd41a32214e4c958432, type: 3}
       propertyPath: m_Name

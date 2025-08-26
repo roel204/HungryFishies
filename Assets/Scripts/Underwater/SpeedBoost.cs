@@ -1,14 +1,12 @@
 using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class SpeedBoost : MonoBehaviour {
 
     public Fish fish;
     public Slider slider;
-    public Button button;
-    public InputActionProperty boostButton;
+    public GameObject buttonObj;
 
     private bool boostingAllowed = false;
     private bool boosting = false;
@@ -20,12 +18,10 @@ public class SpeedBoost : MonoBehaviour {
 
         if (GameManager.instance.fishDataList[GameManager.instance.selectedFish].abilities.Contains("boost")) {
             boostingAllowed = true;
-            button.gameObject.SetActive(true); // Show the button
-
-            boostButton.action.performed += ToggleSpeedBoost;
+            buttonObj.SetActive(true);
         } else {
             boostingAllowed = false;
-            button.gameObject.SetActive(false); // Hide the button
+            buttonObj.SetActive(false);
         }
     }
 
@@ -55,7 +51,7 @@ public class SpeedBoost : MonoBehaviour {
         slider.value = energy;
     }
 
-    private void ToggleSpeedBoost(InputAction.CallbackContext ctx) {
+    public void ToggleSpeedBoost() {
         if (boostingAllowed) {
             if (boosting) {
                 boosting = false;
@@ -67,9 +63,5 @@ public class SpeedBoost : MonoBehaviour {
                 SoundManager.Instance.PlaySound("Sfx", "error");
             }
         }
-    }
-
-    private void OnDestroy() {
-        boostButton.action.performed -= ToggleSpeedBoost;
     }
 }
