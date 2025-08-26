@@ -11,9 +11,10 @@ public class UpgradeManager : MonoBehaviour {
 
     public int coins = 0;
     public TextMeshProUGUI coinCounter;
+    public TextMeshProUGUI shopCointCounter;
 
-    private Dictionary<string, int> upgradeLevels = new Dictionary<string, int>();
-    private Dictionary<string, UpgradeItemUI> upgradeItemUIs = new Dictionary<string, UpgradeItemUI>();
+    private Dictionary<string, int> upgradeLevels = new();
+    private Dictionary<string, UpgradeItemUI> upgradeItemUIs = new();
 
     private void Start() {
         InitializeShop();
@@ -39,6 +40,7 @@ public class UpgradeManager : MonoBehaviour {
     public void IncreaseCoinCount(float amount) {
         coins += (int)amount;
         coinCounter.text = "Coins: " + coins;
+        shopCointCounter.text = coins.ToString();
     }
 
     public void Upgrade(string upgradeId) {
