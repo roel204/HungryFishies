@@ -7,6 +7,8 @@ public class Fish : MonoBehaviour {
     public bool screenPressed = false;
     [SerializeField] private InputActionReference pointerPress;
     [SerializeField] private InputActionReference pointerPosition;
+    [SerializeField] private InputActionReference leftInput;
+    [SerializeField] private InputActionReference rightInput;
     private Vector3 mousePos;
     private Animator animator;
 
@@ -31,8 +33,10 @@ public class Fish : MonoBehaviour {
     private bool autoSwimEnabled;
     private bool lrTurn;
 
-    private bool turnLeft = false;
-    private bool turnRight = false;
+    private string lastTurnDirection;
+    private bool leftHeld = false;
+    private bool rightHeld = false;
+
 
     private void Start() {
         // Get selected fish data
@@ -111,22 +115,36 @@ public class Fish : MonoBehaviour {
         Vector3 direction;
         float currentAngle = transform.rotation.eulerAngles.z;
 
-        if (pointerPress.action.ReadValue<float>() > 0) {
-            screenPressed = true;
-
-            // Read pointer position in screen coordinates
-            Vector2 screenPos = pointerPosition.action.ReadValue<Vector2>();
-            mousePos = Camera.main.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 0f));
-        } else {
-            screenPressed = false;
-        }
+        // Read pointer position in screen coordinates
+        Vector2 pointerScreenPos = pointerPosition.action.ReadValue<Vector2>();
+        mousePos = Camera.main.ScreenToWorldPoint(new Vector3(pointerScreenPos.x, pointerScreenPos.y, 0f));
+        screenPressed = pointerPress.action.ReadValue<float>() > 0;
 
         // Always move the fish forward when autoSwim is enabled or the player is following the mouse
         if (screenPressed || autoSwimEnabled) {
             float targetAngle = currentAngle;
             if (lrTurn) {
-                if (turnLeft) targetAngle += currentRotateSpeed * Time.deltaTime;
-                else if (turnRight) targetAngle -= currentRotateSpeed * Time.deltaTime;
+
+                if (screenPressed) {
+                    if (pointerScreenPos.x < Screen.width / 2) leftHeld = true;
+                    if (pointerScreenPos.x > Screen.width / 2) rightHeld = true;
+                } else {
+                    leftHeld = leftInput.action.ReadValue<float>() > 0;
+                    rightHeld = rightInput.action.ReadValue<float>() > 0;
+                }
+
+                // Apply turn based on most recent press if both are held
+                if (leftHeld && !rightHeld) {
+                    targetAngle += currentRotateSpeed * Time.deltaTime;
+                } else if (rightHeld && !leftHeld) {
+                    targetAngle -= currentRotateSpeed * Time.deltaTime;
+                } else if (leftHeld && rightHeld) {
+                    if (lastTurnDirection == "left") {
+                        targetAngle += currentRotateSpeed * Time.deltaTime;
+                    } else if (lastTurnDirection == "right") {
+                        targetAngle -= currentRotateSpeed * Time.deltaTime;
+                    }
+                }
 
             } else if (screenPressed) {
                 direction = mousePos - transform.position;
@@ -164,21 +182,11 @@ public class Fish : MonoBehaviour {
         }
     }
 
-    public void LeftPointerDown() {
-        turnRight = false;
-        turnLeft = true;
+    public void LeftPress() {
+        lastTurnDirection = "left";
     }
 
-    public void LeftPointerUp() {
-        turnLeft = false;
-    }
-
-    public void RightPointerDown() {
-        turnLeft = false;
-        turnRight = true;
-    }
-
-    public void RightPointerUp() {
-        turnRight = false;
+    public void RightPress() {
+        lastTurnDirection = "right";
     }
 }
